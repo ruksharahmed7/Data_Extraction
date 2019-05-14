@@ -1,0 +1,1257 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="date" content="2017-12-21T09:10:50Z" />
+<meta name="pdf:PDFVersion" content="1.6" />
+<meta name="xmp:CreatorTool" content="Acrobat PDFMaker 10.0 for Excel" />
+<meta name="access_permission:modify_annotations" content="true" />
+<meta name="access_permission:can_print_degraded" content="true" />
+<meta name="dcterms:created" content="2017-12-21T09:07:38Z" />
+<meta name="Last-Modified" content="2017-12-21T09:10:50Z" />
+<meta name="dcterms:modified" content="2017-12-21T09:10:50Z" />
+<meta name="dc:format" content="application/pdf; version=1.6" />
+<meta name="xmpMM:DocumentID" content="uuid:4ee8c498-6565-4ed6-bc5b-e8e80cea5ca0" />
+<meta name="Last-Save-Date" content="2017-12-21T09:10:50Z" />
+<meta name="pdf:docinfo:creator_tool" content="Acrobat PDFMaker 10.0 for Excel" />
+<meta name="access_permission:fill_in_form" content="true" />
+<meta name="pdf:docinfo:modified" content="2017-12-21T09:10:50Z" />
+<meta name="meta:save-date" content="2017-12-21T09:10:50Z" />
+<meta name="pdf:encrypted" content="false" />
+<meta name="modified" content="2017-12-21T09:10:50Z" />
+<meta name="Content-Type" content="application/pdf" />
+<meta name="pdf:docinfo:creator" content="" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.pdf.PDFParser" />
+<meta name="meta:creation-date" content="2017-12-21T09:07:38Z" />
+<meta name="created" content="2017-12-21T09:07:38Z" />
+<meta name="access_permission:extract_for_accessibility" content="true" />
+<meta name="access_permission:assemble_document" content="true" />
+<meta name="xmpTPg:NPages" content="11" />
+<meta name="Creation-Date" content="2017-12-21T09:07:38Z" />
+<meta name="resourceName" content="dpp2.pdf" />
+<meta name="access_permission:extract_content" content="true" />
+<meta name="access_permission:can_print" content="true" />
+<meta name="producer" content="Adobe PDF Library 10.0" />
+<meta name="access_permission:can_modify" content="true" />
+<meta name="pdf:docinfo:producer" content="Adobe PDF Library 10.0" />
+<meta name="pdf:docinfo:created" content="2017-12-21T09:07:38Z" />
+<title></title>
+</head>
+<body><div class="page"><p />
+<p>                                                                     -3-
+</p>
+<p>9 Component and estimated cost summary :-
+</p>
+<p>% of the
+</p>
+<p> total 
+Through 
+</p>
+<p>GOB
+Special 
+Account
+</p>
+<p>Total cost
+</p>
+<p>1 5 6 7 8 9 10
+</p>
+<p>1419.60 1419.60
+(0.00)
+20.00 20.00
+</p>
+<p>(0.00)
+</p>
+<p>1439.60 - - - 1439.60
+(0.00)
+</p>
+<p>7000/7081 1906.50 - - - 1906.50
+</p>
+<p>(762.60)
+7000/7081 43815.00 - - - 43815.00
+</p>
+<p>(17526.00)
+7000/7081 2618.00 - - - 2618.00
+</p>
+<p>(1047.20)
+6800/6827 2100.00 - - - 2100.00
+</p>
+<p>(1680.00)
+6800/6807
+</p>
+<p>i) Jeep -(01 No.  including registration fee and insurance)  72.80 - - - 72.80
+(0.00)
+</p>
+<p>ii) Pick - up(Double cabin) –(01 No. including registration fee and 
+insurance)
+</p>
+<p>46.50 - - - 46.50
+</p>
+<p>(0.00)
+iii) Motor Cycle –( 02Nos. including registration fee and insurance) 3.80 3.80
+</p>
+<p>(0.00)
+7900/7901 500.00 500.00
+</p>
+<p>(0.00)
+51062.60 - - - 51062.60
+</p>
+<p>(21015.80)
+52502.20 - - - 52502.20
+</p>
+<p>(21015.80)
+c) Physical Contingency @ 1% of (a+b) 525.02 525.02
+</p>
+<p>(210.01) (0.00)
+d) Price contingency @ 2% on 2nd &amp; 3rd year's cost. (1024.79) 1024.79
+</p>
+<p>(409.92) (0.00)
+54052.01 54052.01
+</p>
+<p>(21635.73)
+</p>
+<p>(Taka in Lakh)
+</p>
+<p>2
+</p>
+<p>Strengthening of Runway and Taxiway (198,360 Sqm) (Detailed 
+breakup at page 23,24.1 &amp; 116-120 )
+</p>
+<p>Side Strip Grading and Drainage Work ( 01 Job)-(Detailed breakup at 
+page 23.1)
+</p>
+<p>Preliminary &amp; General Items (01 Job)-(Detailed breakup at page 23 &amp; 
+109-115)
+</p>
+<p>Estimated Cost
+Project Aid
+</p>
+<p>RPA
+</p>
+<p>Code / Sub  - code Description
+</p>
+<p>D
+P
+A
+</p>
+<p>2.63%
+</p>
+<p>0.04%
+</p>
+<p>2.66%
+</p>
+<p>Budget 
+Head GOB
+</p>
+<p>(FE)
+</p>
+<p>Economic 
+Code/ sub-
+code
+</p>
+<p>a) Revenue Component
+</p>
+<p>Sub- Total (a) Revenue Component
+</p>
+<p>4800/4822, 
+4901, 
+</p>
+<p>4883,4828, 
+4827, 4888, 
+</p>
+<p>4840
+</p>
+<p>Establishment Cost  i.e., fuel, maintenance,  honorium,stationary, 
+photocopy, computer Consumables etc.  (LS) -(Detailed breakup at 
+page 24.2)
+</p>
+<p>Consultancy services for Supervision Phase ( 360 man-month)  4800/4874R
+e
+v
+e
+n
+u
+e
+</p>
+<p>Grand Total (a+b+c+d)=
+</p>
+<p>Total ( a + b )=
+</p>
+<p>b) Capital Component
+</p>
+<p>                                 Sub- Total (b)  Capital Component=
+</p>
+<p>Airfield Ground Lighting (AGL) System (1 Set) (Detailed breakup at 
+page 24 , 121 &amp; 122 )
+</p>
+<p>Transport :  (4 Nos.)
+</p>
+<p>CD/VAT - (L.S)
+</p>
+<p>C
+a
+p
+i
+t
+a
+l
+</p>
+<p>3.53%
+</p>
+<p>81.06%
+</p>
+<p>4.84%
+</p>
+<p>3.89%
+</p>
+<p>0.13%
+</p>
+<p>0.09%
+</p>
+<p>0.01%
+</p>
+<p>100.00%
+</p>
+<p>0.93%
+</p>
+<p>94.47%
+</p>
+<p>97.13%
+</p>
+<p>0.97%
+</p>
+<p>1.90%</p>
+<p />
+</div>
+<div class="page"><p />
+<p>10.. Log Frame :
+   i)  Planned date for project completion : 30-06-2020
+   ii) Date of this summary preparation :  16-08-2017
+</p>
+<p>Narrative Summary Means of 
+Verifications
+</p>
+<p>Important Assumptions
+</p>
+<p>Programme goal:-
+Ensuring Safe movement of wide body Aircrafts on 
+Runway &amp; Taxiway at Shah Amanat International 
+Airport, Chittagong.
+</p>
+<p>Project Purpose:-
+To strengthen &amp; develop the existing Runway &amp; 
+Taxiway of Shah Amanat International Airport, 
+Chittagong for safe movement of wide body Aircrafts.
+</p>
+<p>- Record from 
+concerned airport 
+manager.
+- Site Visit
+-IMED report
+</p>
+<p>Affecting Purpose-Goal Link:-       
+I ) Safety and security of  Runway &amp; 
+Taxiway   developed.
+ii) Transparent supervision &amp; 
+monitoring.
+</p>
+<p>Outputs:-
+Runway &amp; Taxiway  including shoulder of Shah 
+Amanat International Airport, Chittagong 
+strengthened enough for safe movement of Aircrafts. 
+Also smooth drainage system of the area ensured.
+</p>
+<p>-Project Director’s 
+office
+- Site Visit
+-IMED report
+</p>
+<p>Affecting Output Purpose Link:-    
+i) Construction works completed.
+</p>
+<p>Inputs:- Affecting input to output  Link:-
+</p>
+<p> No. Item Quantity Cost in lakh Tk.
+1. Preliminary &amp; General Items 1 Preliminary &amp; General Items (01 Job)-(Detailed 
+</p>
+<p>breakup at page 23 &amp; 109-115)
+01 job 1906.50
+</p>
+<p>2. Strengthening of existing Runway &amp; Taxiway  2 Strengthening of Runway and Taxiway (198,360 
+Sqm) (Detailed breakup at page 23,24.1 &amp; 116-
+120 )
+</p>
+<p>198360 
+Sqm.
+</p>
+<p>43815.00
+</p>
+<p>3.. Side strip grading &amp; drainage works 3 Side Strip Grading and Drainage Work ( 01 Job)-
+(Detailed breakup at page 23.1)
+</p>
+<p>01 job 2618.00
+</p>
+<p>4. AGL Works 4 Airfield Ground Lighting (AGL) System (1 Set) 
+(Detailed breakup at page 24 , 121 &amp; 122 )
+</p>
+<p>01 Set 2100.00
+</p>
+<p>5. Transport 5 Transport :  (4 Nos.) 4 Nos 123.10
+6. Contingency 6 Contingency LS 1549.81
+7. Consultancy 7 Consultancy services for Supervision Phase ( 
+</p>
+<p>360 man-month)  
+ 360 man-
+</p>
+<p>month  
+1419.60
+</p>
+<p>8. CD/ VAT 8 CD/ VAT LS 500.00
+-4-
+</p>
+<p>Level of effects/Expenditure for each activity:-                                
+</p>
+<p>Name of Project : Strengthening of Existing Runway &amp; Taxiway at Shah Amanat International Airport, Chittagong.
+</p>
+<p>-Project Director’s 
+office
+- Office file
+- DPP
+-Project completion 
+report
+</p>
+<p>-DPP approved on time                    -  
+ Contractor timely engaged.
+-  Equipment procured as per   
+schedule
+-  No Natural disaster.
+</p>
+<p>-Record from 
+concerned airport 
+manager.
+- Record from CAAB 
+Headquarters.
+</p>
+<p> 
+</p>
+<p>Magnitude outputs necessary &amp; Sufficient to achieve Purpose:-
+One Lakh Ninety Eight Thousand Three Hundred and Sixty (198,360.00) 
+Sqm asphalt Pavement work constructed.
+</p>
+<p>i) Aircraft movement increased.
+ii) Aircraft parking facility increased
+</p>
+<p>i) )  Increased landing and take off 
+facilities of Aircraft.                                           
+                ii) Aircrafts  operated 
+safely.
+</p>
+<p>Objectively Verifiable Indicators/ Measure of goal achievement
+</p>
+<p>Condition that will indicate that Purpose has been achieved at the end of 
+Project status:-
+i) Wide body aircraft operated safely.</p>
+<p />
+</div>
+<div class="page"><p />
+<p>Sl. No. Date of 
+Completion
+</p>
+<p>1 3 5
+1
+</p>
+<p>1
+Preliminary &amp; General Items (01 Job)-(Detailed 
+breakup at page 23 &amp; 109-115)
+</p>
+<p>1906.50 01 Job
+</p>
+<p>2
+Strengthening of Runway and Taxiway (198,360 
+Sqm) (Estmate of Rate at Appendix B1, page 
+23,24.1 &amp; 116-120)
+</p>
+<p>0.22089 per Sqm.
+</p>
+<p>3
+Side Strip Grading and Drainage Work ( 01 Job)-
+(Detailed breakup at page 23.1)
+</p>
+<p>2618.00 01 Job
+</p>
+<p>4 Airfield Ground Lighting (AGL) System (1 Set) 
+</p>
+<p>(Detailed breakup at page 24 , 121 &amp; 122 )
+2100.00 per set
+</p>
+<p>5 Transport :  (4 Nos.) 30.78 per no.
+6 Consultancy services for Supervision Phase ( 
+</p>
+<p>360 man-month)  
+3.94 man month
+</p>
+<p>7 CD/ VAT LS LS
+2
+</p>
+<p>1 Preliminary &amp; General Items (LS) 662.00 LS
+</p>
+<p>2 Strengthening of Runway = 195,095 Sqm
+ 0.06322 per Sqm
+</p>
+<p>3 Side Strip &amp; Drainage Work=  585284 Sqm 0.002242 per Sqm
+</p>
+<p>4 Airfield Ground Lighting system L.S. 2298.00 per set
+3
+</p>
+<p>- -
+</p>
+<p>2 4
+</p>
+<p>Give comparative cost of major items of similar other projects.  :
+</p>
+<p>10
+</p>
+<p>19.
+</p>
+<p>Name of the Project
+(Taka in lakh)
+</p>
+<p>Name of major items Unit Cost
+</p>
+<p>Proposed Project :- 
+</p>
+<p>Similar Completed Project :- 
+</p>
+<p>Similar on going Project :-    
+</p>
+<p>December, 
+2020 Strengthening of Existing Runway &amp; 
+</p>
+<p>Taxiway at Shah Amanat International 
+Airport, Chittagong.
+</p>
+<p>Asphalt Concrete Overlay over the 
+Runway at Hazrat Shahjalal 
+International airport, Kurmitola, 
+Dhaka
+</p>
+<p>December, 
+2014</p>
+<p />
+</div>
+<div class="page"><p />
+<p>PROCUREMENT PLAN FOR DEVELOPMENT PROJECT/PROGRAM
+</p>
+<p>: Project Cost (Taka In Lakh)
+Agency : Total
+</p>
+<p>: GOB(Grant)
+Project/Program Name &amp; Code :
+</p>
+<p>PA
+</p>
+<p>Goods / Equipment Procurement :
+Pkg. Description of procurement Procurement Contract Sources Estd. Cost Time Not used Invitation Signing of Time for
+</p>
+<p> No. package as per PP Goods. Unit Quantity  Method Approving  of Funds (Taka in Code  in goods for Tender Contract completion
+</p>
+<p> &amp; (Type) Authority  Lakh) for process of contract
+</p>
+<p>1 2 3 4 5 6 7 8 9 10 11 12 13
+</p>
+<p>GD-1
+</p>
+<p>Transport
+(1 Nos Jeep, 1 No. Double Cab Pick up and 2 
+Nos. Motorcycle) Nos. 4.0 DPM 
+</p>
+<p>Chairman, 
+CAAB GOB 123.10 Planned - 15/02/2018 15/03/2018 1/4/2018
+</p>
+<p>123.10
+</p>
+<p>-15-
+</p>
+<p> Annexure-III(a)
+Ref: Reg-16(4) of PPR, 2003
+</p>
+<p>Others (Specify) -
+</p>
+<p>Ministry of Civil Aviation &amp; Tourism.
+</p>
+<p>Total value of Goods procurement=
+</p>
+<p>Ministry/ Division
+</p>
+<p>Procuring Entity Name &amp; Code 
+</p>
+<p>54052.01
+</p>
+<p>54052.01
+</p>
+<p>-
+</p>
+<p>Civil Aviation Authority of Bangladesh
+</p>
+<p>Civil Aviation Authority of Bangladesh
+</p>
+<p> Strengthening of Existing Runway &amp; Taxiway at 
+Shah Amanat International Airport, Chittagong.</p>
+<p />
+</div>
+<div class="page"><p />
+<p>PROCUREMENT PLAN FOR DEVELOPMENT PROJECT/PROGRAM
+Ministry/ Division :
+Agency : Total
+Procuring Entity Name &amp; Code : GOB(Grant)
+Project/Program Name &amp; Code : PA
+</p>
+<p>1 2 3 4 5 6 7 8 9 10 11 12 13
+</p>
+<p>WD-1 Strengthening of Runway &amp; Taxiway at 
+Shah Amanat international Airport, 
+Chittagong Sqm 198360
+</p>
+<p>  Single stage-Two 
+envelop (ICT)     
+</p>
+<p>CCGP GOB 50939.50 Planned N/A 19/02/2018 19/6/2018 15/06/2020
+</p>
+<p>50939.50
+</p>
+<p>-16-
+</p>
+<p>Total value of works procurement =
+</p>
+<p>Invite pre-
+quel / if 
+</p>
+<p>applicable
+</p>
+<p>Indicative Dates
+Signing of 
+Contract
+</p>
+<p>Completion 
+of contract
+</p>
+<p>Invitation for 
+Tender
+</p>
+<p>Pkg. 
+No.
+</p>
+<p>Description of procurement package as per 
+Works.
+</p>
+<p> Annexure-III(b)
+</p>
+<p>Others (Specify) 
+</p>
+<p>Ref: Reg-16(4) of PPR, 2003
+</p>
+<p>Works Procurement :
+</p>
+<p> Strengthening of Existing Runway &amp; Taxiway at Shah Amanat 
+International Airport, Chittagong.
+</p>
+<p>Civil Aviation Authority of Bangladesh 54052.01
+-
+</p>
+<p>-
+</p>
+<p>Ministry of Civil Aviation &amp; Tourism.
+Civil Aviation Authority of Bangladesh
+</p>
+<p>Project Cost (Taka In Lakh)
+54052.01
+</p>
+<p>TimeCod
+efor 
+</p>
+<p>process
+</p>
+<p> Contract 
+Approving 
+Authority
+</p>
+<p>Sources 
+of Funds 
+</p>
+<p>Estd. Cost 
+(Taka in 
+</p>
+<p>Lakh)
+</p>
+<p>Unit Quantity Procurement Method 
+&amp; (Type)</p>
+<p />
+</div>
+<div class="page"><p />
+<p>                         
+</p>
+<p>PROCUREMENT PLAN FOR DEVELOPMENT PROJECT/PROGRAM
+: Ministry of Civil Aviation &amp; Tourism. Project Cost(Taka In Lakh)
+</p>
+<p>: Civil Aviation Authority of Bangladesh. 54052.01 Total
+: Civil Aviation Authority of Bangladesh. 54052.01 GOB(Grant)
+:
+</p>
+<p>- PA
+</p>
+<p>-
+</p>
+<p>1 2 3 4 5 6 7 8 9 10 11 12
+</p>
+<p>SD-1 Consultancy Services 
+(Supervision Phase)
+</p>
+<p>mm 360 Single Source 
+based 
+selection 
+method
+(BRTC, 
+BUET)
+</p>
+<p>MOCAT GOB 1419.60 - 5/2/2018 9/4/2018 15/06/2020
+</p>
+<p>1419.60
+</p>
+<p>-17-
+</p>
+<p>Others(Specify) 
+</p>
+<p>Completion of 
+contract
+</p>
+<p>Indicative Dates
+</p>
+<p>Ministry/ Division
+</p>
+<p>Agency
+</p>
+<p>Procuring Entity Name &amp; Code 
+</p>
+<p>Project/Program Name &amp; Code  Strengthening of Existing Runway &amp; Taxiway at Shah Amanat 
+International Airport, Chittagong.
+</p>
+<p> Annexure-III(c)
+</p>
+<p>Total value of  Services  procurement =
+</p>
+<p>Services Procurement :
+Package 
+</p>
+<p>No.
+Description of 
+</p>
+<p>Procurement Package 
+Work
+</p>
+<p>Unit Quantity Procurement 
+Method &amp; 
+</p>
+<p>Type
+</p>
+<p>Contract 
+Approving 
+Authority
+</p>
+<p>Source 
+ of 
+</p>
+<p>Funds
+</p>
+<p>Estd. 
+Cost  (In 
+</p>
+<p>Lakh 
+Taka)
+</p>
+<p>Invitation 
+for EOI
+</p>
+<p>Issue of RFP Signing of 
+Contract
+</p>
+<p>Ref: Reg-16(4) of PPR, 2003</p>
+<p />
+</div>
+<div class="page"><p />
+<p>% of item % of  
+Project
+</p>
+<p>% of item % of  
+Project
+</p>
+<p>% of item % of  
+Project
+</p>
+<p>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+</p>
+<p>4800/4874 Consultancy services for Supervision Phase ( 360 man-month)   360 man-month  3.943 1419.60 0.02626 100.00 7.04% 0.19% 500.00 35.22% 0.93% 819.60 57.73% 1.52%
+R
+e
+v
+e
+n
+</p>
+<p>4800/4822, 
+4901, 
+</p>
+<p>4883,4828, 
+4827, 4888, 
+</p>
+<p>4840
+</p>
+<p>Establishment Cost  i.e., fuel, maintenance,  honorium,stationary, 
+photocopy, computer Consumables etc.  (LS) -(Detailed breakup at 
+page 24.2)
+</p>
+<p>L.S L.S 20.00 0.00037 10.00 50.00% 0.02% 10.00 50.00% 0.02%
+</p>
+<p>1439.60 0.03 100.00 0.19% 510.00 0.94% 829.60 1.53%
+</p>
+<p>7000/7081 Preliminary &amp; General Items (01 Job)-(Detailed breakup at 
+page 23 &amp; 109-115)
+</p>
+<p>01 Job 1906.50 1906.50 0.03527 106.50 5.59% 0.20% 900.00 47.21% 1.67% 900.00 47.21% 1.67%
+</p>
+<p>7000/7081 Strengthening of Runway and Taxiway (198,360 Sqm) 
+(Detailed breakup at page 23,24.1 &amp; 116-120 )
+</p>
+<p>198360 Sqm. 0.22089 43815.00 0.81061 815.00 1.86% 1.51% 21500.00 49.07% 39.78% 21500.00 49.07% 39.78%
+</p>
+<p>7000/7081 Side Strip Grading and Drainage Work ( 01 Job)-(Detailed
+breakup at page 23.1)
+</p>
+<p>01 Job 2618.00 2618.00 0.04843 18.00 0.69% 0.03% 1300.00 49.66% 2.41% 1300.00 49.66% 2.41%
+</p>
+<p>6800/6827 Airfield Ground Lighting (AGL) System (1 Set) (Detailed 
+breakup at page 24 , 121 &amp; 122 )
+</p>
+<p>01 Set 2100.00 2100.00 0.03885 100.00 4.76% 0.19% 1000.00 47.62% 1.85% 1000.00 47.62% 1.85%
+</p>
+<p>Transport :  (4 Nos.)
+i) Jeep -(01 No.  including registration fee and insurance)  01 No. 72.80 72.80 0.00135 72.80 100.00% 0.13% 0.00% 0.00% 0.00% 0.00%
+ii) Pick - up(Double cabin) –(01 No. including registration 
+fee and insurance)
+</p>
+<p>01 No. 46.50 46.50 0.00086 46.50 100.00% 0.09% 0.00% 0.00% 0.00% 0.00%
+</p>
+<p>iii) Motor Cycle –( 02Nos. including registration fee and 
+insurance) 
+</p>
+<p>02Nos.. 1.90 3.80 0.00007 3.80 100.00% 0.01% 0.00% 0.00% 0.00% 0.00%
+</p>
+<p>7900/7901 CD/VAT - (L.S) LS LS 500.00 0.00925 0.00 0.00% 0.00% 250.00 50.00% 0.46% 250.00 50.00% 0.46%
+</p>
+<p>                                                                                           Sub total (b)= 51062.60 0.94469 1162.60 2.15% 24950.00 46.16% 24950.00 46.16%
+                                                                                             Total (a+b)= 52502.20 0.97133 1262.60 2.34% 25460.00 47.10% 25779.60 47.69%
+c) Physical Contingency @ 1% of (a+b) LS LS 525.02 0.00971 12.63 2.40% 0.02% 254.60 48.49% 0.47% 257.80 49.10% 0.48%
+d) Price contingency @ 2% on 2nd &amp; 3rd year's cost. LS LS 1024.79 0.01896 0.00 509.20 49.69% 0.94% 515.59 50.31% 0.95%
+</p>
+<p>54052.01 1.00 1275.23 2.36% 26223.80 48.52% 26552.99 49.12%
+-18-
+</p>
+<p>Grand Total (a+b+c+d)=
+</p>
+<p>Name of Project : Strengthening of Existing Runway &amp; Taxiway at Shah Amanat International Airport, Chittagong.
+Name of Agency : Civil Aviation Authority, Banglasesh.
+</p>
+<p>Sub-total (a)
+</p>
+<p>Quantity/ Unit Unit Cost Total Cost
+</p>
+<p>Total Physical &amp;   Financial TargetBudget 
+head
+</p>
+<p>Economic Code/sub-
+code
+</p>
+<p>Weight
+</p>
+<p>(a) Revenue Component
+</p>
+<p>(b) Capital Component
+</p>
+<p>Financial Physical
+</p>
+<p>Code / Sub  - code Description
+</p>
+<p>C
+a
+p
+i
+t
+a
+l
+</p>
+<p>Annexure- IV
+</p>
+<p>Financial Financial
+</p>
+<p>2019-202017-18
+</p>
+<p>Year wise Financial and Physical Target Plan
+</p>
+<p>Physical Physical
+</p>
+<p>2018-19
+</p>
+<p>6800/6807</p>
+<p />
+</div>
+<div class="page"><p />
+<p>Through GOB Special A/C Through 
+GOB Special A/C
+</p>
+<p>Through 
+GOB Special A/C
+</p>
+<p>1 2 3 4 6 7 8 9 10 11 12 13 14 15 16 17 18
+</p>
+<p>100.00 100.00 500.00 500.00 819.60 819.60
+(0.00) (0.00) (0.00)
+0.00 0.00 10.00 10.00 10.00 10.00
+</p>
+<p>(0.00) (0.00) (0.00)
+</p>
+<p>100.00 100.00 510.00 510.00 829.60 829.60
+(0.00) (0.00) (0.00)
+</p>
+<p>106.50 106.50 900.00 900.00 900.00 900.00
+(42.60) (360.00) (360.00)
+815.00 815.00 21500.00 21500.00 21500.00 21500.00
+</p>
+<p>(326.00) (8600.00) (8600.00)
+18.00 18.00 1300.00 1300.00 1300.00 1300.00
+</p>
+<p>(7.20) (520.00) (520.00)
+100.00 100.00 1000.00 1000.00 1000.00 1000.00
+(80.00) (800.00) (800.00)
+</p>
+<p>Transport :  (4 Nos.)
+72.80 72.80 0.00 0.00 0.00 0.00
+(0.00) (0.00) (0.00)
+46.50 46.50 0.00 0.00 0.00 0.00
+(0.00) (0.00) (0.00)
+3.80 3.80 0.00 0.00 0.00 0.00
+</p>
+<p>(0.00) (0.00) (0.00)
+0.00 0.00 250.00 250.00 250.00 250.00
+</p>
+<p>(0.00) (0.00) (0.00)
+1162.60 1162.60 24950.00 24950.00 24950.00 24950.00
+(455.80) (10280.00) (10280.00)
+1262.60 1262.60 25460.00 25460.00 25779.60 25779.60
+(455.80) (10280.00) (10280.00)
+</p>
+<p>12.63 12.63 254.60 254.60 257.80 257.80
+(5.05) (101.84) (103.12)
+0.00 0.00 509.20 509.20 (515.59) 515.59
+</p>
+<p>(0.00) (203.68) (206.24)
+1275.23 1275.23 26223.80 26223.80 26552.99 26552.99
+(460.85) (10585.52) (10589.36)
+</p>
+<p>-19-
+</p>
+<p>Total 
+</p>
+<p>2018-19
+</p>
+<p>Project aid Total 
+RAP
+</p>
+<p>DPA
+GOB
+(FE)
+</p>
+<p>Annexure-v
+Details annual phasing of cost
+</p>
+<p>2019-20
+</p>
+<p>Total Project aid
+RAP
+</p>
+<p>2017-18
+</p>
+<p>GOB
+(FE)
+</p>
+<p>DPA
+</p>
+<p>Project aid
+RPA DPA GOB
+</p>
+<p>(FE)
+</p>
+<p>Budget 
+Head
+</p>
+<p>Economic 
+Code/Sub-code
+</p>
+<p>Economic code/sub-code description
+</p>
+<p>a) Revenue Component
+4800/4874 Consultancy services for Supervision Phase ( 360 man-month)  
+</p>
+<p>b) Capital Component
+</p>
+<p>c
+a
+p
+i
+t
+a
+l
+</p>
+<p>R
+e
+v
+e
+n
+u
+e
+</p>
+<p>Preliminary &amp; General Items (01 Job)-(Detailed breakup at page 23 &amp; 109-115)7000/7081
+</p>
+<p>7000/7081 
+</p>
+<p>4800/4822, 4901, 
+4883,4828, 4827, 
+</p>
+<p>4888, 4840
+</p>
+<p>Establishment Cost  i.e., fuel, maintenance,  honorium,stationary, photocopy, 
+computer Consumables etc.  (LS) -(Detailed breakup at page 24.2)
+</p>
+<p>Strengthening of Runway and Taxiway (198,360 Sqm) (Detailed breakup at 
+page 23,24.1 &amp; 116-120 )
+</p>
+<p>d) Price contingency @ 2% on 2nd &amp; 3rd year's cost.
+</p>
+<p>Grand Total (a+b+c+d)=
+</p>
+<p>Sub- Total (a) Revenue Component
+</p>
+<p>7900/7901 CD/VAT - (L.S)
+</p>
+<p>Sub- Total (b)  Capital Component
+</p>
+<p>Total ( a + b )=
+</p>
+<p>c) Physical Contingency @ 1% of (a+b)
+</p>
+<p>7000/7081 Side Strip Grading and Drainage Work ( 01 Job)-(Detailed breakup at page 23.1)
+</p>
+<p>6800/6827 Airfield Ground Lighting (AGL) System (1 Set) (Detailed breakup at page 24 , 
+121 &amp; 122 )
+</p>
+<p>6800/6807
+i) Jeep -(01 No.  including registration fee and insurance)  
+</p>
+<p>ii) Pick - up(Double cabin) –(01 No. including registration fee and insurance)
+</p>
+<p>iii) Motor Cycle –( 02Nos. including registration fee and insurance) </p>
+<p />
+</div>
+<div class="page"><p />
+<p>Estimated Cost Estimated Cost
+GOB (FE) GOB (FE)
+</p>
+<p>1 2 5 6 7 8
+</p>
+<p>1419.60 1419.60
+(0.00) (0.00)
+100.00 20.00
+(0.00) (0.00)
+</p>
+<p>1519.60 1439.60
+(0.00) (0.00)
+</p>
+<p>1906.50 1906.50
+(762.60) (762.60)
+43815.00 43815.00
+</p>
+<p>(17526.00) (17526.00)
+</p>
+<p>2618.00 2618.00
+(1047.20) (1047.20)
+2100.00 2100.00
+</p>
+<p>(1680.00) (1680.00)
+</p>
+<p>72.80 72.80
+(0.00) (0.00)
+46.50 46.50
+(0.00) (0.00)
+3.80 3.80
+</p>
+<p>(0.00) (0.00)
+500.00 500.00
+(0.00) (0.00)
+</p>
+<p>51062.60 51062.60
+(21015.80) (21015.80)
+52582.20 52502.20
+</p>
+<p>(21015.80) (21015.80)
+525.82 525.02
+</p>
+<p>(210.33) (210.01)
+1026.19 1024.79
+(410.48) (409.92)
+54134.21 54052.01
+</p>
+<p>(21636.61) (21635.73)
+</p>
+<p>-124
+</p>
+<p>L. S
+1.40
+</p>
+<p>(0.56)
+</p>
+<p>7900/7901 CD/VAT - (L.S)
+</p>
+<p>                                 Sub- Total (b)  Capital Component =
+</p>
+<p>C
+a
+p
+i
+t
+a
+l
+</p>
+<p>d) Price contingency @ 2% on 2nd &amp; 3rd year's cost.
+</p>
+<p>Grand Total (a+b+c+d)=
+</p>
+<p>Total ( a + b )=
+</p>
+<p>6800/6827 Airfield Ground Lighting (AGL) System (1 Set) 
+(Detailed breakup at page 24 , 121 &amp; 122 )
+</p>
+<p>i) Jeep -(01 No.  including registration fee and 
+insurance)  
+ii) Pick - up(Double cabin) –(01 No. including 
+registration fee and insurance)
+iii) Motor Cycle –( 02Nos. including registration fee 
+and insurance) 
+</p>
+<p>6800/6807
+</p>
+<p>01 No.
+</p>
+<p>02 Nos.
+</p>
+<p>L. S
+</p>
+<p>L. S
+</p>
+<p>Comparative Statement between DPP Submitted after PEC meeting and finally proposed Recast DPP
+</p>
+<p>Quantity/Unit
+DPP Submitted after PEC meeting
+</p>
+<p>Consultancy services for Supervision Phase ( 360 man-
+month)  
+</p>
+<p>Code / Sub  - code Description Quantity/Unit
+</p>
+<p>4800/4874 Consultancy services for Supervision Phase ( 360 man-
+month)  
+</p>
+<p>Code / Sub  - code Description
+Finally proposed Recast DPPBudget 
+</p>
+<p>Head
+Economic 
+Code/ sub-
+</p>
+<p>code
+</p>
+<p>360 man-month 360 man-monthR
+e
+v
+e
+n
+u
+</p>
+<p>4800/4822, 
+4901, 
+</p>
+<p>4883,4828, 
+4827, 4888, 
+</p>
+<p>4840
+</p>
+<p>Establishment Cost  i.e., fuel, maintenance,  
+honorium,stationary, photocopy, computer 
+Consumables etc.  (LS) -(Detailed breakup at page 
+24.2)
+</p>
+<p>Difference
+</p>
+<p>9
+</p>
+<p>a) Revenue Component
+0.00
+</p>
+<p>a) Revenue Component
+</p>
+<p>(0.00)
+80.00
+(0.00)L.S. L.S.
+</p>
+<p>Establishment Cost  i.e., fuel, maintenance,  
+honorium,stationary, photocopy, computer 
+Consumables etc.  (LS) -(Detailed breakup at page 24.2)
+</p>
+<p>(0.00)
+</p>
+<p>0.00
+(0.00)
+0.00
+</p>
+<p>(0.00)
+</p>
+<p>0.00
+(0.00)
+</p>
+<p>01 Job
+</p>
+<p>198360.00 
+Sqm.
+</p>
+<p>b) Capital Component
+</p>
+<p>Sub- Total (a) Revenue Component
+</p>
+<p>Transport :  (4 Nos.) Transport :  (4 Nos.)
+0.00
+</p>
+<p>01 Set.
+</p>
+<p>01 No.
+</p>
+<p>Sub- Total (a) Revenue Component
+</p>
+<p>7000/7081 Preliminary &amp; General Items (01 Job)-(Detailed 
+breakup at page 23 &amp; 109-115)
+</p>
+<p>7000/7081 Strengthening of Runway and Taxiway (198,360 Sqm) 
+(Detailed breakup at page 23,24.1 &amp; 116-120 )
+</p>
+<p>7000/7081 Side Strip Grading and Drainage Work ( 01 Job)-
+(Detailed breakup at page 23.1)
+</p>
+<p>01 Job
+</p>
+<p>198360.00 
+Sqm.
+</p>
+<p>01 Job
+</p>
+<p>Preliminary &amp; General Items (01 Job)-(Detailed 
+breakup at page 23 &amp; 109-115)
+Strengthening of Runway and Taxiway (198,360 Sqm) 
+(Detailed breakup at page 23,24.1 &amp; 116-120 )
+</p>
+<p>Side Strip Grading and Drainage Work ( 01 Job)-
+(Detailed breakup at page 23.1)
+Airfield Ground Lighting (AGL) System (1 Set) 
+(Detailed breakup at page 24 , 121 &amp; 122 )
+</p>
+<p>i) Jeep -(01 No.  including registration fee and 
+insurance)  
+</p>
+<p>80.00
+</p>
+<p>iii) Motor Cycle –( 02Nos. including registration fee 
+and insurance) 
+CD/VAT - (L.S)
+</p>
+<p>01 No.
+</p>
+<p>02 Nos.
+</p>
+<p>c) Physical Contingency @ 1% of (a+b)
+</p>
+<p>d) Price contingency @ 2% on 2nd &amp; 3rd 
+year's cost.
+</p>
+<p>Grand Total (a+b+c+d)=
+</p>
+<p>Total ( a + b )=
+</p>
+<p>c) Physical Contingency @ 1% of (a+b)
+</p>
+<p>L. S
+</p>
+<p>L. S
+</p>
+<p>L. S
+</p>
+<p>                                 Sub- Total (b)  Capital Component =
+</p>
+<p>(0.00)
+b) Capital Component
+</p>
+<p>01 Job
+</p>
+<p>01 Set.
+</p>
+<p>01 No.
+</p>
+<p>82.20
+(0.88)
+</p>
+<p>Appendix-'V'
+</p>
+<p>(Taka in Lakh)
+</p>
+<p>0.00
+(0.00)
+80.00
+(0.00)
+0.80
+</p>
+<p>(0.32)
+</p>
+<p>0.00
+(0.00)
+0.00
+</p>
+<p>(0.00)
+0.00
+</p>
+<p>(0.00)
+</p>
+<p>0.00
+</p>
+<p>(0.00)
+</p>
+<p>ii) Pick - up(Double cabin) –(01 No. including 
+registration fee and insurance)</p>
+<p />
+</div>
+<div class="page"><p />
+</div>
+<div class="page"><p />
+</div>
+<ul>	<li>Sumary</li>
+	<li>DPP 9</li>
+	<li>Logframe</li>
+	<li>sl 19</li>
+	<li>good</li>
+	<li>work</li>
+	<li>consultancy</li>
+	<li>Year wise</li>
+	<li>Phasing</li>
+	<li>DPP 9 (2)</li>
+</ul>
+</body></html>
