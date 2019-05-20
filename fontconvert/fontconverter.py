@@ -1,6 +1,7 @@
 from bijoy2unicode import converter
 test = converter.Unicode()
 import  re
+import config as configfile
 import dataExtraction.fontconvert.bijoy_to_unicode as bijoy_to_unicode
 check_ascii_re=re.compile(r'[a-z]K|Rvbyqvwi|A‡±vei|wmGgGmwW|GmGm|mfvcwZ|Uvt|Revew|mwPe|'
                           r'Nbwgt|Lyjbv|cvZv|welqvejx|fvov|PvjK|AwWUwiqvg|mnKvix|mnvqK|'
@@ -25,7 +26,7 @@ def bijoy2uni(s):
         l=len(s)
         percentage=(cnt/l)*100
         #print(percentage)
-        if(percentage>3.0 and percentage<40.0):
+        if(percentage>configfile.Threshold['font_conversion_low'] and percentage<configfile.Threshold['font_conversion_high']):
             toUnicode = test.convertBijoyToUnicode(s)
             #toUnicode = bijoy_to_unicode.convertBijoyToUnicode(s)
             #print(toUnicode)

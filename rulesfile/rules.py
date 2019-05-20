@@ -42,3 +42,7 @@ escape_objective_re=re.compile(r'বুলেট\s*আকারে|(W|w)rite\s*i
 
 #geo coverage
 geo_re=re.compile(r'প্রকল্প\s*এলাকা|প্রকল্প\s*এলাকার\s*বিভাগ|(l|)Location\s*of\s*the\s*(p|P)roject(s)?|প্রকল্প\s*অবস্থান')
+
+#project activity
+activity_re=re.compile(r'প্রকল্প\s*(প্রধান\s*প্রধান)?\s*কার্যক্রম')
+stop_activity_re=re.compile(r'(সপ্তম|৭ম)\s*পঞ্চবার্ষিক|প্রকল্প\s*সংগতিপূর্ণতা|প্রকল্প\s*এলাকা')

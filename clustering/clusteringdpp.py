@@ -83,7 +83,7 @@ def summarize_dpp(converted_data):
     #print("cleaded data")
     for key,value in sorted(converted_data.items()):
         cleaned = dataprocessing.cleaning_data(value)
-        print(key,cleaned)
+        #print(key,cleaned)
         #print(cleaned)
         back_track-=1
         if(not (rules.project_name_re.search(cleaned)==None) and flag==0 and lock==0):

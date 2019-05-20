@@ -4,7 +4,7 @@ import pandas as pd
 import traceback
 from pprint import pprint
 import re
-
+import config as configfile
 
 def filtering_project_name(result_list,project_name,project_id):
     try:
@@ -45,7 +45,7 @@ def filtering_project_name(result_list,project_name,project_id):
         indx=tf_percentage.index(max(tf_percentage))
         #print(indx)
         res_list = []
-        if(tf_percentage[indx]>60.0 and first_word_check_flag):
+        if(tf_percentage[indx]>configfile.Threshold['tfidf_percentage'] and first_word_check_flag):
             res=result_list[indx]
             res['project_id']=project_id
             res_list.append(res)

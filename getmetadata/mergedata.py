@@ -30,7 +30,7 @@ def clustering_and_get_merge_dpp(raw_data,converted_data,project_id):
     raw_cluster_data,cleaned_cluster_data=clusteringdpp.summarize_dpp(converted_data)
     #pprint(raw_cluster_data)
     raw_final_clustered_data,final_clustered_data=clusteringdpp.final_level_summarize_dpp(raw_cluster_data,cleaned_cluster_data)
-    pprint(raw_final_clustered_data)
+    #pprint(raw_final_clustered_data)
     #result_list=dppdetails.extract_all(raw_cluster_data,cleaned_cluster_data,project_id)
     #print(result_list)
     object_extraction = dppextraction.extractdpp(raw_data, converted_data,raw_cluster_data,cleaned_cluster_data,raw_final_clustered_data, final_clustered_data,project_id)
@@ -40,6 +40,20 @@ def clustering_and_get_merge_dpp(raw_data,converted_data,project_id):
     filtered_final_result,filter_mask=filterdppresult.filter(final_result,results)
     pprint(filtered_final_result)
     print(filter_mask)
+    return_result={}
+    return_result['approval_date']=filtered_final_result['approval_date']
+    return_result['cost_unit']=filtered_final_result['cost_unit']
+    return_result['end_date']=filtered_final_result['end_date']
+    return_result['executing_agency']=filtered_final_result['executing_agency']
+    return_result['gob_cost']=filtered_final_result['gob_cost']
+    return_result['other_cost']=filtered_final_result['other_cost']
+    return_result['own_fund']=filtered_final_result['own_fund']
+    return_result['pa_cost']=filtered_final_result['pa_cost']
+    return_result['planning_division']=filtered_final_result['planning_division']
+    return_result['project_cost']=filtered_final_result['project_cost']
+    return_result['project_id']=filtered_final_result['project_id']
+    return_result['project_name']=filtered_final_result['project_name']
+    return_result['project_name_english']=filtered_final_result['project_name_english']
     result.append(filtered_final_result)
 
     json_result = json.dumps(
