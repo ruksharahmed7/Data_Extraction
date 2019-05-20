@@ -45,11 +45,15 @@ TTFSearchPath = (
             '/Network/Library/Fonts',
             '/System/Library/Fonts',
             )
-
-pdf_file_name = 'dataExtraction/dppFile/pdf/dpp1.pdf'
-
 # For debugging
 # Begin
+
+#import dataExtraction.banglaocr.ocr as ocr
+pdf_file_name = '/home/babl/DDAS/library/pdf/test.pdf'
+#text=readpdf.pdf_to_text(pdf_file_name)
+#pprint(text)
+#ocr.pdftotext(pdf_file_name)
+
 #pdftotext.extract(pdf_file_name)
 #text=pdfreader.extract_pdf(pdf_file_name)
 #text=pyreader.convert_pdf_to_html(pdf_file_name)
@@ -81,7 +85,7 @@ pdf_file_name = 'dataExtraction/dppFile/pdf/dpp1.pdf'
 # End
 
 
-file='/home/babl/DDAS/library/dppFile/doc/dpp4.docx'
+file='/home/babl/DDAS/library/dppFile/doc/1.docx'
 if('.docx' not in file):
     root = "/home/babl/DDAS/library/dppFile/"
     data_path = root + '/doc/'
@@ -103,6 +107,7 @@ dpp_result=mergedata.clustering_and_get_merge_dpp(raw_data, converted_data,'1234
 #finalresult = json.loads(dpp_result)
 #print(finalresult)
 
+###input from url
 #@app.route('/<string:folder_name>/<string:dpp_name>', methods=['POST','GET'])
 @app.route('/',methods=['POST'])
 def start():
@@ -110,7 +115,7 @@ def start():
     print(Test)
 
 
-@app.route('/extraction',methods=['POST'])
+@app.route('/data_extraction',methods=['POST'])
 def extraction_():
     try:
         db.create()
@@ -121,6 +126,8 @@ def extraction_():
         folder_name = data['folder_name']
         file_name = data['file_name']
         print(project_name)
+        ###Project tracking using DB
+        '''
         p_name = trackingfromdb.get_project_name(str(project_id))
         print(p_name)
         if p_name == "" or p_name == None:
@@ -129,10 +136,14 @@ def extraction_():
         else:
             print('id matched', p_name)
             return get_tasks(folder_name, file_name, str(project_id),project_name)
+        '''
+        return get_tasks(folder_name, file_name, str(project_id), project_name)
     except Exception as e:
         return '<p>error<p>'
 
-
+#for debugging
+##start
+'''
 @app.route('/data_extraction',methods=['POST'])
 def extraction():
     try:
@@ -152,12 +163,14 @@ def extraction():
             return get_tasks(folder_name, file_name, str(project_id))
     except Exception as e:
         return '<p>error<p>'
+'''
+##end
 
 def get_tasks(folder_name,file_name,project_id,project_name):
     print("inside get_task")
     #object_list = getTableData('dppFile/doc/'+dpp_name)
     #print(object_list)
-    file_location='/home/babl/DDAS/library/dppFile/'+ folder_name +'/'+ file_name
+    file_location='/home/babl/DDAS/library/'+ folder_name +'/'+ file_name
     data_list,raw_data,converted_data =docreader.doc_reader_tree_formate(file_location)
     #pprint(raw_data)
     if(folder_name=='dpp'):
