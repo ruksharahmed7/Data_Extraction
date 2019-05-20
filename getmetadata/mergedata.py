@@ -54,7 +54,15 @@ def clustering_and_get_merge_dpp(raw_data,converted_data,project_id):
     return_result['project_id']=filtered_final_result['project_id']
     return_result['project_name']=filtered_final_result['project_name']
     return_result['project_name_english']=filtered_final_result['project_name_english']
-    result.append(filtered_final_result)
+    return_result['revised_end_date']=filtered_final_result['revised_end_date']
+    return_result['revised_gob_cost']=filtered_final_result['revised_gob_cost']
+    return_result['revised_other_cost']=filtered_final_result['revised_other_cost']
+    return_result['revised_pa_cost']=filtered_final_result['revised_pa_cost']
+    return_result['revised_project_cost']=filtered_final_result['revised_project_cost']
+    return_result['revised_start_date']=filtered_final_result['revised_start_date']
+    return_result['sponsoring_ministry']=filtered_final_result['sponsoring_ministry']
+    return_result['start_date']=filtered_final_result['start_date']
+    result.append(return_result)
 
     json_result = json.dumps(
         result,
