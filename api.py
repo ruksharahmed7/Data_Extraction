@@ -85,7 +85,8 @@ pdf_file_name = '/home/babl/DDAS/library/pdf/test.pdf'
 # End
 
 
-file='/home/babl/DDAS/library/dppFile/doc/1.docx'
+file='/home/babl/DDAS/library/dppFile/doc/test1.docx'
+'''
 if('.docx' not in file):
     root = "/home/babl/DDAS/library/dppFile/"
     data_path = root + '/doc/'
@@ -99,13 +100,13 @@ if('.docx' not in file):
     idx=file.find('.')
     file=file[:idx]+'.docx'
     print(file)
-
+'''
 data_list,raw_data,converted_data =docreader.doc_reader_tree_formate(file)
 #pprint(raw_data)
 dpp_result=mergedata.clustering_and_get_merge_dpp(raw_data, converted_data,'12345')
 #pprint(dpp_result)
-#finalresult = json.loads(dpp_result)
-#print(finalresult)
+finalresult = json.loads(dpp_result)
+print(finalresult)
 
 ###input from url
 #@app.route('/<string:folder_name>/<string:dpp_name>', methods=['POST','GET'])
@@ -118,7 +119,7 @@ def start():
 @app.route('/data_extraction',methods=['POST'])
 def extraction_():
     try:
-        db.create()
+        #db.create()
         print('Hit')
         data=request.get_json(force=True)
         project_name = data['project_name']

@@ -34,8 +34,8 @@ except Exception:
 setup(
     name='DataExtractionModule',
     version='1.1',
-    url='https://github.com/RaihanSabique/Data_Extraction',
-    author='Raihan',
+    url='https://github.com/RaihanSabique/Data_Extraction.git',
+    author='Mia Md.Raihan',
     author_email='1305116.mrm@ugrad.cse.buet.ac.bd',
     license='BABL',
     description='Extract metadata from different source file like docx,xml,pdf of DPP,RDPP,ADP,RADP,',
