@@ -180,6 +180,8 @@ def project_purpose_filter(filter_result_dict,temp):
             if(len(value)>50 and len(value)<1000):
                 filter_result_dict['project_purpose']=value
                 msk=1
+            else:
+                filter_result_dict['project_purpose']=project_purpose
     return filter_result_dict,msk
 
 def geo_location_filter(filter_result_dict,temp):

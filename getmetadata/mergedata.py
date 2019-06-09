@@ -17,6 +17,7 @@ import dataExtraction.extractionstrategy.extractdpp.dppdetails as dppdetails
 import dataExtraction.extractionstrategy.extractdpp.dppextraction as dppextraction
 import dataExtraction.resultanalysis.filterdppresult as filterdppresult
 import dataExtraction.tracking.filterproject as filter
+import  dataExtraction.resultanalysis.converter as Converter
 
 def classification_model(train_data_list,train_converted_data_dict,test_data):
     #clusteringdpp.summarize_dpp(converted_data_dict)
@@ -26,6 +27,7 @@ def classification_model(train_data_list,train_converted_data_dict,test_data):
 
 def clustering_and_get_merge_dpp(raw_data,converted_data,project_id):
     result=[]
+    filtered_final_result={}
     #pprint(converted_data)
     raw_cluster_data,cleaned_cluster_data=clusteringdpp.summarize_dpp(converted_data)
     #pprint(raw_cluster_data)
@@ -40,6 +42,7 @@ def clustering_and_get_merge_dpp(raw_data,converted_data,project_id):
     filtered_final_result,filter_mask=filterdppresult.filter(final_result,results)
     pprint(filtered_final_result)
     print(filter_mask)
+    '''
     return_result={}
     return_result['approval_date']=filtered_final_result['approval_date']
     return_result['cost_unit']=filtered_final_result['cost_unit']
@@ -62,8 +65,10 @@ def clustering_and_get_merge_dpp(raw_data,converted_data,project_id):
     return_result['revised_start_date']=filtered_final_result['revised_start_date']
     return_result['sponsoring_ministry']=filtered_final_result['sponsoring_ministry']
     return_result['start_date']=filtered_final_result['start_date']
-    result.append(return_result)
+    '''
 
+    filtered_final_result=Converter.convertAll(filtered_final_result)
+    result.append(filtered_final_result)
     json_result = json.dumps(
         result,
         default=lambda df: json.loads(df.to_json()))

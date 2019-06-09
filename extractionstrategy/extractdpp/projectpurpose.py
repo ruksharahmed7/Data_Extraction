@@ -9,6 +9,7 @@ def extract_purpose(operational_data):
     try:
         result_dict={}
         objective=''
+        result_dict['project_purpose'] = objective
         flag=0
         for key,value in sorted(operational_data.items()):
             #print(key,value)
