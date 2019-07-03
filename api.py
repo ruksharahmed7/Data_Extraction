@@ -49,7 +49,7 @@ TTFSearchPath = (
 # Begin
 
 #import dataExtraction.banglaocr.ocr as ocr
-pdf_file_name = '/home/babl/DDAS/library/pdf/test.pdf'
+#pdf_file_name = '/home/babl/DDAS/library/pdf/test.pdf'
 #text=readpdf.pdf_to_text(pdf_file_name)
 #pprint(text)
 #ocr.pdftotext(pdf_file_name)
@@ -85,7 +85,7 @@ pdf_file_name = '/home/babl/DDAS/library/pdf/test.pdf'
 # End
 
 
-file='/home/babl/DDAS/library/dppFile/doc/test1.docx'
+file='/home/babl/DDAS/library/dppFile/doc/test3.docx'
 '''
 if('.docx' not in file):
     root = "/home/babl/DDAS/library/dppFile/"
@@ -171,7 +171,7 @@ def get_tasks(folder_name,file_name,project_id,project_name):
     print("inside get_task")
     #object_list = getTableData('dppFile/doc/'+dpp_name)
     #print(object_list)
-    file_location='/home/babl/DDAS/library/'+ folder_name +'/'+ file_name
+    file_location='/home/babl/DDAS/library/testdata/'+ folder_name +'/'+ file_name
     data_list,raw_data,converted_data =docreader.doc_reader_tree_formate(file_location)
     #pprint(raw_data)
     if(folder_name=='dpp'):
