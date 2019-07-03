@@ -4,7 +4,7 @@ import pandas as pd
 import dataExtraction.extractionstrategy.commonfunction as commonfunction
 
 
-def extract_estimated_cost_1(cluster_data,raw_cluster_data):
+def extract_estimated_cost_1(operational_data):
     try:
 
         json_data=[]
@@ -37,7 +37,7 @@ def extract_estimated_cost_1(cluster_data,raw_cluster_data):
         cost_idx = 0
 
         result_dict={}
-        for key,data in sorted(raw_cluster_data.items()):
+        for key,data in sorted(operational_data.items()):
             #print(data)
             back_track-=1
             if(back_track<=0):
@@ -435,7 +435,7 @@ def extract_estimated_cost_1(cluster_data,raw_cluster_data):
         print(traceback.format_exc())
 
 
-def extract_estimated_cost_2(cluster_data,raw_cluster_data):
+def extract_estimated_cost_2(operational_data):
     try:
         json_data=[]
         cost_keyword = ''
@@ -459,7 +459,7 @@ def extract_estimated_cost_2(cluster_data,raw_cluster_data):
         cost_idx=0
         list_idx=0
         cost_type_flag=[]
-        for key,data in sorted(raw_cluster_data.items()):
+        for key,data in sorted(operational_data.items()):
             #print(data)
             back_track-=1
             if(back_track<=0):

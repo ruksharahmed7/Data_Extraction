@@ -36,7 +36,7 @@ planning_re=re.compile(r'(C|c)oncern(ed)?\s*(d|D)ivision\s*of\s*(p|P)lanning\s*(
 trackorg_re=re.compile(r'Objectives\s*of\s*Project|প্রকল্পের\s*উদ্দেশ্য\s*ও\s*লক্ষ্যমাত্রা|cÖK‡íi\s*D‡Ïk¨|Objectives|প্রকল্পের\s*উদ্দেশ্য|মোট\s*প্রকল্প\s*ব্যয়|(O|o)bjective\s*of\s*the\s*(P|p)roject')
 stop_org_re=re.compile(r'ব্যয়')
 #objective of project
-objective_re=re.compile(r'প্রকল্পের উদ্দেশ্য|Objectives\s*of\s*Project|প্রকল্পের\s*উদ্দেশ্য\s*ও\s*লক্ষ্যমাত্রা|cÖK‡íi\s*D‡Ïk¨|Objectives\s*and\s*Targets|প্রকল্পের\s*উদ্দেশ্য|(O|o)bjective\s*of\s*the\s*(P|p)roject')
+objective_re=re.compile(r'প্রকল্পের\s*উদ্দেশ্য|Objectives\s*of\s*Project|প্রকল্পের\s*উদ্দেশ্য\s*ও\s*লক্ষ্যমাত্রা|cÖK‡íi\s*D‡Ïk¨|Objectives\s*and\s*Targets|প্রকল্পের\s*উদ্দেশ্য|(O|o)bjective\s*of\s*the\s*(P|p)roject')
 stop_objective_re=re.compile(r'৪.০|4.0|প্রকল্পের\s*(প্রধান\s*প্রধান)?\s*কার্যক্রম')
 escape_objective_re=re.compile(r'বুলেট\s*আকারে|(W|w)rite\s*in\s*bullet\s*form')
 

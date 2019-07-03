@@ -66,8 +66,11 @@ def filter(final_result,results):
         states.append(6)
     ###project activity
     temp=results[8]
-    filter_result_dict['project_activity']=temp['project_activity']
-    states.append(7)
+    project_activity=temp['project_activity']
+    if(len(project_activity)>5):
+        states.append(7)
+    filter_result_dict['project_activity']=project_activity
+
     #filter_result_dict['project_location'] = temp['project_location']
     #states.append(6)
     #pprint(filter_result_dict)
@@ -187,9 +190,11 @@ def project_purpose_filter(filter_result_dict,temp):
 def geo_location_filter(filter_result_dict,temp):
     project_location = temp['project_location']
     #pprint(project_location)
+    if(len(project_location)>2):
+        msk=1
+    else:
+        msk=0
     filter_result_dict['project_location'] = project_location
-    msk = 1
-
     return filter_result_dict,msk
 
 

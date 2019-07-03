@@ -42,6 +42,8 @@ def clustering_and_get_merge_dpp(raw_data,converted_data,project_id):
     filtered_final_result,filter_mask=filterdppresult.filter(final_result,results)
     pprint(filtered_final_result)
     print(filter_mask)
+    object_extraction.set_mask(filter_mask)
+    object_extraction.extraction_second_level()
     '''
     return_result={}
     return_result['approval_date']=filtered_final_result['approval_date']
@@ -66,7 +68,7 @@ def clustering_and_get_merge_dpp(raw_data,converted_data,project_id):
     return_result['sponsoring_ministry']=filtered_final_result['sponsoring_ministry']
     return_result['start_date']=filtered_final_result['start_date']
     '''
-
+    print('converting start')
     filtered_final_result=Converter.convertAll(filtered_final_result)
     result.append(filtered_final_result)
     json_result = json.dumps(
@@ -80,34 +82,6 @@ def clustering_and_get_merge_dpp_summary(raw_data,converted_data,project_id):
     clusteringdpp.summarize_dpp_summary(converted_data)
 
 
-
-
-def get_merge_dpp(data_list, converted_data_dict):
-    project_title_json, project_title_df = projectname.extract_project_title_1(data_list)
-    # print(project_title_df)
-    estimated_cost_json1, estimated_cost_df1 = estimatedcost.extract_estimated_cost_1(data_list)
-    # print(json_data2)
-    estimated_cost_json2 = []
-    estimated_cost_df2 = pd.DataFrame()
-    if (len(estimated_cost_json1) < 1):
-        estimated_cost_json2, estimated_cost_df2 = estimatedcost.extract_estimated_cost_2(data_list)
-        print(estimated_cost_json1)
-
-    peoject_date_json1, project_date_df1 = projectdate.extract_date_1(data_list)
-    project_date_df2 = projectdate.extract_date_2(converted_data_dict)
-
-    #project_org_df1 = projectorg.extract_organization_1(converted_data_dict)
-    clustered_projectorg_data= clusteringdpp.find_projectorg_cluster(converted_data_dict)
-    project_org_df2= projectorg.extract_org_data_1(clustered_projectorg_data)
-
-    frames = [project_title_df, estimated_cost_df1, estimated_cost_df2, project_date_df1, project_date_df2,project_org_df2]
-    result = pd.concat(frames, axis=1, sort=False)
-    pprint(result)
-    merge_df = json.dumps(
-        [project_title_df, estimated_cost_df1, estimated_cost_df2, project_date_df1, project_date_df2,project_org_df2],
-        default=lambda df: json.loads(df.to_json()))
-    #print(merge_df)
-    return merge_df
 
 def get_merge_summary(raw_data, converted_data,project_id,project_name):
     first_cluster= clusteringsummarydata.first_level_clustering(converted_data)

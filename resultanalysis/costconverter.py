@@ -12,11 +12,9 @@ def convert(cost,unit):
             cost = digitconverter(cost)
             print(float(cost))
             if(not rules.lakh_re.search(unit)==None):
-                cost=float(cost)*100000.0
-                cost = math.ceil(cost)
+                cost=float(cost)*1.0
             elif (not rules.core_re.search(unit) == None):
-                cost=float(cost) * 10000000.0
-                cost=math.ceil(cost)
+                cost=float(cost) * 100.0
         print(cost)
         return cost
     except Exception as e:

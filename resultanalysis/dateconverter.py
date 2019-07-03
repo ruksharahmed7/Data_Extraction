@@ -14,7 +14,8 @@ def converter(date):
                 dates = date.split('-')
             if ('/' in date):
                 dates = date.split('/')
-            month=digitconverter(dates[1])
+            m=digitconverter(dates[1])
+            month=monthconverter(m)
             year=digitconverter(dates[2])
             print(month,year)
             return month,year

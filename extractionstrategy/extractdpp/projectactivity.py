@@ -9,7 +9,7 @@ def extract_activity(operational_data):
         flag=0
         for key,value in sorted(operational_data.items()):
             value_clean=cleaningdata.cleaning_data(value)
-            print(key,value_clean)
+            #print(key,value_clean)
             if(not rules.activity_re.search(value_clean)==None and flag==0):
                 flag=1
                 continue
