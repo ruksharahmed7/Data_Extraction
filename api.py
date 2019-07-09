@@ -171,7 +171,7 @@ def get_tasks(folder_name,file_name,project_id,project_name):
     print("inside get_task")
     #object_list = getTableData('dppFile/doc/'+dpp_name)
     #print(object_list)
-    file_location='/home/babl/DDAS/library/testdata/'+ folder_name +'/'+ file_name
+    file_location='/home/babl/DDAS/library/'+ folder_name +'/'+ file_name
     data_list,raw_data,converted_data =docreader.doc_reader_tree_formate(file_location)
     #pprint(raw_data)
     if(folder_name=='dpp'):
