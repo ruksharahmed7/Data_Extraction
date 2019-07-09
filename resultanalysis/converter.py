@@ -31,3 +31,11 @@ def convertAll(filtered_final_result):
 
     return filtered_final_result
 
+def convertAll_summary(filtered_final_result):
+    filtered_final_result['project_cost_lakh'] = costConverter(filtered_final_result['project_cost'],
+                                                                          filtered_final_result['cost_unit'])
+    filtered_final_result['start_month'],filtered_final_result['start_year']=dateconverter(filtered_final_result['start_date'])
+    filtered_final_result['end_month'],filtered_final_result['end_year'] = dateconverter(filtered_final_result['end_date'])
+
+    return filtered_final_result
+

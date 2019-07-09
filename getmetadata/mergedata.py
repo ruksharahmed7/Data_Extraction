@@ -88,16 +88,21 @@ def get_merge_summary(raw_data, converted_data,project_id,project_name):
     #pprint(first_cluster)
     second_cluster= clusteringsummarydata.second_level_clustering(first_cluster)
     print('final cluster')
-    #pprint(second_cluster)
+    pprint(second_cluster)
     '''for key,values in sorted(second_cluster.items()):
         print(key)
         for value in values:
             print(value)'''
     result_df,result_list= summarydetails.summary_data(second_cluster)
+    pprint(result_list)
     filtered_result=filter.filtering_project_name(result_list,project_name,project_id)
     pprint(filtered_result)
+    filtered_convert_result = Converter.convertAll_summary(filtered_result[0])
+    result=[]
+    result.append(filtered_convert_result)
+
     merge_df = json.dumps(
-        filtered_result,
+        result,
         default=lambda df: json.loads(df.to_json()))
     return merge_df
 
