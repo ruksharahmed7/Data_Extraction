@@ -46,6 +46,28 @@ def second_level_clustering(data_dict):
     #pprint(clusterd_data)
     return clusterd_data
 
+
+def clustering_brief_summary(data_dict):
+    print('clustering..')
+    cluster_data=[]
+    flag=0
+    temp_dict={}
+    for key,value in sorted(data_dict.items()):
+        print(key,value)
+        if(not rules.starting_re.search(value)==None and flag==0):
+            flag=1
+            continue
+        elif(not rules.stopping_re.search(value)==None and flag==1):
+            #print(temp_dict)
+            cluster_data.append(temp_dict.copy())
+            temp_dict.clear()
+            flag=0
+        elif(flag==1):
+            temp_dict[key]=value
+    #pprint(cluster_data)
+
+    return cluster_data
+
 import re
 def spliting_data(data):
     data_list_1=[]

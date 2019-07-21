@@ -1,6 +1,7 @@
 import pandas as pd
 import json
 from pprint import pprint
+import traceback
 
 import dataExtraction.extractionstrategy.extractdpp.projectname as projectname
 import dataExtraction.extractionstrategy.extractdpp.estimatedcost as estimatedcost
@@ -84,27 +85,50 @@ def clustering_and_get_merge_dpp_summary(raw_data,converted_data,project_id):
 
 
 def get_merge_summary(raw_data, converted_data,project_id,project_name):
-    first_cluster= clusteringsummarydata.first_level_clustering(converted_data)
-    #pprint(first_cluster)
-    second_cluster= clusteringsummarydata.second_level_clustering(first_cluster)
-    print('final cluster')
-    pprint(second_cluster)
-    '''for key,values in sorted(second_cluster.items()):
-        print(key)
-        for value in values:
-            print(value)'''
-    result_df,result_list= summarydetails.summary_data(second_cluster)
-    pprint(result_list)
-    filtered_result=filter.filtering_project_name(result_list,project_name,project_id)
-    pprint(filtered_result)
-    filtered_convert_result = Converter.convertAll_summary(filtered_result[0])
-    result=[]
-    result.append(filtered_convert_result)
+    try:
+        first_cluster= clusteringsummarydata.first_level_clustering(converted_data)
+        #pprint(first_cluster)
+        second_cluster= clusteringsummarydata.second_level_clustering(first_cluster)
+        print('final cluster')
+        pprint(second_cluster)
+        '''for key,values in sorted(second_cluster.items()):
+            print(key)
+            for value in values:
+                print(value)'''
+        result_df,result_list= summarydetails.summary_data(second_cluster)
+        print('results')
+        pprint(result_list)
+        if not result_list:
+            print("empty result")
+            cluster_data = clusteringsummarydata.clustering_brief_summary(converted_data)
+            for project_data in cluster_data:
+                result_list.append(summarydetails.extract_brief_summary(project_data))
+        pprint(result_list)
+        filtered_result=filter.filtering_project_name(result_list,project_name,project_id)
+        pprint(filtered_result)
+        if(filtered_result==None):
+            print("brief summary")
+            cluster_data = clusteringsummarydata.clustering_brief_summary(converted_data)
+            pprint(cluster_data)
+            for project_data in cluster_data:
+                result_list.append(summarydetails.extract_brief_summary(project_data))
+            filtered_result = filter.filtering_project_name(result_list, project_name, project_id)
+            pprint(filtered_result)
+        filtered_convert_result = Converter.convertAll_summary(filtered_result[0])
+        result=[]
+        result.append(filtered_convert_result)
 
-    merge_df = json.dumps(
-        result,
-        default=lambda df: json.loads(df.to_json()))
-    return merge_df
+        merge_df = json.dumps(
+            result,
+            default=lambda df: json.loads(df.to_json()))
+        return merge_df
+    except Exception as e:
+        print("type error: " + str(e))
+        print(traceback.format_exc())
+        return None
+
+
+
 
 
 def get_merge_meetingminute(raw_data,converted_data,project_id,project_name):

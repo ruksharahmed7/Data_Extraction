@@ -36,6 +36,16 @@ def convertAll_summary(filtered_final_result):
                                                                           filtered_final_result['cost_unit'])
     filtered_final_result['start_month'],filtered_final_result['start_year']=dateconverter(filtered_final_result['start_date'])
     filtered_final_result['end_month'],filtered_final_result['end_year'] = dateconverter(filtered_final_result['end_date'])
+    #for key,value in filtered_final_result.items():
+    if 'gob_cost' in  filtered_final_result:
+        filtered_final_result['gob_cost_lakh'] = costConverter(filtered_final_result['gob_cost'],
+                                                                                   filtered_final_result['cost_unit'])
+    if 'pa_cost' in filtered_final_result:
+        filtered_final_result['pa_cost_lakh'] = costConverter(filtered_final_result['pa_cost'],
+                                                                   filtered_final_result['cost_unit'])
+    if 'own_fund' in filtered_final_result:
+        filtered_final_result['own_fund_lakh'] = costConverter(filtered_final_result['own_fund'],
+                                                                   filtered_final_result['cost_unit'])
 
     return filtered_final_result
 
