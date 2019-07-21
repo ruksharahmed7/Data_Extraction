@@ -85,7 +85,8 @@ TTFSearchPath = (
 # End
 
 
-file='/home/babl/DDAS/library/dppFile/doc/test3.docx'
+file='/home/babl/DDAS/library/summary/Brief03.07.2018.docx'
+#file='/home/babl/DDAS/library/summary/Summary05.03.19.docx'
 '''
 if('.docx' not in file):
     root = "/home/babl/DDAS/library/dppFile/"
@@ -103,7 +104,8 @@ if('.docx' not in file):
 '''
 data_list,raw_data,converted_data =docreader.doc_reader_tree_formate(file)
 #pprint(raw_data)
-dpp_result=mergedata.clustering_and_get_merge_dpp(raw_data, converted_data,'12345')
+#print(converted_data)
+dpp_result=mergedata.get_merge_summary(raw_data, converted_data,'12345',"ঢাকা দক্ষিণ সিটি কর্পোরেশনের আওতায় কমিউনিটি সেন্টার নির্মাণ")
 #pprint(dpp_result)
 finalresult = json.loads(dpp_result)
 print(finalresult)
