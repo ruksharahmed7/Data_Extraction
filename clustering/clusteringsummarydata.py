@@ -53,7 +53,7 @@ def clustering_brief_summary(data_dict):
     flag=0
     temp_dict={}
     for key,value in sorted(data_dict.items()):
-        print(key,value)
+        #print(key,value)
         if(not rules.starting_re.search(value)==None and flag==0):
             flag=1
             continue

@@ -95,14 +95,20 @@ def get_merge_summary(raw_data, converted_data,project_id,project_name):
             print(key)
             for value in values:
                 print(value)'''
-        result_df,result_list= summarydetails.summary_data(second_cluster)
+        result_df,result_list= summarydetails.summary_extract(second_cluster)
         print('results')
         pprint(result_list)
         if not result_list:
             print("empty result")
             cluster_data = clusteringsummarydata.clustering_brief_summary(converted_data)
+            pprint(cluster_data)
+            data_dict={}
             for project_data in cluster_data:
-                result_list.append(summarydetails.extract_brief_summary(project_data))
+                data_dict=summarydetails.extract_brief_summary(project_data)
+                print(data_dict)
+                if not data_dict:
+                    continue
+                result_list.append(data_dict)
         pprint(result_list)
         filtered_result=filter.filtering_project_name(result_list,project_name,project_id)
         pprint(filtered_result)

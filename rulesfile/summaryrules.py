@@ -9,15 +9,15 @@ total_re=re.compile(r'মোট')
 total_suplimentary_re=re.compile(r'হয়েছে|ব্যয়')
 and_re=re.compile(r'এবং|\(|তন্মধ্যে')
 project_date_re=re.compile(r'বাস্তবায়নকাল|বাস্তবায়নকাল')
-from_re=re.compile(r'হতে|থেকে')
-year_re=re.compile(r'\d\d\d\d|(০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)')
+from_re=re.compile(r'হতে|থেকে|হতে')
+year_re=re.compile(r'\d\d\d\d|(০|১|২|৩|৪|৫|৬|৭|৮|৯|\d)(০|১|২|৩|৪|৫|৬|৭|৮|৯|\d)(০|১|২|৩|৪|৫|৬|৭|৮|৯|\d)(০|১|২|৩|৪|৫|৬|৭|৮|৯|\d)')
 
 activity_re=re.compile(r'প্রকল্পটির\s*প্রধান\s*কার্যক্রমসমূহ|কার্যক্রমসমূহ')
 
 
 #clustering rules
 starting_re=re.compile(r'আলোচ্য\s*বিষয়')
-stopping_re=re.compile(r'পরিকল্পনার\s*সাথে\s*সংগতিপূর্ণতা|পিইসি\s*সভা|প্রকল্প\s*সংশোধনের\s*কারণ')
+stopping_re=re.compile(r'পরিকল্পনার\s*সাথে\s*সংগতিপূর্ণতা|পিইসি\s*সভা|প্রকল্প\s*সংশোধনের\s*কারণ|সংশোধনের\s*কারণ')
 
 #brief summary rules
 stop_point_re=re.compile(r'\d(\d).|(০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)?.')
