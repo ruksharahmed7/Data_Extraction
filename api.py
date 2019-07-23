@@ -85,7 +85,7 @@ TTFSearchPath = (
 # End
 
 
-file='/home/babl/DDAS/library/summary/Brief03.07.2018.docx'
+file='/home/babl/DDAS/library/summary/Brief02.10.18.docx'
 #file='/home/babl/DDAS/library/summary/Summary05.03.19.docx'
 '''
 if('.docx' not in file):
@@ -105,7 +105,7 @@ if('.docx' not in file):
 data_list,raw_data,converted_data =docreader.doc_reader_tree_formate(file)
 #pprint(raw_data)
 #print(converted_data)
-dpp_result=mergedata.get_merge_summary(raw_data, converted_data,'12345',"ঢাকা দক্ষিণ সিটি কর্পোরেশনের আওতায় কমিউনিটি সেন্টার নির্মাণ")
+dpp_result=mergedata.get_merge_summary(raw_data, converted_data,'12345',"ভুরুঙ্গামারী-সোনাহাট স্থলবন্দর-ভিতরবন্দ-নাগেশ্বরী মহাসড়কের দুধকুমর নদীর উপর সোনাহাট সেতু নির্মাণ")
 #pprint(dpp_result)
 finalresult = json.loads(dpp_result)
 print(finalresult)
