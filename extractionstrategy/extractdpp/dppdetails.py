@@ -138,7 +138,7 @@ def extract_all(raw_cluser_data,cleaned_cluster_data,project_id):
         elif(flag==36 and not rules.pa_cost_re.search(value)==None):
             flag=37
             continue
-        elif(flag==37 and rules.number_re.search(value)==None):
+        elif(flag == 37 and rules.amount_re.search(value) == None):
             flag=39
         elif (flag == 37):
             pa_cost = value
@@ -150,7 +150,7 @@ def extract_all(raw_cluser_data,cleaned_cluster_data,project_id):
             flag = 40
             back_track=1
             continue
-        elif(flag==40 and rules.number_re.search(value)==None and back_track>0):
+        elif(flag == 40 and rules.amount_re.search(value) == None and back_track > 0):
             back_track-=1
             flag=0
         elif (flag == 40):

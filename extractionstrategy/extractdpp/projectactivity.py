@@ -10,10 +10,12 @@ def extract_activity(operational_data):
         for key,value in sorted(operational_data.items()):
             value_clean=cleaningdata.cleaning_data(value)
             #print(key,value_clean)
-            if(not rules.activity_re.search(value_clean)==None and flag==0):
+            if(not rules.activity_re.search(value)==None and flag==0):
                 flag=1
+                print('sdfsf')
+                print(value)
                 continue
-            elif(not rules.stop_activity_re.search(value_clean)==None and flag==1):
+            elif(not rules.stop_activity_re.search(value)==None or not rules.stop_activity_re_1.search(value)==None):
                 flag=0
             elif(flag==1):
                 activity+=value+'\n'

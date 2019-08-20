@@ -218,3 +218,33 @@ def extract_date_2(operational_data):
         print("type error: " + str(e))
         print(traceback.format_exc())
         return None,None
+
+def extract_date_exception(operational_data):
+    try:
+        #print(operational_data)
+        data_dict={}
+        flag=0
+        for key,value in sorted(operational_data.items()):
+            if(not rules.date_re.search(value)==None):
+                flag=1
+            elif(flag==1 and not rules.mid_point_re.search(value)==None):
+                mo=rules.year_re.search(value)
+                start_year=mo.group(0)
+                indx=value.find(start_year)
+                start_date=value[:indx+len(start_year)]
+                moo=rules.mid_point_re.search(value)
+                mid_point=moo.group(0)
+                start_idx=value.find(mid_point)+len(mid_point)
+                mo = rules.year_re.search(value[indx+len(start_year):])
+                end_year=mo.group(0)
+                end_idx=value.find(end_year)+len(end_year)
+                end_date=value[start_idx:end_idx]
+                data_dict['start_date']=start_date
+                data_dict['end_date']=end_date
+                flag=0
+        print(data_dict)
+        return data_dict
+    except Exception as e:
+        print("type error: " + str(e))
+        print(traceback.format_exc())
+        return None

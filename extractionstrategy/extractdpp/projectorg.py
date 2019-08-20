@@ -102,6 +102,35 @@ def extract_organization1(operational_data):
         print(traceback.format_exc())
         return None,None
 
+def extract_organization_3(operational_data):
+    data_dict={}
+    flag=0
+    for key,value in sorted(operational_data.items()):
+        #print(value)
+        if(not rules.ministy_re.search(value)==None and flag==0):
+            flag=1
+            #print('found')
+            continue
+        elif(rules.trackorg_re.match(value)):
+            break
+        elif(flag==1 and rules.agency_re.search(value)==None):
+            data_dict['sponsoring_ministry']=value
+            #print(data_dict)
+            flag=0
+        elif(not rules.agency_re.search(value)==None and flag==0):
+            flag=2
+            continue
+        elif(flag==2 and rules.planning_re.search(value)==None):
+            data_dict['executing_agency']=value
+            flag=0
+        elif(not rules.planning_re.search(value)==None and flag==0):
+            flag=3
+            continue
+        elif(flag==3 and not rules.trackorg_re.search(value)):
+            data_dict['planning_division']=value
+            break
+
+    return data_dict
 
 
 

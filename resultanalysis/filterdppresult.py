@@ -146,6 +146,8 @@ def date_filter(filter_result_dict,temp1,temp2,start_date,end_date):
         if (key == 'end_date'):
             if (rules.date_re.search(end_date) == None and not (rules.date_re.search(value) == None)):
                 end_date = value
+    print('testing date:')
+    print(start_date,end_date)
     filter_result_dict['start_date']=start_date
     filter_result_dict['end_date']=end_date
     flag=0
@@ -198,4 +200,39 @@ def geo_location_filter(filter_result_dict,temp):
     return filter_result_dict,msk
 
 
+def second_level_date_append(date,result):
+    result['start_date']=date['start_date']
+    result['end_date']=date['end_date']
+    return result
+
+def second_level_org_append(org,result):
+    for key,value in org.items():
+        if(key=='sponsoring_ministry'):
+            result['sponsoring_ministry'] = org['sponsoring_ministry']
+        if(key=='executing_agency'):
+            result['executing_agency']=org['executing_agency']
+        if(key=='planning_division'):
+            result['planning_division']=org['planning_division']
+    return result
+
+
+def second_level_cost_append(costs,result):
+    for cost in costs:
+        if(rules.cost_re.match(cost['project_cost']) and (rules.cost_re.match(cost['gob_cost']) or rules.cost_re.match(cost['pa_cost']))):
+            result.update(cost)
+
+        #pprint(result)
+        return result
+
+def second_level_location_append(project_location_dict,final_result):
+    if (len(project_location_dict['project_location'])>4):
+        final_result['project_location'] = project_location_dict['project_location']
+    return final_result
+
+
+
+def second_level_activity_append(project_activity_dict, final_result):
+    if(len(project_activity_dict['project_activity'])>50):
+        final_result['project_activity']=project_activity_dict['project_activity']
+    return final_result
 
