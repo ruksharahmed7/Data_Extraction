@@ -4,15 +4,12 @@ import json
 import dataExtraction.filereader.docreader as docreader
 import dataExtraction.filereader.readpdf as readpdf
 import dataExtraction.getmetadata.mergedata as mergedata
-import dataExtraction.tracking.trackingprojectid as tracking
-import dataExtraction.tracking.trackingdb as trackingfromdb
 from pprint import pprint
 import dataExtraction.fileconveter.doctodocx as doctodocx
 import glob
 import subprocess
 
 import os
-import dataExtraction.database.connectdb as db
 
 #print('Here:'+font.__str__('cjøx Dbœqb I mgevq gš¿Yvjq/¯’vbxq miKvi wefvM'))
 
@@ -85,7 +82,9 @@ TTFSearchPath = (
 # End
 
 
-file='/home/babl/DDAS/library/summary/Brief02.10.18.docx'
+file='/home/babl/DDAS/library/dpp2018-19/09-04-2019 Dual Gauge in Akhaura-Sylhet.xlsx'
+from dataExtraction.filereader.excelreader import readExcel
+readExcel(file)
 #file='/home/babl/DDAS/library/summary/Summary05.03.19.docx'
 '''
 if('.docx' not in file):
@@ -102,13 +101,13 @@ if('.docx' not in file):
     file=file[:idx]+'.docx'
     print(file)
 '''
-data_list,raw_data,converted_data =docreader.doc_reader_tree_formate(file)
+#data_list,raw_data,converted_data =docreader.doc_reader_tree_formate(file)
 #pprint(raw_data)
 #print(converted_data)
-dpp_result=mergedata.get_merge_summary(raw_data, converted_data,'12345',"ভুরুঙ্গামারী-সোনাহাট স্থলবন্দর-ভিতরবন্দ-নাগেশ্বরী মহাসড়কের দুধকুমর নদীর উপর সোনাহাট সেতু নির্মাণ")
+#dpp_result=mergedata.get_merge_summary(raw_data, converted_data,'12345',"ভুরুঙ্গামারী-সোনাহাট স্থলবন্দর-ভিতরবন্দ-নাগেশ্বরী মহাসড়কের দুধকুমর নদীর উপর সোনাহাট সেতু নির্মাণ")
 #pprint(dpp_result)
-finalresult = json.loads(dpp_result)
-print(finalresult)
+#finalresult = json.loads(dpp_result)
+#print(finalresult)
 
 ###input from url
 #@app.route('/<string:folder_name>/<string:dpp_name>', methods=['POST','GET'])
@@ -176,7 +175,7 @@ def get_tasks(folder_name,file_name,project_id,project_name):
     file_location='/home/babl/DDAS/library/'+ folder_name +'/'+ file_name
     data_list,raw_data,converted_data =docreader.doc_reader_tree_formate(file_location)
     #pprint(raw_data)
-    if(folder_name=='dpp'):
+    if(folder_name=='dpp2018-19'):
         #db.update_dpp_status()
         dpp_result=mergedata.clustering_and_get_merge_dpp(raw_data, converted_data,project_id)
         finalresult = json.loads(dpp_result)
