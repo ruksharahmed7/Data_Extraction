@@ -2,24 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f1adb5a-0ed3-4cec-9499-dd64f640be87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/checkresult.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataExtraction" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/database/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/filereader/excelreader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/database/connectdb.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/dppdetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/dppdetails.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/dppextraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/dppextraction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/estimatedcost.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/estimatedcost.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectactivity.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectactivity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectdate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectlocation.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectlocation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectorg.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectorg.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataExtraction/fontconvert/fontconverter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/fontconvert/fontconverter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/getmetadata/mergedata.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/getmetadata/mergedata.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/resultanalysis/filterdppresult.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/filterdppresult.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/resultanalysis/converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/resultanalysis/stmconverter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/stmconverter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataExtraction/rulesfile/convertingrules.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/rulesfile/convertingrules.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/rulesfile/resultanalysisrules.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/rulesfile/resultanalysisrules.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataExtraction/rulesfile/rules.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/rulesfile/rules.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,52 +23,6 @@
         <option value="Python Script" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>(u</find>
-      <find>u'</find>
-      <find>00</find>
-      <find>\u09c1</find>
-      <find>\u09be</find>
-      <find>\u0998</find>
-      <find>\u098</find>
-      <find>ভ</find>
-      <find>find_location</find>
-      <find>\u09ee</find>
-      <find>09aa</find>
-      <find>09</find>
-      <find>\u09ab</find>
-      <find>\u09aa</find>
-      <find>\u09bf</find>
-      <find>print</find>
-      <find>\u09a8</find>
-      <find>\u09a1</find>
-      <find>\u09b1</find>
-      <find>\\u09a8</find>
-      <find>\u0985</find>
-      <find>\u09af</find>
-      <find>ad</find>
-      <find>data[end3 + 1:]</find>
-      <find>data[:ending]</find>
-      <find>result</find>
-      <find>first</find>
-      <find>clean</find>
-      <find>pprint</find>
-      <find>PRINT</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>(</replace>
-      <replace>'</replace>
-      <replace>09</replace>
-      <replace>commonfunction.find_location</replace>
-      <replace />
-      <replace>_</replace>
-      <replace>key</replace>
-      <replace>data</replace>
-      <replace>results</replace>
-      <replace>mid</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/dataExtraction" />
