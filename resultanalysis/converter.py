@@ -1,5 +1,6 @@
 from .costconverter import convert as costConverter
 from .dateconverter import converter as dateconverter
+from .stmconverter import division_convert as div_convert
 
 def convertAll(filtered_final_result):
     filtered_final_result['project_cost_lakh'] = costConverter(filtered_final_result['project_cost'],
@@ -24,10 +25,25 @@ def convertAll(filtered_final_result):
     filtered_final_result['revised_pa_cost_lakh'] = costConverter(filtered_final_result['revised_pa_cost'],
                                                                           filtered_final_result['cost_unit'])
 
+    start_date=filtered_final_result['start_date']
+    end_date=filtered_final_result['end_date']
+    print(start_date,end_date)
     filtered_final_result['start_month'],filtered_final_result['start_year']=dateconverter(filtered_final_result['start_date'])
     filtered_final_result['end_month'],filtered_final_result['end_year'] = dateconverter(filtered_final_result['end_date'])
     filtered_final_result['revised_start_month'], filtered_final_result['revised_start_year'] = dateconverter(filtered_final_result['revised_start_date'])
     filtered_final_result['revised_end_month'], filtered_final_result['revised_end_year'] = dateconverter(filtered_final_result['revised_end_date'])
+    if filtered_final_result['start_month']:
+        filtered_final_result['start_date']=filtered_final_result['start_month']+"'"+filtered_final_result['start_year']
+    if filtered_final_result['end_month']:
+        filtered_final_result['end_date'] = filtered_final_result['end_month'] + "'" + filtered_final_result['end_year']
+    if filtered_final_result['revised_start_month']:
+        filtered_final_result['revised_start_date'] = filtered_final_result['revised_start_month'] + "'" + filtered_final_result['revised_start_year']
+    if filtered_final_result['revised_end_month']:
+        filtered_final_result['revised_end_date'] = filtered_final_result['revised_end_month'] + "'" + filtered_final_result['revised_end_year']
+    planning_division=filtered_final_result["planning_division"]
+    print(planning_division)
+    if planning_division:
+        filtered_final_result['planning_division']=div_convert(planning_division)
 
     return filtered_final_result
 

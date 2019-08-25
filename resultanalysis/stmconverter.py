@@ -18,26 +18,36 @@ def digit_convert(txt):
 
 def month_convert(txt):
     if (not rules.jan_re.search(txt) == None or txt=='01'):
-        return 'Jan'
+        return 'January'
     elif (not rules.feb_re.search(txt) == None or txt=='02'):
-        return 'Feb'
+        return 'February'
     elif (not rules.mar_re.search(txt) == None or txt=='03'):
-        return 'Mar'
+        return 'March'
     elif(not rules.apr_re.search(txt)==None or txt=='04'):
-        return 'Apr'
+        return 'April'
     elif (not rules.may_re.search(txt) == None or txt=='05'):
         return 'May'
     elif (not rules.jun_re.search(txt) == None or txt=='06'):
-        return 'Jun'
+        return 'June'
     elif (not rules.july_re.search(txt) == None or txt=='07'):
         return 'July'
     elif (not rules.agu_re.search(txt) == None or txt=='08'):
-        return "Aug"
+        return "August"
     elif (not rules.sep_re.search(txt) == None or txt=='09'):
-        return 'Sep'
+        return 'September'
     elif (not rules.oct_re.search(txt) == None or txt=='10'):
-        return 'Oct'
+        return 'October'
     elif (not rules.nov_re.search(txt) == None or txt=='11'):
-        return 'Nov'
+        return 'November'
     elif(not rules.dec_re.search(txt)==None or txt=='12'):
-        return 'Dec'
+        return 'December'
+
+def division_convert(planning_division):
+    if(not rules.agri_re.search(planning_division)==None):
+        return 1
+    if(not rules.energy_re.search(planning_division)==None):
+        return 2
+    if(not rules.structure_re.search(planning_division)==None):
+        return 3
+    if(not rules.social_re.search(planning_division)==None):
+        return 4
