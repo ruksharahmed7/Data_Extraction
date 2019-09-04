@@ -1,4 +1,5 @@
 import re
+start_re=re.compile(r'উন্নয়ন\s*প্রকল্প\s*প্রস্তাব')
 
 project_name_re=re.compile(r'প্রকল্প\s*শিরোনাম|প্রকল্প\s*নাম|(P|p)roject\s*(T|t)itle')
 project_cost_re=re.compile(r'মোট\s*প্রকল্প\s*ব্যয়|প্রকল্প\s*প্রাক্কলিত\s*ব্য|প্রকল্প\s*প্রাক্কলিত\s*ব্য|Estimated\s*(C|c)ost\s*of\s*the\s*(p|P)roject')

@@ -11,7 +11,8 @@ check_ascii_re=re.compile(r'[a-z]K|Rvbyqvwi|A‡±vei|wmGgGmwW|GmGm|mfvcwZ|Uvt|R
                           r'ewikvj|wRIwe|wbR|nvqvwis|exgv|wU|Rvgvjcyi|gqgbwmsn|wbKjx|Ryb|'
                           r'cvwb|RyjvB|Aby|Drm|aiY|FY|GKK|Pjgvb|cwigvb|Rxc|wKtwgt|Bbcy|ÿ|'
                           r'UvsMvBj|bvMicyi|KvwjnvZx|gaycyi|NvUvBj|evmvBj|‡kicyi|†Rjvi|'
-                          r'ivRkvnx|RqcyinvU|iscyi|kZKiv nvi|etwgUvi|wgUvi|jvgmvg')
+                          r'ivRkvnx|RqcyinvU|iscyi|kZKiv nvi|etwgUvi|wgUvi|jvgmvg|Rvbyqvix|‡m‡Þ¤^i|'
+                          r'XvKv|MÖvgxY|e„nËi')
 
 
 def bijoy2uni(s):

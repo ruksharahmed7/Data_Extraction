@@ -219,6 +219,60 @@ def extract_date_2(operational_data):
         print(traceback.format_exc())
         return None,None
 
+def extract_date_3(operational_data):
+    try:
+        print('extract strategy 3')
+        flag=0
+        data_dict={}
+        back_track=20
+        for key,value in sorted(operational_data.items()):
+            #print(value)
+            if(flag!=0):
+                back_track-=1
+            if(back_track<0):
+                flag=0
+            if(not rules.date_re.search(value)==None and flag==0):
+                print(key,value)
+                flag=1
+            elif(flag==1 and not rules.start_date_re.search(value)==None):
+                flag=10
+            elif(flag==10 and not rules.end_date_re.search(value)==None):
+                flag=11
+            elif(not rules.original_date_re.search(value)==None and flag==11 and back_track>0):
+                print(key,value)
+                flag=2
+            elif(not rules.revised_date_re.search(value)==None and flag==11 and back_track>0):
+                print(key,value)
+                flag=3
+            elif(flag==2 and not rules.date_format_re.search(value)==None and back_track>0):
+                print(key,value)
+                data_dict['start_date']=value
+                flag=4
+                continue
+            elif (flag == 4 and not rules.date_format_re.search(value)==None and back_track>0):
+                print('end')
+                print(key,value)
+                data_dict['end_date'] = value
+                flag=11
+            elif (flag == 3 and not rules.date_format_re.search(value)==None and back_track>0):
+                print(key,value)
+                data_dict['revised_start_date'] = value
+                flag=5
+                continue
+            elif (flag == 5 and not rules.date_format_re.search(value)==None and back_track>0):
+                print('rev end')
+                data_dict['revised_end_date'] = value
+                break
+        print(data_dict)
+        return data_dict
+    except Exception as e:
+        data_dict['start_date']=''
+        data_dict['end_date']=''
+        data_dict['revised_start_date']=''
+        data_dict['revised_end_date']=''
+        return data_dict
+
+
 def extract_date_exception(operational_data):
     try:
         #print(operational_data)
@@ -228,6 +282,7 @@ def extract_date_exception(operational_data):
             if(not rules.date_re.search(value)==None):
                 flag=1
             elif(flag==1 and not rules.mid_point_re.search(value)==None):
+                print(value)
                 mo=rules.year_re.search(value)
                 start_year=mo.group(0)
                 indx=value.find(start_year)

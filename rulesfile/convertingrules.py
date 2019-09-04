@@ -23,8 +23,8 @@ nov_re=re.compile(r'নভেম্বর')
 dec_re=re.compile(r'ডিসেম্বর|December')
 
 #planning division convertion
-agri_re=re.compile(r'কৃষি|পানি|পলস্নী|পল্লী')
+agri_re=re.compile(r'কৃষি|পানি|পলস্নী|পল্লী|ফসল')
 energy_re=re.compile(r'শিল্প|শক্তি')
-structure_re=re.compile(r'ভৌত|আবকাঠামো')
+structure_re=re.compile(r'ভৌত|আবকাঠামো|Physical|Infrastructure')
 social_re=re.compile(r'আর্থ|সামাজিক')
 

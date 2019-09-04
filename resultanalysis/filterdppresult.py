@@ -204,6 +204,12 @@ def second_level_date_append(date,result):
     result['start_date']=date['start_date']
     result['end_date']=date['end_date']
     return result
+def second_level_date_append_revised(date,result):
+    result['start_date']=date['start_date']
+    result['end_date']=date['end_date']
+    result['revised_start_date']=date['revised_start_date']
+    result['revised_end_date'] = date['revised_end_date']
+    return result
 
 def second_level_org_append(org,result):
     for key,value in org.items():

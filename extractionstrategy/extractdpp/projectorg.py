@@ -137,6 +137,7 @@ def extract_organization_3(operational_data):
 def extract_organization_2(operational_data):
     try:
         operational_cluster_data = clusteringdpp.find_projectorg_data(operational_data)
+        print(operational_cluster_data)
         dict_data = {}
         result_dict={}
         sponsoring_ministry_key = 0
@@ -173,12 +174,14 @@ def extract_organization_2(operational_data):
         df4 = pd.DataFrame()
         df5 = pd.DataFrame()
         for key, data in sorted(operational_cluster_data.items()):
-            #print(key,data)
+            print(data)
             if (not (rules.ministy_re.search(data) == None) and org_flag==0):
                 sponsoring_ministry_key = key
+                print(data)
                 #print(sponsoring_ministry_key)
                 #location_track_list.append(key)
                 if(':' in data or '\t' in data or 'ঃ' in data):
+                    print(data)
                     org_flag = 10
                     track = commonfunction.find_index(data)
                     sponsoring_ministry_key_data = data[:track]

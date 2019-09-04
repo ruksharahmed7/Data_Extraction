@@ -1,9 +1,12 @@
 import dataExtraction.rulesfile.resultanalysisrules as rarules
 
 def check_date(date_dict):
-    if(rarules.date_re.match(date_dict['start_date']) and rarules.date_re.match(date_dict['end_date'])):
-        return True
-    else:
+    try:
+        if(rarules.date_re.match(date_dict['start_date']) and rarules.date_re.match(date_dict['end_date'])):
+            return True
+        else:
+            return False
+    except Exception as e:
         return False
 
 def check_org(data_dict):

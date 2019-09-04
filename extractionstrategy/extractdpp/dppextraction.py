@@ -1,3 +1,4 @@
+import traceback
 from pprint import pprint
 import dataExtraction.extractionstrategy.extractdpp.dppdetails as dppdetails
 import dataExtraction.extractionstrategy.extractdpp.projectname as projectname
@@ -121,9 +122,14 @@ class extractdpp:
                     print(data_dict)
                     self.final_result=filter.second_level_date_append(data_dict,self.final_result)
                 else:
-                    data_df,data_dict=projectdate.extract_date_1(self.converted_raw_data)
+                    data_df,data_dict=projectdate.extract_date_2(self.converted_raw_data)
                     print(data_dict)
-                    self.final_result = filter.second_level_date_append(data_dict, self.final_result)
+                    if(checker.check_date(data_dict)):
+                        self.final_result = filter.second_level_date_append(data_dict, self.final_result)
+                    else:
+                        data_dict=projectdate.extract_date_3(self.raw_final_clustered_data)
+                        print(data_dict)
+                        self.final_result = filter.second_level_date_append_revised(data_dict, self.final_result)
             except Exception as e:
                 print("exception")
                 data_dict=projectdate.extract_date_exception(self.converted_raw_data)
@@ -135,12 +141,17 @@ class extractdpp:
             # pprint(date_dict2)
             # temp_result.append(date_dict2)
         if(self.filter_mask[3] ==False):
+            try:
+                print("second level org")
                 project_org_df2, project_org_dict2 = projectorg.extract_organization_2(self.converted_raw_data)
                 if (checker.check_org(project_org_dict2)):
                     self.final_result = filter.second_level_org_append(project_org_dict2, self.final_result)
                 else:
-                   project_org_dict = projectorg.extract_organization_3(self.converted_raw_data)
-                   self.final_result = filter.second_level_org_append(project_org_dict, self.final_result)
+                    project_org_dict = projectorg.extract_organization_3(self.converted_raw_data)
+                    self.final_result = filter.second_level_org_append(project_org_dict, self.final_result)
+            except Exception as e:
+                print("type error: " + str(e))
+                print(traceback.format_exc())
         if (self.filter_mask[4]==False):
             project_purpose_dict = projectpurpose.extract_purpose(self.converted_raw_data)
             self.final_result['project_purpose']=project_purpose_dict['project_purpose']
