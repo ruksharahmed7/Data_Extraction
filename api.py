@@ -80,7 +80,16 @@ TTFSearchPath = (
 #docreader.print_doc('dataExtraction/dppFile/dppsummary/Summary01.docx')
 
 # End
-
+from dataExtraction.fileconveter.docxtopdf import convert_to
+#file convertion start
+# folder='/home/babl/DDAS/library/dpp/'
+# filename='/home/babl/DDAS/library/dpp/dpp2.docx'
+# converted_file_name=convert_to(folder,filename)
+# print(converted_file_name)
+# filename_renamed=filename+'.pdf'
+# os.rename(converted_file_name, filename_renamed)
+#print()
+#end
 
 file='/home/babl/DDAS/library/dpp2018-19/09-04-2019 Dual Gauge in Akhaura-Sylhet.xlsx'
 from dataExtraction.filereader.excelreader import readExcel
@@ -115,7 +124,6 @@ if('.docx' not in file):
 def start():
     Test=request.form['test']
     print(Test)
-
 
 @app.route('/data_extraction',methods=['POST'])
 def extraction_():
@@ -167,6 +175,23 @@ def extraction():
         return '<p>error<p>'
 '''
 ##end
+
+@app.route('/file_convert',methods=['POST'])
+def conversion():
+    try:
+        data = request.get_json(force=True)
+        folder_name=data['folder_name']
+        file_name=data['file_name']
+        directory = '/home/babl/DDAS/library/'
+        foldername=directory+folder_name+'/'
+        filename=foldername+file_name
+        converted_file_name = convert_to(foldername, filename)
+        print(converted_file_name)
+        filename_renamed = filename + '.pdf'
+        os.rename(converted_file_name, filename_renamed)
+        return '<p>Successfully converted to PDF<p>'
+    except Exception as e:
+        return '<p>error<p>'
 
 def get_tasks(folder_name,file_name,project_id,project_name):
     print("inside get_task")

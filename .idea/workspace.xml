@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f1adb5a-0ed3-4cec-9499-dd64f640be87" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dataExtraction/fileconveter/docxtopdf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataExtraction" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/clustering/clusteringdpp.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/clustering/clusteringdpp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/dppextraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/dppextraction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectdate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectorg.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectorg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/fontconvert/fontconverter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/fontconvert/fontconverter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/resultanalysis/checkresult.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/checkresult.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/resultanalysis/filterdppresult.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/filterdppresult.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/rulesfile/clusteringrules.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/rulesfile/clusteringrules.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/rulesfile/convertingrules.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/rulesfile/convertingrules.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/rulesfile/rules.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/rulesfile/rules.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/clustering/clusteringsummarydata.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/clustering/clusteringsummarydata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractsummary/summarydetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractsummary/summarydetails.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/rulesfile/summaryrules.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/rulesfile/summaryrules.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
