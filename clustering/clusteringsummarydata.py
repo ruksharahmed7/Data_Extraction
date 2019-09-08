@@ -50,15 +50,21 @@ def second_level_clustering(data_dict):
 def clustering_brief_summary(data_dict):
     print('clustering..')
     cluster_data=[]
+    approval_key=0
+    approval_data=''
     flag=0
     temp_dict={}
     for key,value in sorted(data_dict.items()):
         #print(key,value)
+        if(not rules.date_formate_re.search(value)==None and not rules.approval_date_re.search(value)==None):
+            approval_key=key
+            approval_data=value
         if(not rules.starting_re.search(value)==None and flag==0):
             flag=1
             continue
         elif(not rules.stopping_re.search(value)==None and flag==1):
             #print(temp_dict)
+            temp_dict[approval_key]=approval_data
             cluster_data.append(temp_dict.copy())
             temp_dict.clear()
             flag=0

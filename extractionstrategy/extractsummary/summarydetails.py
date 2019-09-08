@@ -157,12 +157,15 @@ def extract_brief_summary(operational_data):
         for key,value in sorted(operational_data.items()):
             #print(key,value)
             length=len(value)
-            if(rules.division_re.match(value)):
-                #print(value)
-                idx=value.find(':')
-                #print(idx)
-                result_dict['planning_division']=value[idx+1:len(value)-1]
-                #print(result_dict)
+            if(not rules.date_formate_re.search(value)==None and not rules.approval_date_re.search(value)==None):
+                mo=rules.date_formate_re.search(value)
+                result_dict['approval_date']=mo.group(0)
+            elif (rules.division_re.match(value)):
+                # print(value)
+                idx = value.find(':')
+                # print(idx)
+                result_dict['planning_division'] = value[idx + 1:len(value) - 1]
+                # print(result_dict)
             elif(rules.project_name_re.match(value)):
                 flag='p_name'
                 continue
