@@ -185,10 +185,12 @@ def conversion():
         directory = '/home/babl/DDAS/library/'
         foldername=directory+folder_name+'/'
         filename=foldername+file_name
+        check_exist_file=filename + '.pdf'
+        if os.path.isfile(check_exist_file):
+            return '<p>Already coverted<p>'
         converted_file_name = convert_to(foldername, filename)
         print(converted_file_name)
-        filename_renamed = filename + '.pdf'
-        os.rename(converted_file_name, filename_renamed)
+        os.rename(converted_file_name, check_exist_file)
         return '<p>Successfully converted to PDF<p>'
     except Exception as e:
         return '<p>error<p>'

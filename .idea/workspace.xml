@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f1adb5a-0ed3-4cec-9499-dd64f640be87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dataExtraction/fileconveter/docxtopdf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataExtraction" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/clustering/clusteringsummarydata.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/clustering/clusteringsummarydata.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractsummary/summarydetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractsummary/summarydetails.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/resultanalysis/converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/resultanalysis/dateconverter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/dateconverter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/resultanalysis/stmconverter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/stmconverter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/rulesfile/convertingrules.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/rulesfile/convertingrules.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataExtraction/rulesfile/summaryrules.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/rulesfile/summaryrules.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
