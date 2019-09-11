@@ -1,6 +1,7 @@
 import dataExtraction.rulesfile.convertingrules as rules
 from .stmconverter import digit_convert as digitconverter
 from .stmconverter import month_convert as monthconverter
+from .stmconverter import date_digit_convert as dateconverter
 import traceback
 def converter(date):
     try:
@@ -37,3 +38,15 @@ def converter(date):
         print("type error: " + str(e))
         print(traceback.format_exc())
         return None,None
+
+
+
+def approval_date_convert(date):
+    date=dateconverter(date)
+    return date
+
+
+
+
+
+

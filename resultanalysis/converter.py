@@ -1,5 +1,6 @@
 from .costconverter import convert as costConverter
 from .dateconverter import converter as dateconverter
+from .dateconverter import dateconverter as approvaldateconverter
 from .stmconverter import division_convert as div_convert
 
 def convertAll(filtered_final_result):
@@ -62,6 +63,7 @@ def convertAll_summary(filtered_final_result):
     if 'own_fund' in filtered_final_result:
         filtered_final_result['own_fund_lakh'] = costConverter(filtered_final_result['own_fund'],
                                                                    filtered_final_result['cost_unit'])
-
+    if filtered_final_result['approval_date']:
+        filtered_final_result['approval_date']=approvaldateconverter(filtered_final_result['approval_date'])
     return filtered_final_result
 
