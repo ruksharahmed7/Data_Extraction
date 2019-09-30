@@ -35,7 +35,7 @@ partner_ministry_re=re.compile(r'Partner\s*Ministry')
 agency_re=re.compile(r'\tবাস্তবায়নকারী\s*সংস্থা\s*(সংস্থাসমূহ)\t|বাস্ত্মবাযনকারী\s*সংস্থা|Executing\s*agency|বাসত্মবায়নকারী\s*সংস্থা|বাস্তবায়ণকারী\s*সংস্থা|বাস্তবায়নকারী\s*সংস্থা|বাস্ত্মবায়নকারী\s*সংস্থা|Executing\s*Agency|বাস্তাবায়নকারী\s*সংস্থা|Implementation\s*Agency|Implementing\s*Agency|Executing\s*Agency')
 partner_agency_re=re.compile(r'Partner\s*Executing\s*Agency')
 sector_re=re.compile(r'Concern\s*sector')
-planning_re=re.compile(r'পরিকল্পনা\s*কমিশনের|\tপরিকল্পনা\s*কমিশনের\s*সংশ্লিষ্ট\s*বিভাগ\t|(C|c)oncern(ed)?\s*(d|D)ivision\s*of\s*(p|P)lanning\s*(c|C)ommission|পরিকল্পনা কমিশনের সংশ্লিষ্ট বিভাগ|পরিকল্পনা\s*কমিশনের\s*(সংশ্লিষ্ট|সংশিস্নষ্ট)\s*বিভাগ|পরিকল্পনা\s*কমিশনের\s*সংশ্লিষ্ট\s*বিভাগ|Planning\s*Commission')
+planning_re=re.compile(r'Commission|পরিকল্পনা\s*কমিশনের|\tপরিকল্পনা\s*কমিশনের\s*সংশ্লিষ্ট\s*বিভাগ\t|(C|c)oncern(ed)?\s*(d|D)ivision\s*of\s*(p|P)lanning\s*(c|C)ommission|পরিকল্পনা কমিশনের সংশ্লিষ্ট বিভাগ|পরিকল্পনা\s*কমিশনের\s*(সংশ্লিষ্ট|সংশিস্নষ্ট)\s*বিভাগ|পরিকল্পনা\s*কমিশনের\s*সংশ্লিষ্ট\s*বিভাগ|Planning\s*Commission')
 trackorg_re=re.compile(r'Objectives|Objectives\s*of\s*Project|প্রকল্পের\s*উদ্দেশ্য\s*ও\s*লক্ষ্যমাত্রা|cÖK‡íi\s*D‡Ïk¨|Objectives|প্রকল্পের\s*উদ্দেশ্য|মোট\s*প্রকল্প\s*ব্যয়|(O|o)bjective\s*of\s*the\s*(P|p)roject')
 stop_org_re=re.compile(r'ব্যয়')
 #objective of project

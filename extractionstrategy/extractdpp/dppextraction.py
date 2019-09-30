@@ -34,7 +34,7 @@ class extractdpp:
         self.raw_final_clustered_data=raw_final_cluster
         self.final_clustered_data=final_level_cluster
         #print("inside class")
-        #pprint(self.raw_mid_cluster_data)
+        #pprint(self.raw_final_clustered_data)
         #pprint(self.final_clustered_data)
 
     def __del__(self):
@@ -44,7 +44,7 @@ class extractdpp:
         self.final_result.clear()
         self.results.clear()
         self.final_result=dppdetails.extract_all(self.raw_mid_cluster_data,self.final_clustered_data,self.project_id)
-        #pprint(self.results)
+        pprint(self.results)
         project_name_dict=projectname.extract_project_title_(self.raw_final_clustered_data)
         pprint(project_name_dict)
         self.results.append(project_name_dict)

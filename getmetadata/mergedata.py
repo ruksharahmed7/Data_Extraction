@@ -31,8 +31,10 @@ def clustering_and_get_merge_dpp(raw_data,converted_data,project_id):
     filtered_final_result={}
     #pprint(converted_data)
     raw_cluster_data,cleaned_cluster_data=clusteringdpp.summarize_dpp(converted_data)
+    #print("summarized dpp")
     #pprint(raw_cluster_data)
     raw_final_clustered_data,final_clustered_data=clusteringdpp.final_level_summarize_dpp(raw_cluster_data,cleaned_cluster_data)
+    print('final cluster')
     pprint(raw_final_clustered_data)
     #result_list=dppdetails.extract_all(raw_cluster_data,cleaned_cluster_data,project_id)
     #print(result_list)

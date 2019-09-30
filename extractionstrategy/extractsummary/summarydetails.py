@@ -205,7 +205,9 @@ def extract_brief_summary(operational_data):
                 continue
             elif (flag == 'date'):
                 print(value)
-                if(not rules.from_re.search(value)==None):
+                if(not rules.exception_re.search(value)==None):
+                    result_dict['start_date'],result_dict['end_date']=extract_date(operational_data)
+                elif(not rules.from_re.search(value)==None):
                     mo1=rules.from_re.search(value)
                     break_point = mo1.group(0)
                     idx = value.find(break_point)
@@ -272,6 +274,43 @@ def extract_brief_summary(operational_data):
         print(traceback.format_exc())
         data_dict={}
         return data_dict
+
+
+def extract_date(operational_dict):
+    flag=0
+    lock=0
+    start_date=''
+    end_date=''
+    for key,value in operational_dict.items():
+        print(value)
+        if(not rules.project_date_re.search(value)==None):
+            flag=1
+        elif(flag==1 and not rules.exception_re.search(value)==None):
+            flag=2
+            print(key,value)
+        elif(flag==2 and rules.extension_re.search(value)==None):
+            lock=1
+        elif(flag==2 and rules.from_re.search(value)==None):
+            print(key,value)
+            if(lock==1):
+                flag=5
+                continue
+            else:
+                mo1 = rules.from_re.search(value)
+                break_point = mo1.group(0)
+                idx = value.find(break_point)
+                start_date = value[:idx]
+                end_date = value[idx + len(break_point):]
+                break
+        elif(flag==5 and rules.from_re.search(value)==None):
+            mo1 = rules.from_re.search(value)
+            break_point = mo1.group(0)
+            idx = value.find(break_point)
+            start_date = value[:idx]
+            end_date = value[idx + len(break_point):]
+            break
+    print("date:",start_date,end_date)
+    return start_date,end_date
 
 
 

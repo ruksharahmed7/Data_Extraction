@@ -1,3 +1,5 @@
+from pprint import pprint
+
 import dataExtraction.rulesfile.rules as rules
 import dataExtraction.tracking.trackingprojectid as tracking
 import re
@@ -5,6 +7,7 @@ import time
 leter=re.compile(r'[a-zA-Z]')
 
 def extract_all(raw_cluser_data,cleaned_cluster_data,project_id):
+    print('ALl Extraction')
     result_dict={}
     result_list=[]
     project_name=''
@@ -37,7 +40,9 @@ def extract_all(raw_cluser_data,cleaned_cluster_data,project_id):
     cost_track=0
     back_track=0
     flag_unit=0
+    pprint(raw_cluser_data)
     for key,value in sorted(raw_cluser_data.items()):
+        print(key,value)
         if(not (rules.project_name_re.search(value)==None) and flag==0 and ':' in value):
             idx=value.find(':')
             project_name=value[idx+1:]

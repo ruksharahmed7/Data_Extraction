@@ -65,5 +65,7 @@ def convertAll_summary(filtered_final_result):
                                                                    filtered_final_result['cost_unit'])
     if filtered_final_result['approval_date']:
         filtered_final_result['approval_date']=approvaldateconverter(filtered_final_result['approval_date'])
+    if filtered_final_result["planning_division"]:
+        filtered_final_result['planning_division'] = div_convert(filtered_final_result["planning_division"])
     return filtered_final_result
 

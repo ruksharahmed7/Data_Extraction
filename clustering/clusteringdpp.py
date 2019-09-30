@@ -93,7 +93,7 @@ def summarize_dpp(converted_data):
             back_track=5
             continue
         elif(not rules.start_re.search(value)==None):
-            raw_cluster_data.clear()
+            #raw_cluster_data.clear()
             flag=0
             lock=0
         elif (not (rules.ministry_re.search(cleaned) == None) and flag == 1 and lock==0):

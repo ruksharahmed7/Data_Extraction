@@ -2,7 +2,7 @@ import re
 
 
 
-approval_date_re=re.compile(r'একনেক\s*সভায়')
+approval_date_re=re.compile(r'একনেক\s*সভায়|একনেক')
 date_formate_re=re.compile(r'(০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)\s*(-|/)\s*(০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)\s*(-|/|.)\s*(০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)|\d\d\s*(-|/|.)\s*\d\d\s*(-|/|.)\s*\d\d\d\d')
 division_re=re.compile(r'বিভাগ\s*:|বিভাগ:')
 point_re=re.compile(r'(\d\d).\s|((০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)).\s')
@@ -12,10 +12,15 @@ total_re=re.compile(r'মোট')
 total_suplimentary_re=re.compile(r'হয়েছে|ব্যয়')
 and_re=re.compile(r'এবং|\(|তন্মধ্যে')
 project_date_re=re.compile(r'বাস্তবায়নকাল|বাস্তবায়নকাল')
-from_re=re.compile(r'হতে|থেকে|হতে')
+from_re=re.compile(r'হতে|থেকে|-')
 year_re=re.compile(r'\d\d\d\d|(০|১|২|৩|৪|৫|৬|৭|৮|৯|\d)(০|১|২|৩|৪|৫|৬|৭|৮|৯|\d)(০|১|২|৩|৪|৫|৬|৭|৮|৯|\d)(০|১|২|৩|৪|৫|৬|৭|৮|৯|\d)')
 
 activity_re=re.compile(r'প্রকল্পটির\s*প্রধান\s*কার্যক্রমসমূহ|কার্যক্রমসমূহ')
+
+#exception handle
+exception_re=re.compile(r'মূল|অনুমোদিত')
+extension_re=re.compile(r'মেয়াদ\s*বৃদ্ধি')
+proposal_re=re.compile(r'প্রস্তাবিত')
 
 
 #clustering rules

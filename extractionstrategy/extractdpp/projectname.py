@@ -164,7 +164,7 @@ def extract_project_title_(operational_data):
         result_dict={}
         title_idx = 0
         for key,data in sorted(operational_data.items()):
-            #print(data)
+            print(data)
             back_track-=1
             if(back_track<=0):
                 title_flag=0
