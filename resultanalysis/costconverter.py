@@ -16,7 +16,7 @@ def convert(cost,unit):
             elif (not rules.core_re.search(unit) == None):
                 cost=float(cost) * 100.0
         print(cost)
-        return cost
+        return round(cost,2)
     except Exception as e:
         print("type error: " + str(e))
         print(traceback.format_exc())

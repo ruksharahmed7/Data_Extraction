@@ -154,6 +154,7 @@ def extract_brief_summary(operational_data):
         project_location=[]
         project_activity=''
         flag=''
+        lock=0
         for key,value in sorted(operational_data.items()):
             #print(key,value)
             length=len(value)
@@ -204,10 +205,12 @@ def extract_brief_summary(operational_data):
                 flag = 'date'
                 continue
             elif (flag == 'date'):
-                print(value)
+                #print(value)
                 if(not rules.exception_re.search(value)==None):
                     result_dict['start_date'],result_dict['end_date']=extract_date(operational_data)
-                elif(not rules.from_re.search(value)==None):
+                    flag=''
+                    continue
+                if(not rules.from_re.search(value)==None):
                     mo1=rules.from_re.search(value)
                     break_point = mo1.group(0)
                     idx = value.find(break_point)
@@ -229,14 +232,17 @@ def extract_brief_summary(operational_data):
             elif(rules.total_re.match(value)):
                 flag='total'
                 continue
-            elif(flag=='total' and rules.cost_value_re.match(value)):
+            elif(flag=='total' and not rules.exception_re.search(value)==None):
+                result_dict['cost_unit'],result_dict['project_cost'],result_dict['gob_cost'],result_dict['pa_cost'],result_dict['own_fund']=extract_cost(operational_data)
+                lock=1
+            elif(flag=='total' and not lock and rules.cost_value_re.match(value)):
                 co=rules.cost_value_re.search(value)
                 cost=co.group(0)
                 result_dict['project_cost']=cost
                 idx=value.find('টাকা')
                 result_dict['cost_unit']=value[len(cost):idx]+'টাকা'
                 flag=''
-            elif (rules.gob_cost_re.match(value)):
+            elif (rules.gob_cost_re.match(value) and not lock):
                 flag = 'gob'
                 continue
             elif (flag == 'gob' and rules.stop_point_re.match(value) and len(value) < 5):
@@ -246,7 +252,7 @@ def extract_brief_summary(operational_data):
                 cost = co.group(0)
                 result_dict['gob_cost'] = cost
                 flag = ''
-            elif (rules.pa_cost_re.match(value)):
+            elif (rules.pa_cost_re.match(value) and not lock):
                 flag = 'pa'
                 continue
             elif(flag=='pa' and rules.stop_point_re.match(value) and len(value) < 5):
@@ -256,7 +262,7 @@ def extract_brief_summary(operational_data):
                 cost = co.group(0)
                 result_dict['pa_cost'] = cost
                 flag = ''
-            elif (rules.own_fund_re.match(value)):
+            elif (rules.own_fund_re.match(value) and not lock):
                 flag = 'own'
                 continue
             elif(flag=='own' and rules.stop_point_re.match(value) and len(value) < 5):
@@ -279,39 +285,103 @@ def extract_brief_summary(operational_data):
 def extract_date(operational_dict):
     flag=0
     lock=0
+    back_track=0
     start_date=''
     end_date=''
     for key,value in operational_dict.items():
-        print(value)
+        #print(value)
         if(not rules.project_date_re.search(value)==None):
             flag=1
         elif(flag==1 and not rules.exception_re.search(value)==None):
             flag=2
             print(key,value)
-        elif(flag==2 and rules.extension_re.search(value)==None):
+        elif(flag==2 and not rules.extension_re.search(value)==None):
             lock=1
-        elif(flag==2 and rules.from_re.search(value)==None):
+            back_track+=2
+            print(key, value)
+        elif(flag==2 and not rules.approved_re.search(value)==None):
+            lock=2
+            flag=3
+            back_track+=1
+            print(key, value)
+        elif(flag==3 and back_track>=2 and not rules.from_re.search(value)==None):
+            back_track-=1
+            continue
+        elif(flag==3 and back_track==1 and not rules.from_re.search(value)==None):
             print(key,value)
-            if(lock==1):
-                flag=5
-                continue
-            else:
-                mo1 = rules.from_re.search(value)
-                break_point = mo1.group(0)
-                idx = value.find(break_point)
-                start_date = value[:idx]
-                end_date = value[idx + len(break_point):]
-                break
-        elif(flag==5 and rules.from_re.search(value)==None):
             mo1 = rules.from_re.search(value)
             break_point = mo1.group(0)
             idx = value.find(break_point)
             start_date = value[:idx]
             end_date = value[idx + len(break_point):]
-            break
-    print("date:",start_date,end_date)
+            flag=0
+    print("date:")
+    print(start_date,end_date)
     return start_date,end_date
 
+def extract_cost(operation_data):
+    cost_unit=''
+    project_cost=''
+    gob=''
+    pa=''
+    own=''
+    flag=0
+    lock=0
+    for key,value in operation_data.items():
+        if(rules.total_re.match(value)):
+            flag=1
+        elif(flag==1 and rules.approved_re.match(value)):
+            flag=2
+        elif(flag==2 and rules.cost_value_re.match(value)):
+            co=rules.cost_value_re.search(value)
+            cost=co.group(0)
+            project_cost=cost
+            idx=value.find('টাকা')
+            cost_unit=value[len(cost):idx]+'টাকা'
+            flag=3
+        elif(flag==3 and rules.gob_cost_re.match(value)):
+            flag=4
+            lock=1
+        elif (flag == 4 and rules.stop_point_re.match(value) and len(value) < 5 and not rules.null_cost_re.match(value)):
+            flag =0
+        elif (flag == 4 and lock == 1 and rules.cost_value_re.match(value)):
+            lock=0
+            continue
+        elif (flag == 4 and lock==0 and rules.cost_value_re.match(value)):
+            co = rules.cost_value_re.search(value)
+            cost = co.group(0)
+            gob= cost
+            flag = 0
+        elif (rules.pa_cost_re.match(value)):
+            flag = 5
+            lock=1
+            continue
+        elif (flag == 5 and rules.stop_point_re.match(value) and len(value) < 5 and not rules.null_cost_re.match(value)):
+            flag = 0
+        elif (flag == 5 and lock == 1 and rules.cost_value_re.match(value)):
+            lock = 0
+            continue
+        elif (flag == 5 and lock == 0 and rules.cost_value_re.match(value)):
+            co = rules.cost_value_re.search(value)
+            cost = co.group(0)
+            pa = cost
+            flag = 0
+        elif (rules.own_fund_re.match(value)):
+            flag = 6
+            lock=1
+            continue
+        elif (flag == 6 and rules.stop_point_re.match(value) and len(value) < 5 and not rules.null_cost_re.match(value)):
+            flag = 0
+        elif (flag == 6 and lock == 1 and rules.cost_value_re.match(value)):
+            lock = 0
+            continue
+        elif (flag == 6 and lock == 0 and rules.cost_value_re.match(value)):
+            co = rules.cost_value_re.search(value)
+            cost = co.group(0)
+            own = cost
+            flag = 0
+    print(cost_unit,project_cost,gob,pa,own)
+    return cost_unit,project_cost,gob,pa,own
 
 
 

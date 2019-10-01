@@ -129,7 +129,8 @@ def get_merge_summary(raw_data, converted_data,project_id,project_name):
             pprint(cluster_data)
             for project_data in cluster_data:
                 result_list.append(summarydetails.extract_brief_summary(project_data))
-            filtered_result = filter.filtering_project_name(result_list, project_name, project_id)
+            #pprint(result_list)
+            filtered_result = filter.filter_project(result_list, project_name, project_id)
             pprint(filtered_result)
         filtered_convert_result = Converter.convertAll_summary(filtered_result[0])
         result=[]
