@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 #happy_coding('~')
 import json
+import traceback
+
 import dataExtraction.filereader.docreader as docreader
 import dataExtraction.filereader.readpdf as readpdf
 import dataExtraction.getmetadata.mergedata as mergedata
@@ -193,6 +195,8 @@ def conversion():
         os.rename(converted_file_name, check_exist_file)
         return jsonify([{'response': 'Successfully converted to PDF'}])
     except Exception as e:
+        print("type error: " + str(e))
+        print(traceback.format_exc())
         return jsonify([{'response': 'error'}])
 
 def get_tasks(folder_name,file_name,project_id,project_name):
@@ -205,18 +209,18 @@ def get_tasks(folder_name,file_name,project_id,project_name):
     if(folder_name=='dpp2018-19'):
         #db.update_dpp_status()
         password=''
-        data_list, raw_data, converted_data = docreader.doc_reader_tree_formate(file_location,password)
+        data_list, raw_data, converted_data = docreader.doc_reader_tree_formate(file_location)
         dpp_result=mergedata.clustering_and_get_merge_dpp(raw_data, converted_data,project_id)
         finalresult = json.loads(dpp_result)
     if(folder_name=='summary'):
         password=''
-        data_list, raw_data, converted_data = docreader.doc_reader_tree_formate(file_location,password)
+        data_list, raw_data, converted_data = docreader.doc_reader_tree_formate(file_location)
         summary_result=mergedata.get_merge_summary(raw_data, converted_data,project_id,project_name)
         finalresult = json.loads(summary_result)
     if (folder_name == 'meetingminute'):
         print('MM')
         password='ecnec14'
-        data_list, raw_data, converted_data = docreader.doc_reader_tree_formate_password_protected(file_location,password)
+        data_list, raw_data, converted_data = docreader.doc_reader_tree_formate(file_location)
         meetingminute_result = mergedata.get_merge_meetingminute(raw_data, converted_data,project_id,project_name)
         finalresult = json.loads(meetingminute_result)
     return jsonify(finalresult)
