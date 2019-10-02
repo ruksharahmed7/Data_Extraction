@@ -162,10 +162,10 @@ def extract_brief_summary(operational_data):
                 mo=rules.date_formate_re.search(value)
                 result_dict['approval_date']=mo.group(0)
             elif (rules.division_re.match(value)):
-                # print(value)
-                idx = value.find(':')
-                # print(idx)
-                result_dict['planning_division'] = value[idx + 1:len(value) - 1]
+                #print(value)
+                #idx = value.find(':')
+                #print(idx)
+                result_dict['planning_division'] = value
                 # print(result_dict)
             elif(rules.project_name_re.match(value)):
                 flag='p_name'

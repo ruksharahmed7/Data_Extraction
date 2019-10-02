@@ -46,79 +46,12 @@ nsprefixes = {
 from bijoy2unicode import converter
 test = converter.Unicode()
 import  re
-import msoffice_decrypt
 
 check_ascii_re=re.compile(r"^[a-zA-Z\d]+$")
 
-def doc_reader_tree_formate_password_protected(filename,psw):
-    #file = msoffice_decrypt.MSOfficeDecryptor(open(filename, "rb"))
-    # Use password
-    #file.load_key(password=psw)
-    print('reading...')
-    #document = Document(filename)
-    #document.setpassword(psw)
-    #style = document.styles['Normal']
-    #font = style.font
-    #font.name = 'SutonnyMJ'
-    print('reading...')
-    password_encoded = bytes(psw.encode('utf-8'))
-    print(password_encoded)
-    z=zf.ZipFile()
-    zf.setpassword(password_encoded)
-    z = zf.ZipFile(filename)
-
-    print('test')
-    #z.extractall(pwd=password_encoded)
-    f = z.open("word/document.xml")  # a file-like objectclass
-    tree = ET.parse(f)  # an ElementTree instance
-    paratextlist=[]
-    paralist=[]
-    for element in tree.iter():
-        #print(element.text)
-        if element.tag == '{' + nsprefixes['w'] + '}p':
-            paralist.append(element)
-        if element.tag=="//w:p/w:r/w:br[@w:type='page']" + nsprefixes['w']:
-            print('here find:'+element.text)
-        # Since a single sentence might be spread over multiple text elements,
-        # iterate through each paragraph, appending all text (t) children to that
-        # paragraphs text.
-    tree_node=0
-    para_node=0
-    raw_data={}
-    converted_data={}
-    for para in paralist:
-        paratext = ''
-        # Loop through each paragraph
-        for element in para.iter():
-            # Find t (text) elements
-            if element.tag == '{' + nsprefixes['w'] + '}t':
-                if element.text:
-                    paratext = paratext + element.text
-                        #toUnicode = test.convertBijoyToUnicode(str(element.text))
-                        #paratext = paratext + toUnicode
-                    #else:
-                     #   toUnicode = test.convertBijoyToUnicode(element.text)
-                      #  paratext = paratext + toUnicode
-                    #print(paratext.run.font)
-            elif element.tag == '{' + nsprefixes['w'] + '}tab':
-                paratext = paratext + '\t'
-        # Add our completed paragraph text to the list of paragraph text
-
-        if (not len(paratext.strip()) <= 1 and paratext.strip()!=':-' and  paratext.strip()!=':' and  paratext.strip()!='t'):
-            data=paratext.strip()
-            raw_data[para_node] = data
-            #print(data)
-            toUnicode=fontconverter.bijoy2uni(data)
-            #print(toUnicode)
-            paratextlist.append(toUnicode +'^'+str(para_node))
-            converted_data[para_node]=toUnicode
-        para_node+=1
-    #print("Here find all:")
-    return paratextlist,raw_data,converted_data
 
 
-
-def doc_reader_tree_formate(filename,psw):
+def doc_reader_tree_formate(filename):
     document = Document(filename)
     #document.setpassword(psw)
     style = document.styles['Normal']

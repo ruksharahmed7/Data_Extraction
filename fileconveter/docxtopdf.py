@@ -4,14 +4,21 @@ import re
 
 
 def convert_to(folder, source, timeout=None):
+    print(source)
     args = [libreoffice_exec(), '--headless', '--convert-to', 'pdf', '--outdir', folder, source]
-
     process = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout)
+    # stdout, stderr = process.communicate()
+    # stdout_formatted = stdout.decode('UTF-16')
+    # stderr_formatted = stderr.decode('UTF-16')
+    print(process)
     filename = re.search('-> (.*?) using filter', process.stdout.decode())
     print(filename)
-
     if filename is None:
-        raise LibreOfficeError(process.stdout.decode())
+        filename=source
+        indx=filename.find('.docx')
+        filename=filename[:indx]+".pdf"
+        print(filename)
+        return filename
     else:
         return filename.group(1)
 
