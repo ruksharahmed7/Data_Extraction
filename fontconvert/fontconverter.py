@@ -12,11 +12,13 @@ check_ascii_re=re.compile(r'[a-z]K|Rvbyqvwi|A‡±vei|wmGgGmwW|GmGm|mfvcwZ|Uvt|R
                           r'cvwb|RyjvB|Aby|Drm|aiY|FY|GKK|Pjgvb|cwigvb|Rxc|wKtwgt|Bbcy|ÿ|'
                           r'UvsMvBj|bvMicyi|KvwjnvZx|gaycyi|NvUvBj|evmvBj|‡kicyi|†Rjvi|'
                           r'ivRkvnx|RqcyinvU|iscyi|kZKiv nvi|etwgUvi|wgUvi|jvgmvg|Rvbyqvix|‡m‡Þ¤^i|'
-                          r'XvKv|MÖvgxY|e„nËi')
+                          r'XvKv|MÖvgxY|e„nËi|‡m‡Þ¤^i')
 
 
 def bijoy2uni(s):
     try:
+        if(len(s)==0):
+            return s
         #print(s)
         c = s.encode('ascii', 'replace')
         #print(c)

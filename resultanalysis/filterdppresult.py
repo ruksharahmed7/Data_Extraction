@@ -1,83 +1,90 @@
+import traceback
+
 import dataExtraction.rulesfile.resultanalysisrules as rules
 import numpy as np
 from pprint import pprint
 
 def filter(final_result,results):
-    filtered_result=[]
-    filter_result_dict={}
-    track=np.array([1,2,3,4,5,6,7])
-    states=[]
-    filter_result_dict = final_result[0]
-    #pprint(filter_result_dict)
-    p_name=filter_result_dict['project_name']
-    p_name_en=filter_result_dict['project_name_english']
-    temp=results[0]
-    if(len(p_name)<10 or len(p_name)>200):
-        filter_result_dict['project_name']=temp['project_name']
-    if(len(p_name_en)<10 or len(p_name_en)>200):
-        for key,value in temp.items():
-            if(key=='project_name_eng'):
-                filter_result_dict['project_name_english']=temp['project_name_eng']
-    states.append(1)
-    del temp
-    ###project cost
-    temp1=results[1]
-    temp2=results[2]
-    cost_unit=filter_result_dict['cost_unit']
-    project_cost=filter_result_dict['project_cost']
-    gob_cost=filter_result_dict['gob_cost']
-    own_fund=filter_result_dict['own_fund']
-    pa_cost=filter_result_dict['pa_cost']
-    other_cost=filter_result_dict['other_cost']
-    filter_result_dict,flag=cost_filter(filter_result_dict,temp1,temp2,cost_unit,project_cost,gob_cost,own_fund,pa_cost,other_cost)
-    if(flag==2):
-        states.append(flag)
-    del temp1,temp2
-    ###project date
-    temp1=results[3]
-    temp2=results[4]
-    start_date=filter_result_dict['start_date']
-    end_date=filter_result_dict['end_date']
-    filter_result_dict,flag=date_filter(filter_result_dict,temp1,temp2,start_date,end_date)
-    if(flag==3):
-        states.append(flag)
-    del temp1,temp2
-    ###project organization
-    temp1=results[5]
-    #temp2=results[6]
-    #pprint(temp1)
-    sponsoring_ministry=filter_result_dict['sponsoring_ministry']
-    executing_agency=filter_result_dict['executing_agency']
-    planning_division=filter_result_dict['planning_division']
-    if(len(temp1)>0):
-        filter_result_dict,flag=org_filter(filter_result_dict,temp1,sponsoring_ministry,executing_agency,planning_division)
-        states.append(flag)
-    del temp1
-    ###project purpose
-    temp=results[6]
-    filter_result_dict,msk=project_purpose_filter(filter_result_dict,temp)
-    if(msk==1):
-        states.append(5)
-    del temp
-    ###project location
-    temp=results[7]
-    filter_result_dict,msk=geo_location_filter(filter_result_dict,temp)
-    if(msk==1):
-        states.append(6)
-    ###project activity
-    temp=results[8]
-    project_activity=temp['project_activity']
-    if(len(project_activity)>5):
-        states.append(7)
-    filter_result_dict['project_activity']=project_activity
+    try:
+        print('inside filter')
+        filtered_result=[]
+        filter_result_dict={}
+        track=np.array([1,2,3,4,5,6,7])
+        states=[]
+        filter_result_dict = final_result[0]
+        #pprint(filter_result_dict)
+        p_name=filter_result_dict['project_name']
+        p_name_en=filter_result_dict['project_name_english']
+        temp=results[0]
+        if(len(p_name)<10 or len(p_name)>200):
+            filter_result_dict['project_name']=temp['project_name']
+        if(len(p_name_en)<10 or len(p_name_en)>200):
+            for key,value in temp.items():
+                if(key=='project_name_eng'):
+                    filter_result_dict['project_name_english']=temp['project_name_eng']
+        states.append(1)
+        del temp
+        ###project cost
+        temp1=results[1]
+        temp2=results[2]
+        cost_unit=filter_result_dict['cost_unit']
+        project_cost=filter_result_dict['project_cost']
+        gob_cost=filter_result_dict['gob_cost']
+        own_fund=filter_result_dict['own_fund']
+        pa_cost=filter_result_dict['pa_cost']
+        other_cost=filter_result_dict['other_cost']
+        filter_result_dict,flag=cost_filter(filter_result_dict,temp1,temp2,cost_unit,project_cost,gob_cost,own_fund,pa_cost,other_cost)
+        if(flag==2):
+            states.append(flag)
+        del temp1,temp2
+        ###project date
+        temp1=results[3]
+        temp2=results[4]
+        start_date=filter_result_dict['start_date']
+        end_date=filter_result_dict['end_date']
+        filter_result_dict,flag=date_filter(filter_result_dict,temp1,temp2,start_date,end_date)
+        if(flag==3):
+            states.append(flag)
+        del temp1,temp2
+        ###project organization
+        temp1=results[5]
+        #temp2=results[6]
+        #pprint(temp1)
+        sponsoring_ministry=filter_result_dict['sponsoring_ministry']
+        executing_agency=filter_result_dict['executing_agency']
+        planning_division=filter_result_dict['planning_division']
+        if(len(temp1)>0):
+            filter_result_dict,flag=org_filter(filter_result_dict,temp1,sponsoring_ministry,executing_agency,planning_division)
+            states.append(flag)
+        del temp1
+        ###project purpose
+        temp=results[6]
+        filter_result_dict,msk=project_purpose_filter(filter_result_dict,temp)
+        if(msk==1):
+            states.append(5)
+        del temp
+        ###project location
+        temp=results[7]
+        filter_result_dict,msk=geo_location_filter(filter_result_dict,temp)
+        if(msk==1):
+            states.append(6)
+        ###project activity
+        temp=results[8]
+        project_activity=temp['project_activity']
+        if(len(project_activity)>5):
+            states.append(7)
+        filter_result_dict['project_activity']=project_activity
 
-    #filter_result_dict['project_location'] = temp['project_location']
-    #states.append(6)
-    #pprint(filter_result_dict)
-    #print(states)
-    mask=np.in1d(track,states)
-    #pprint(mask)
-    return filter_result_dict,mask
+        #filter_result_dict['project_location'] = temp['project_location']
+        #states.append(6)
+        #pprint(filter_result_dict)
+        #print(states)
+        mask=np.in1d(track,states)
+        #pprint(mask)
+        return filter_result_dict,mask
+    except Exception as e:
+        print("type error: " + str(e))
+        print(traceback.format_exc())
 
 def cost_filter(filter_result_dict,temp1,temp2,cost_unit,project_cost,gob_cost,own_fund,pa_cost,other_cost):
     #pprint(temp1)
@@ -93,7 +100,7 @@ def cost_filter(filter_result_dict,temp1,temp2,cost_unit,project_cost,gob_cost,o
             if (rules.cost_re.search(gob_cost) == None and not (rules.cost_re.search(value) == None)):
                 gob_cost = value
         if(key=='own_fund'):
-            if(rules.cost_re.search(own_fund) == None and not (rules.cost_re.search(value) == None) and len(value)>3):
+            if(rules.cost_re.search(str(own_fund)) == None and not (rules.cost_re.search(str(value)) == None) and len(str(value))>3):
                 own_fund=value
         if (key == 'pa_cost'):
             if (rules.cost_re.search(pa_cost) == None and not (rules.cost_re.search(value) == None)):

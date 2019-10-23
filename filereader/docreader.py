@@ -119,26 +119,41 @@ def getParaText(filename):
         i+=1
     return data
 
+import dataExtraction.extractionstrategy.extractdpp.projectlocationtableformat as project_loc
 
 def getTableData(filename):
-    document = Document(filename)
-    # table = document.tables[0]
+    try:
+        document = Document(filename)
+        # table = document.tables[0]
 
-    data = []
+        table = document.tables[13]
 
-    table_no = 1
-    keys = None
-    for table in document.tables:
-        row_no = 1
-        for i, row in enumerate(table.rows):
-            text = (cell.text for cell in row.cells)
-            # print(tuple(text))
-            row_data = tuple(text)
-            row_data = row_data + (str(table_no), str(row_no))
-            data.append(row_data)
-            row_no += 1
-        table_no += 1
-    return data
+        # Data will be a list of rows represented as dictionaries
+        # containing each row's data.
+        data = []
+
+        for table in document.tables:
+            keys = None
+            for i, row in enumerate(table.rows):
+                text = (fontconverter.bijoy2uni(cell.text) for cell in row.cells)
+
+                # Establish the mapping based on the first row
+                # headers; these will become the keys of our dictionary
+                if i == 0:
+                    keys = tuple(text)
+                    continue
+
+                # Construct a dictionary for this row, mapping
+                # keys to values for this row
+                if(project_loc.verify_location_keys(keys)):
+                    #print(keys,text)
+                    row_data = dict(zip(keys, text))
+                    data.append(row_data)
+        return data
+    except Exception as e:
+        print("type error: " + str(e))
+        print(traceback.format_exc())
+        return None
 
 
 try:

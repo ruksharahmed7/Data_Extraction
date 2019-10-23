@@ -14,6 +14,8 @@ import dataExtraction.clustering.clusteringmeetingminute as clusteringmeetingmin
 import dataExtraction.extractionstrategy.extractsummary.summarydetails as summarydetails
 import dataExtraction.extractionstrategy.extractmeetingminute.meetingminutedetails as meetingminutedetails
 import dataExtraction.extractionstrategy.extractdpp.dppdetails as dppdetails
+import dataExtraction.extractionstrategy.extractdpp.projectlocationtableformat as pro_location
+
 
 import dataExtraction.extractionstrategy.extractdpp.dppextraction as dppextraction
 import dataExtraction.resultanalysis.filterdppresult as filterdppresult
@@ -88,6 +90,17 @@ def clustering_and_get_merge_dpp(raw_data,converted_data,project_id):
         default=lambda df: json.loads(df.to_json()))
     return json_result
 
+def merge_location(result,location_data):
+    result=json.loads(result)
+    print(result)
+    if(not location_data==None):
+        location_data=pro_location.convert_location(location_data)
+        result[0]['project_location_tab']=location_data
+        json_result = json.dumps(
+            result,
+            default=lambda df: json.loads(df.to_json()))
+        return json_result
+
 def clustering_and_get_merge_dpp_summary(raw_data,converted_data,project_id):
     result=[]
     pprint(converted_data)
@@ -150,17 +163,24 @@ def get_merge_summary(raw_data, converted_data,project_id,project_name):
 
 
 def get_merge_meetingminute(raw_data,converted_data,project_id,project_name):
-    first_level_cluster_data=clusteringmeetingminute.first_level_clustering(converted_data)
-    #print('cluster')
-    #pprint(first_level_cluster_data)
-    second_level_cluster_data=clusteringmeetingminute.second_level_clustering(first_level_cluster_data)
+    first_level_cluster_data_list=clusteringmeetingminute.mm_clustering(converted_data)
+    print('mm_cluster')
+    pprint(first_level_cluster_data_list)
+    ministry_project_cluster=clusteringmeetingminute.ministry_project_clustering(converted_data)
+    pprint(ministry_project_cluster)
+    #second_level_cluster_data=clusteringmeetingminute.second_level_clustering(first_level_cluster_data_list)
     #pprint(second_level_cluster_data)
-    mmdetails=meetingminutedetails.Meetingminute(second_level_cluster_data)
-    result_df,result_list=mmdetails.get_result()
+    mmdetails=meetingminutedetails.Meetingminute(raw_data,converted_data,first_level_cluster_data_list,ministry_project_cluster)
+    mmdetails.extract_all()
+    print("extraction done")
+    result_list=mmdetails.get_result()
+    print('total project:',len(result_list))
     pprint(result_list)
-    filtered_result=filter.filtering_project_name(result_list,project_name,project_id)
+    filtered_result=filter.filter_project(result_list,project_name,project_id)
     print("filtered result")
     pprint(filtered_result)
+    if(filtered_result):
+        filtered_result=Converter.convertMM(filtered_result[0])
     #pprint(mmdetails.get_result())
     json_result = json.dumps(
         filtered_result,
