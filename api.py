@@ -92,10 +92,13 @@ from dataExtraction.fileconveter.docxtopdf import convert_to
 # os.rename(converted_file_name, filename_renamed)
 #print()
 #end
+# filename='/home/babl/DDAS/library/dpp2018-19/04-11-18 2. DPP, ঢাকা.Part-A+B(Literature)org.docx'
+# data=docreader.getTableData(filename)
+# pprint(data)
 
-file='/home/babl/DDAS/library/dpp2018-19/09-04-2019 Dual Gauge in Akhaura-Sylhet.xlsx'
-from dataExtraction.filereader.excelreader import readExcel
-readExcel(file)
+# file='/home/babl/DDAS/library/dpp2018-19/09-04-2019 Dual Gauge in Akhaura-Sylhet.xlsx'
+# from dataExtraction.filereader.excelreader import readExcel
+# readExcel(file)
 #file='/home/babl/DDAS/library/summary/Summary05.03.19.docx'
 '''
 if('.docx' not in file):
@@ -208,10 +211,14 @@ def get_tasks(folder_name,file_name,project_id,project_name):
     #pprint(raw_data)
     if(folder_name=='dpp2018-19'):
         #db.update_dpp_status()
+        location_data=[]
         password=''
         data_list, raw_data, converted_data = docreader.doc_reader_tree_formate(file_location)
         dpp_result=mergedata.clustering_and_get_merge_dpp(raw_data, converted_data,project_id)
-        finalresult = json.loads(dpp_result)
+        #pprint(dpp_result)
+        location_data = docreader.getTableData(file_location)
+        dpp_result_final=mergedata.merge_location(dpp_result,location_data)
+        finalresult = json.loads(dpp_result_final)
     if(folder_name=='summary'):
         password=''
         data_list, raw_data, converted_data = docreader.doc_reader_tree_formate(file_location)
@@ -221,6 +228,7 @@ def get_tasks(folder_name,file_name,project_id,project_name):
         print('MM')
         password='ecnec14'
         data_list, raw_data, converted_data = docreader.doc_reader_tree_formate(file_location)
+        #pprint(converted_data)
         meetingminute_result = mergedata.get_merge_meetingminute(raw_data, converted_data,project_id,project_name)
         finalresult = json.loads(meetingminute_result)
     return jsonify(finalresult)
