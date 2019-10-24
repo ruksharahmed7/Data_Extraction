@@ -88,5 +88,8 @@ def convertMM(result_dict):
                                                                result_dict['cost_unit'])
     if result_dict["planning_division"]:
         result_dict['planning_division'] = div_convert(result_dict["planning_division"])
+    if result_dict['approval_date']:
+        result_dict['approval_date'] = approvaldateconverter(result_dict['approval_date'])
+
     return [result_dict]
 

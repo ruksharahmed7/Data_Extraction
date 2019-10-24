@@ -9,7 +9,7 @@ core_re=re.compile(r'কোটি')
 #date converting
 date_formate_1_re=re.compile(r'(০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)\s*(-|/|\|.)\s*(০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)\s*(-|/|.)\s*((০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯))?(০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)|\d\d\s*(-|/|.)\s*\d\d\s*(-|/|.)\s*(\d\d)?\d\d')
 year_formate_re=re.compile(r'(০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)|\d\d\d\d')
-jan_re=re.compile(r'জানুয়ারী|জানুয়ারি|January')
+jan_re=re.compile(r'জানুয়ারী|জানুয়ারি|January|জানুয়ারি')
 feb_re=re.compile(r'ফেব্রুয়ারী|February')
 mar_re=re.compile(r'মার্চ|March')
 apr_re=re.compile(r'এপ্রিল|April')

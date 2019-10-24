@@ -30,7 +30,89 @@ class Meetingminute:
 
     def extract_all(self):
         self.extract_ecnec_project()
+        self.extract_ministry_project()
         #pprint(self.restul_list)
+
+    def extract_ministry_project(self):
+        pprint(self.ministry_cluster_data)
+        project_list=[]
+        data_dict={}
+        planning_div=''
+        ministry=''
+        agency=''
+        project_name=''
+        start_date=''
+        end_date=''
+        cost=''
+        cost_unit=''
+        flag=0
+        for key,value in self.ministry_cluster_data.items():
+            print(key,value)
+            if(not mmrules.div_start.search(value)==None):
+                mo=mmrules.div_start.search(value)
+                div=mo.group(0)
+                planning_div=value[:value.find(div)]
+                print(planning_div)
+                flag=1
+            elif(flag==1 and not mmrules.project_start.search(value)==None):
+                print('start')
+                flag=2
+                continue
+            elif(flag==2):
+                project_name=value
+                print('p_name:',project_name)
+                flag=3
+            elif(flag==3 and not mmrules.year_re.search(value)==None):
+                start_date=value
+                print(start_date)
+            elif(flag==3 and not mmrules.date_mid_point.search(value)==None):
+                flag=4
+            elif(flag==4 and not mmrules.year_re.search(value)==None):
+                end_date=value
+                print(end_date)
+            elif(flag==4 and not mmrules.ministry.search(value)==None):
+                idx=value.find('/')
+                ministry=value[:idx]
+                agency=value[idx+1:]
+                print(ministry,agency)
+                flag=5
+            elif(flag==5 and not mmrules.min_estimated_cost.search(value)==None):
+                mo1=mmrules.amount_re.search(value)
+                cost=mo1.group(0)
+                print(cost)
+                idx1=value.find(cost)+len(cost)
+                cost_unit=value[idx1:]
+                print(cost,cost_unit)
+                flag=5
+            elif(flag==5 and not mmrules.date_format_re.search(value)==None):
+                data_dict = {"cost_unit": cost_unit,
+                             "end_date": end_date,
+                             "gob_cost": '',
+                             "is_ministry_project": 1,
+                             "own_fund": '',
+                             "own_fund_type": '',
+                             "pa_cost": '',
+                             "pa_cost_name": '',
+                             "planning_division": planning_div,
+                             "project_activity": '',
+                             "project_benefit": '',
+                             "project_cost": cost,
+                             "project_id": '',
+                             "project_name": project_name,
+                             "sponsoring_ministry": ministry,
+                             "executing_agency":agency,
+                             "start_date": start_date,
+                             "approval_date":value
+                             }
+                #pprint(data_dict)
+                project_list.append(data_dict)
+                self.restul_list.append(data_dict)
+                data_dict={}
+                flag=1
+        pprint(project_list)
+
+
+
 
     def extract_ecnec_project(self):
         #pprint(self.cluster_data_list)
@@ -241,8 +323,8 @@ class Meetingminute:
             if(cost_unit=='' or len(cost_unit)<3):
                 cost_unit='কোটি টাকা'
             list_formate_data = {'project_id':project_id,'project_name': project_name, 'project_cost': total_cost, 'cost_unit': cost_unit,
-                         'gob_cost': gob_cost, 'pa_cost': pa_cost, 'pa_cost_name': pa_fund_type, 'own_fund': own_fund,
-                         'own_fund_type': own_fund_type, 'start_date': start_date, 'end_date': end_date,'is_ministry_project':0}
+                         'gob_cost': gob_cost, 'pa_cost': pa_cost, 'pa_cost_name': pa_fund_type, 'own_fund': own_fund,'executing_agency':'',
+                         'own_fund_type': own_fund_type,'approval_date':'', 'start_date': start_date, 'end_date': end_date,'is_ministry_project':0}
             # pprint(data_dict)
 
             data_dict = {'approved_project_' + str(project_id): pd.Series(
