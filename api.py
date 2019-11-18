@@ -133,8 +133,6 @@ def start():
 @app.route('/data_extraction',methods=['POST'])
 def extraction_():
     try:
-        #db.create()
-        print('Hit')
         data=request.get_json(force=True)
         project_name = data['project_name']
         project_id = data['project_id']

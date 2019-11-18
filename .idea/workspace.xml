@@ -2,13 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f1adb5a-0ed3-4cec-9499-dd64f640be87" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dataExtraction/masterdata/division.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataExtraction/masterdata/ministry.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/mapping.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataExtraction" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractmeetingminute/meetingminutedetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractmeetingminute/meetingminutedetails.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/filereader/docreader.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/filereader/docreader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataExtraction/getmetadata/mergedata.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/getmetadata/mergedata.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataExtraction/resultanalysis/converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/resultanalysis/dateconverter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/dateconverter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/resultanalysis/stmconverter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/stmconverter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataExtraction/rulesfile/convertingrules.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/rulesfile/convertingrules.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataExtraction/rulesfile/meetingminuterules.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/rulesfile/meetingminuterules.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/tracking/filterproject.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/tracking/filterproject.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +47,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$USER_HOME$/jachai/project-jachai" />
+    <property name="last_opened_file_path" value="$USER_HOME$/FB Crawling/Ultimate-Facebook-Scraper" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -140,7 +152,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="projectactivity" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="mergedata" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DataExtractionModule" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -148,11 +160,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataExtraction/getmetadata" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectactivity.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataExtraction/getmetadata/mergedata.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -182,7 +194,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="stmconverter" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DataExtractionModule" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -190,11 +202,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataExtraction/resultanalysis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataExtraction/resultanalysis/stmconverter.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/setup.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -207,17 +219,17 @@
       <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.api" />
       <item itemvalue="Python.clusteringsummarydata" />
-      <item itemvalue="Python.projectactivity" />
-      <item itemvalue="Python.stmconverter" />
       <item itemvalue="Python.projectlocationtableformat" />
+      <item itemvalue="Python.setup" />
+      <item itemvalue="Python.mergedata" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.api" />
+        <item itemvalue="Python.mergedata" />
+        <item itemvalue="Python.setup" />
         <item itemvalue="Python.projectlocationtableformat" />
         <item itemvalue="Python.clusteringsummarydata" />
-        <item itemvalue="Python.stmconverter" />
-        <item itemvalue="Python.projectactivity" />
       </list>
     </recent_temporary>
   </component>
@@ -263,6 +275,11 @@
           <url>file://$PROJECT_DIR$/setup.py</url>
           <line>59</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/dataExtraction/extractionstrategy/extractmeetingminute/meetingminutedetails.py</url>
+          <line>248</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
