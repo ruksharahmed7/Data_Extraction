@@ -29,6 +29,7 @@ class Meetingminute:
         self.restul_list.clear()
 
     def extract_all(self):
+        self.restul_list=[]
         self.extract_ecnec_project()
         self.extract_ministry_project()
         #pprint(self.restul_list)
@@ -253,18 +254,7 @@ class Meetingminute:
             end_date=''
             confidence_level=1
             print(data)
-            start=data.find('“')
-            end=0
-            #print(start)
-            if(start==-1):
-                start = data.find('"')
-                end=data[start+1:].find('"')
-                print(start,end)
-                project_name = data[start + 1:end+start+1]
-            else:
-                end=data[start+1:].find('”')
-                print(start, end)
-                project_name=data[start+1:end+start+1]
+            project_name,end=self.extract_project_name(data)
             print("project:",project_name)
             other_data=data[end+2:]
             tokenizer = TokenizeSentence('bengali')
@@ -324,7 +314,7 @@ class Meetingminute:
                 cost_unit='কোটি টাকা'
             list_formate_data = {'project_id':project_id,'project_name': project_name, 'project_cost': total_cost, 'cost_unit': cost_unit,
                          'gob_cost': gob_cost, 'pa_cost': pa_cost, 'pa_cost_name': pa_fund_type, 'own_fund': own_fund,'executing_agency':'',
-                         'own_fund_type': own_fund_type,'approval_date':'', 'start_date': start_date, 'end_date': end_date,'is_ministry_project':0}
+                         'own_fund_type': own_fund_type,'approval_date':self.get_approval_date(), 'start_date': start_date, 'end_date': end_date,'is_ministry_project':0}
             # pprint(data_dict)
 
             data_dict = {'approved_project_' + str(project_id): pd.Series(
@@ -336,11 +326,43 @@ class Meetingminute:
         except Exception as e:
             print("type error: " + str(e))
             print(traceback.format_exc())
+            list_formate_data = {'project_id': project_id, 'project_name': project_name, 'project_cost': total_cost,
+                                 'cost_unit': cost_unit,
+                                 'gob_cost': gob_cost, 'pa_cost': pa_cost, 'pa_cost_name': pa_fund_type,
+                                 'own_fund': own_fund, 'executing_agency': '',
+                                 'own_fund_type': own_fund_type, 'approval_date': '', 'start_date': start_date,
+                                 'end_date': end_date, 'is_ministry_project': 0}
+
             return data_dict,list_formate_data
 
 
 
-
+    def extract_project_name(self,data):
+        try:
+            project_name=''
+            start_mo = mmrules.project_name_notation.search(data)
+            start_notation = start_mo.group(0)
+            start_notation_idx = data.find(start_notation)
+            data_crop = data[start_notation_idx + len(start_notation):]
+            end_mo = mmrules.project_name_notation.search(data_crop)
+            end_notation = end_mo.group(0)
+            end_notation_idx = data_crop.find(end_notation)
+            project_name = data_crop[:end_notation_idx]
+            return project_name,end_notation_idx
+        except:
+            start = data.find('“')
+            end = 0
+            # print(start)
+            if (start == -1):
+                start = data.find('"')
+                end = data[start + 1:].find('"')
+                print(start, end)
+                project_name = data[start + 1:end + start + 1]
+            else:
+                end = data[start + 1:].find('”')
+                print(start, end)
+                project_name = data[start + 1:end + start + 1]
+            return project_name,end
 
     def date_extract(self,date_data):
         mo=mmrules.break_re.search(date_data)
@@ -403,7 +425,24 @@ class Meetingminute:
 
 
 
-
+    def get_approval_date(self):
+        try:
+            approval_date=''
+            flag=0
+            for key,value in self.converted_data.items():
+                if(not mmrules.approval_date_start_re.search(value)==None and flag==0):
+                    flag=1
+                elif(flag==1 and not mmrules.date_re.search(value)==None):
+                    mo=mmrules.date_re.search(value)
+                    date=mo.group(0)
+                    idx=value.find(date)
+                    approval_date=value[:idx]
+                    flag=2
+            return approval_date
+        except Exception as e:
+            print("type error: " + str(e))
+            print(traceback.format_exc())
+            return approval_date
 
 
 

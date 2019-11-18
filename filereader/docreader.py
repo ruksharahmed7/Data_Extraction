@@ -126,7 +126,7 @@ def getTableData(filename):
         document = Document(filename)
         # table = document.tables[0]
 
-        table = document.tables[13]
+        #table = document.tables[13]
 
         # Data will be a list of rows represented as dictionaries
         # containing each row's data.

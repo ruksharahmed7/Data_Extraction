@@ -21,6 +21,7 @@ import dataExtraction.extractionstrategy.extractdpp.dppextraction as dppextracti
 import dataExtraction.resultanalysis.filterdppresult as filterdppresult
 import dataExtraction.tracking.filterproject as filter
 import  dataExtraction.resultanalysis.converter as Converter
+import dataExtraction.resultanalysis.mapping as mapping
 
 def classification_model(train_data_list,train_converted_data_dict,test_data):
     #clusteringdpp.summarize_dpp(converted_data_dict)
@@ -58,33 +59,10 @@ def clustering_and_get_merge_dpp(raw_data,converted_data,project_id):
     final_result = object_extraction.get_final_results()
     print('Finally')
     pprint(final_result)
-    '''
-    return_result={}
-    return_result['approval_date']=filtered_final_result['approval_date']
-    return_result['cost_unit']=filtered_final_result['cost_unit']
-    return_result['end_date']=filtered_final_result['end_date']
-    return_result['executing_agency']=filtered_final_result['executing_agency']
-    return_result['gob_cost']=filtered_final_result['gob_cost']
-    return_result['other_cost']=filtered_final_result['other_cost']
-    return_result['own_fund']=filtered_final_result['own_fund']
-    return_result['pa_cost']=filtered_final_result['pa_cost']
-    return_result['planning_division']=filtered_final_result['planning_division']
-    return_result['project_cost']=filtered_final_result['project_cost']
-    return_result['project_id']=filtered_final_result['project_id']
-    return_result['project_name']=filtered_final_result['project_name']
-    return_result['project_name_english']=filtered_final_result['project_name_english']
-    return_result['revised_end_date']=filtered_final_result['revised_end_date']
-    return_result['revised_gob_cost']=filtered_final_result['revised_gob_cost']
-    return_result['revised_other_cost']=filtered_final_result['revised_other_cost']
-    return_result['revised_pa_cost']=filtered_final_result['revised_pa_cost']
-    return_result['revised_project_cost']=filtered_final_result['revised_project_cost']
-    return_result['revised_start_date']=filtered_final_result['revised_start_date']
-    return_result['sponsoring_ministry']=filtered_final_result['sponsoring_ministry']
-    return_result['start_date']=filtered_final_result['start_date']
-    '''
     print('converting start')
     filtered_final_result=Converter.convertAll(filtered_final_result)
     result.append(filtered_final_result)
+    result = mapping.map(result[0])
     json_result = json.dumps(
         result,
         default=lambda df: json.loads(df.to_json()))
@@ -96,6 +74,12 @@ def merge_location(result,location_data):
     if(not location_data==None):
         location_data=pro_location.convert_location(location_data)
         result[0]['project_location_tab']=location_data
+        json_result = json.dumps(
+            result,
+            default=lambda df: json.loads(df.to_json()))
+        return json_result
+    else:
+        result[0]['project_location_tab']={}
         json_result = json.dumps(
             result,
             default=lambda df: json.loads(df.to_json()))
@@ -148,6 +132,7 @@ def get_merge_summary(raw_data, converted_data,project_id,project_name):
         filtered_convert_result = Converter.convertAll_summary(filtered_result[0])
         result=[]
         result.append(filtered_convert_result)
+        result = mapping.map(result[0])
 
         merge_df = json.dumps(
             result,
@@ -175,12 +160,13 @@ def get_merge_meetingminute(raw_data,converted_data,project_id,project_name):
     print("extraction done")
     result_list=mmdetails.get_result()
     print('total project:',len(result_list))
-    #pprint(result_list)
+    pprint(result_list)
     filtered_result=filter.filter_project(result_list,project_name,project_id)
     print("filtered result")
     #pprint(filtered_result)
     if(filtered_result):
         filtered_result=Converter.convertMM(filtered_result[0])
+        filtered_result=mapping.map(filtered_result[0])
     #pprint(mmdetails.get_result())
     json_result = json.dumps(
         filtered_result,

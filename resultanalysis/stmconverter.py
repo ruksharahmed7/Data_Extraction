@@ -47,7 +47,7 @@ def month_convert(txt):
     elif (not rules.july_re.search(txt) == None or txt=='07'):
         return 'July'
     elif (not rules.agu_re.search(txt) == None or txt=='08'):
-        return "August"
+        return 'August'
     elif (not rules.sep_re.search(txt) == None or txt=='09'):
         return 'September'
     elif (not rules.oct_re.search(txt) == None or txt=='10'):
@@ -56,6 +56,32 @@ def month_convert(txt):
         return 'November'
     elif(not rules.dec_re.search(txt)==None or txt=='12'):
         return 'December'
+
+def month_to_mm(txt):
+    if( txt=='January'):
+        return '01'
+    if (txt == 'February'):
+        return '02'
+    if (txt == 'March'):
+        return '03'
+    if (txt == 'April'):
+        return '04'
+    if (txt == 'May'):
+        return '05'
+    if (txt == 'August'):
+        return '06'
+    if (txt == 'July'):
+        return '07'
+    if (txt == 'August'):
+        return '08'
+    if (txt == 'September'):
+        return '09'
+    if (txt == 'October'):
+        return '10'
+    if (txt == 'November'):
+        return '11'
+    if (txt == 'December'):
+        return '12'
 
 def division_convert(planning_division):
     if(not rules.agri_re.search(planning_division)==None):

@@ -11,15 +11,19 @@ from fuzzywuzzy import process
 def filter_project(result_list,project_name,project_id):
     try:
         res_list=[]
-        project_name = processingdata.cleaning_data(project_name)
+        print(project_name)
+        #project_name = processingdata.cleaning_data(project_name)
         idx = 0
         all_projects = {}
         print(len(result_list))
         for result in result_list:
             # print(result)
             p_name = result.get("project_name")
-            p_name_clean = processingdata.cleaning_data(p_name)
-            all_projects[idx] = p_name_clean
+            # try:
+            #     p_name_clean = processingdata.cleaning_data(p_name)
+            # except Exception as e:
+            #     p_name_clean=p_name
+            all_projects[idx] = p_name
             idx += 1
         #pprint(all_projects)
         ratio=[]

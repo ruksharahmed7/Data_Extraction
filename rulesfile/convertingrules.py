@@ -16,11 +16,14 @@ apr_re=re.compile(r'এপ্রিল|April')
 may_re=re.compile(r'মে|May')
 jun_re=re.compile(r'জুন|জুন|June')
 july_re=re.compile(r'জুলাই|July')
-agu_re=re.compile(r'আগষ্ট|August')
+agu_re=re.compile(r'আগষ্ট|August|আগস্ট')
 sep_re=re.compile(r'সেপ্টেম্বর|September')
 oct_re=re.compile(r'অক্টোবর|October')
 nov_re=re.compile(r'নভেম্বর|November')
 dec_re=re.compile(r'ডিসেম্বর|December')
+#approval date converting rules
+date_formate_goal=re.compile(r'\d\d(-)\d\d(-)\d\d\d\d')
+day_re=re.compile(r'(০|১|২|৩|৪|৫|৬|৭|৮|৯)(০|১|২|৩|৪|৫|৬|৭|৮|৯)|(০|১|২|৩|৪|৫|৬|৭|৮|৯)|\d\d|\d')
 
 #planning division convertion
 agri_re=re.compile(r'কৃষি|পানি|পলস্নী|পল্লী|ফসল')

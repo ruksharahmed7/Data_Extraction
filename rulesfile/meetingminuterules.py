@@ -7,6 +7,7 @@ ministry_start_re=re.compile(r'মাননীয়\s*মন্ত্রী(,)?\s*
 
 
 #extraction rules
+project_name_notation=re.compile(r'“|"|”|‘‘|’’')
 approved_re=re.compile(r'অনুমোদন\s*করা\s*হল')
 unapproved_re=re.compile(r'অনুমোদন\s*করা\s*হল\s*না')
 total_gob_re=re.compile(r'সম্পূর্ণ\s*জিওবি\s*অর্থায়নে')
@@ -47,5 +48,7 @@ date_format_re=re.compile(r'(০|১|২|৩|৪|৫|৬|৭|৮|৯|\d)(০|১
 year_re=re.compile(r'\d\d\d\d|(০|১|২|৩|৪|৫|৬|৭|৮|৯|\d)(০|১|২|৩|৪|৫|৬|৭|৮|৯|\d)(০|১|২|৩|৪|৫|৬|৭|৮|৯|\d)(০|১|২|৩|৪|৫|৬|৭|৮|৯|\d)')
 
 
-
+#approval date
+approval_date_start_re=re.compile(r'এনইসি\s*(-)?একনেক\s*(ও)?\s*সমন্বয়\s*অনুবিভাগ')
+date_re=re.compile(r'তারিখ')
 

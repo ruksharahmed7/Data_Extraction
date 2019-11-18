@@ -1,6 +1,6 @@
 from .costconverter import convert as costConverter
-from .dateconverter import converter as dateconverter
-from .dateconverter import dateconverter as approvaldateconverter
+from .dateconverter import date_converter as dateconverter
+from .dateconverter import approval_date_convert as approvaldateconverter
 from .stmconverter import division_convert as div_convert
 
 def convertAll(filtered_final_result):
@@ -77,6 +77,9 @@ def convertMM(result_dict):
     result_dict['end_month'], result_dict['end_year'] = dateconverter(
         result_dict['end_date'])
     # for key,value in filtered_final_result.items():
+    if result_dict['approval_date']:
+        print('approval_date')
+        result_dict['approval_date'] = approvaldateconverter(result_dict['approval_date'])
     if 'gob_cost' in result_dict:
         result_dict['gob_cost_lakh'] = costConverter(result_dict['gob_cost'],
                                                                result_dict['cost_unit'])
@@ -88,8 +91,6 @@ def convertMM(result_dict):
                                                                result_dict['cost_unit'])
     if result_dict["planning_division"]:
         result_dict['planning_division'] = div_convert(result_dict["planning_division"])
-    if result_dict['approval_date']:
-        result_dict['approval_date'] = approvaldateconverter(result_dict['approval_date'])
 
     return [result_dict]
 
