@@ -46,49 +46,56 @@ class Meetingminute:
         end_date=''
         cost=''
         cost_unit=''
-        flag=0
+        flag=1
         for key,value in self.ministry_cluster_data.items():
             print(key,value)
-            if(not mmrules.div_start.search(value)==None):
+            print(flag)
+            if(flag==1 and not mmrules.div_start.search(value)==None):
                 mo=mmrules.div_start.search(value)
                 div=mo.group(0)
                 planning_div=value[:value.find(div)]
                 print(planning_div)
                 flag=1
-            elif(flag==1 and not mmrules.project_start.search(value)==None):
+            elif(flag==1 and not mmrules.project_start.search(value)==None and len(value)<5):
                 print('start')
                 flag=2
                 continue
             elif(flag==2):
                 project_name=value
+                project_name_key=key
                 print('p_name:',project_name)
                 flag=3
             elif(flag==3 and not mmrules.year_re.search(value)==None):
                 start_date=value
                 print(start_date)
-            elif(flag==3 and not mmrules.date_mid_point.search(value)==None):
                 flag=4
+            # elif(flag==3 and not mmrules.date_mid_point.search(value)==None):
+            #     flag=4
             elif(flag==4 and not mmrules.year_re.search(value)==None):
                 end_date=value
                 print(end_date)
+                flag=4
             elif(flag==4 and not mmrules.ministry.search(value)==None):
+                print("ministry")
                 idx=value.find('/')
                 ministry=value[:idx]
                 agency=value[idx+1:]
                 print(ministry,agency)
                 flag=5
             elif(flag==5 and not mmrules.min_estimated_cost.search(value)==None):
+                print('cost')
                 mo1=mmrules.amount_re.search(value)
                 cost=mo1.group(0)
                 print(cost)
                 idx1=value.find(cost)+len(cost)
                 cost_unit=value[idx1:]
                 print(cost,cost_unit)
-                flag=5
-            elif(flag==5 and not mmrules.date_format_re.search(value)==None):
+                flag=6
+                continue
+            elif(flag==6):
                 data_dict = {"cost_unit": cost_unit,
                              "end_date": end_date,
-                             "gob_cost": '',
+                             "gob_cost": cost,
                              "is_ministry_project": 1,
                              "own_fund": '',
                              "own_fund_type": '',
@@ -100,6 +107,7 @@ class Meetingminute:
                              "project_cost": cost,
                              "project_id": '',
                              "project_name": project_name,
+                             "project_name_raw":self.raw_data[project_name_key],
                              "sponsoring_ministry": ministry,
                              "executing_agency":agency,
                              "start_date": start_date,
@@ -238,15 +246,15 @@ class Meetingminute:
         try:
             if (not mmrules.unapproved_re.search(data) == None):
                 return None,None
-            data_dict={}
-            list_formate_data={}
+            data_dict = {}
+            list_formate_data = {}
             project_id=''
             project_name=''
             total_cost=''
             gob_cost=''
             cost_unit=''
             pa_cost=''
-            pa_fund_type=''
+            pa_fund_type = ''
             own_fund=''
             own_fund_type=''
 
@@ -255,7 +263,10 @@ class Meetingminute:
             confidence_level=1
             print(data)
             project_name,end=self.extract_project_name(data)
+            project_name_raw,end_raw=self.extract_project_name(self.raw_data[key])
             print("project:",project_name)
+
+            ###Cost extraction###
             other_data=data[end+2:]
             tokenizer = TokenizeSentence('bengali')
             bengali_text_tokenize = tokenizer.tokenize(data[end+2:])
@@ -263,6 +274,7 @@ class Meetingminute:
             flag=0
 
             for i in range(len(bengali_text_tokenize)):
+                #print(bengali_text_tokenize[i])
                 if((bengali_text_tokenize[i]=='সম্পূর্ণ' or bengali_text_tokenize[i]=='সম্পর্ণ') and flag==0):
                     flag=1
                     continue
@@ -277,15 +289,21 @@ class Meetingminute:
                     total_cost = bengali_text_tokenize[i + 1] + bengali_text_tokenize[i + 2] + bengali_text_tokenize[i + 3]
                     cost_unit = bengali_text_tokenize[i + 4] + ' ' + bengali_text_tokenize[i + 5]
                     flag=3
-            idx1=other_data.find('[')
-            idx2=other_data.find(']')
-            if(idx2==-1):
-                idx2=other_data.find('প্রাক্কলিত')
-            if(idx1>0 and idx2>0):
-                gob_cost,pa_cost,pa_fund_type,own_fund,own_fund_type=self.other_cost(other_data[idx1+1:idx2])
+            ##Other cost extraction##
+            # idx1=other_data.find('[')
+            # idx2=other_data.find(']')
+            # if(idx2==-1):
+            #     idx2=other_data.find('প্রাক্কলিত')
+            # if(idx1>0 and idx2>0):
+            #     gob_cost,pa_cost,pa_fund_type,own_fund,own_fund_type=self.other_cost(other_data[idx1+1:idx2])
+            idx=other_data.find(total_cost)
+            other_cost_data=other_data[idx+len(total_cost)+len(cost_unit):]
+            print(other_cost_data)
+            gob_cost,pa_cost,own_fund=self.other_cost(other_cost_data)
+            print(gob_cost,pa_cost,own_fund)
 
-            print(other_data)
 
+            ###End cost Extraction###
             track1=0
             track2=0
             s=0
@@ -312,7 +330,7 @@ class Meetingminute:
                 gob_cost=total_cost
             if(cost_unit=='' or len(cost_unit)<3):
                 cost_unit='কোটি টাকা'
-            list_formate_data = {'project_id':project_id,'project_name': project_name, 'project_cost': total_cost, 'cost_unit': cost_unit,
+            list_formate_data = {'project_id':project_id,'project_name': project_name,'project_name_raw':project_name_raw, 'project_cost': total_cost, 'cost_unit': cost_unit,
                          'gob_cost': gob_cost, 'pa_cost': pa_cost, 'pa_cost_name': pa_fund_type, 'own_fund': own_fund,'executing_agency':'',
                          'own_fund_type': own_fund_type,'approval_date':self.get_approval_date(), 'start_date': start_date, 'end_date': end_date,'is_ministry_project':0}
             # pprint(data_dict)
@@ -326,7 +344,7 @@ class Meetingminute:
         except Exception as e:
             print("type error: " + str(e))
             print(traceback.format_exc())
-            list_formate_data = {'project_id': project_id, 'project_name': project_name, 'project_cost': total_cost,
+            list_formate_data = {'project_id': project_id, 'project_name': project_name,'project_name_raw':project_name_raw, 'project_cost': total_cost,
                                  'cost_unit': cost_unit,
                                  'gob_cost': gob_cost, 'pa_cost': pa_cost, 'pa_cost_name': pa_fund_type,
                                  'own_fund': own_fund, 'executing_agency': '',
@@ -374,44 +392,42 @@ class Meetingminute:
         return start_date,end_date
 
     def other_cost(self,str):
-        #print(str)
-        #idx=str.find('এবং')
-        #str1=str[:idx]
-        #str2=str[idx+3:]
-        #mo1=mmrules.amount_re.search(str1)
-        #mo2=mmrules.amount_re.search(str2)
-        data=[]
-        idx1=str.find(',')
-        if(idx1!=-1):
-            data.append(str[:idx1])
-            str=str[idx1+1:]
-        idx2 = str.find('এবং')
-        data.append(str[:idx2])
-        data.append(str[idx2+3:])
+        # data=[]
+        # idx1=str.find(',')
+        # if(idx1!=-1):
+        #     data.append(str[:idx1])
+        #     str=str[idx1+1:]
+        # idx2 = str.find('এবং')
+        # data.append(str[:idx2])
+        # data.append(str[idx2+3:])
         #pprint(data)
         gob_cost=''
         pa_cost=''
         pa_fund_type=''
         own_fund=''
         own_fund_type=''
-        for val in data:
-            if(not (mmrules.gob_re.search(val)==None)):
-                mo=mmrules.amount_re.search(val)
-                gob_cost=mo.group(0)
-            if(not (mmrules.pa_re.search(val)==None)):
-                mo = mmrules.amount_re.search(val)
-                pa_cost = mo.group(0)
-                start = val.find('(')
-                end = val.find(')')
-                if(start!=-1 and end!=-1):
-                    pa_fund_type = val[start + 1:end]
-            if (not (mmrules.own_fund_re.search(val) == None)):
-                mo = mmrules.amount_re.search(val)
+        last_idx=-1
+        # for val in data:
+        if(not (mmrules.gob_re.search(str)==None)):
+            mo1 = mmrules.gob_re.search(str)
+            gob = mo1.group(0)
+            idx = str.find(gob)
+            mo2 = mmrules.amount_re.search(str[idx:])
+            gob_cost=mo2.group(0)
+            idx=str.find(gob_cost)
+            last_idx=idx+len(gob_cost)
+        if(not (mmrules.pa_re.search(str)==None)):
+            mo1 = mmrules.pa_re.search(str)
+            pa=mo1.group(0)
+            idx=str.find(pa)
+            mo2=mmrules.amount_re.search(str[idx:])
+            pa_cost = mo2.group(0)
+            idx=str.find(pa_cost)
+            last_idx=idx+len(pa_cost)
+        if (not mmrules.amount_re.search(str[last_idx:])==None):
+                mo = mmrules.amount_re.search(str[last_idx:])
                 own_fund = mo.group(0)
-                start=val.find('(')
-                end=val.find(')')
-                own_fund_type=val[start+1:end]
-        return gob_cost,pa_cost,pa_fund_type,own_fund,own_fund_type
+        return gob_cost,pa_cost,own_fund
 
 
 

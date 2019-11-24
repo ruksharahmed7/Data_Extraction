@@ -70,11 +70,26 @@ def date_convert_1(date):
 def approval_date_convert(date):
     print("converting approval date",date)
     d=dateconverter(date)
+    d=date_fit(d)
     print('approvalDate:',d)
     if(not rules.date_formate_goal.match(d)):
         d=date_convert_1(date)
+        return d
     return d
 
+def date_fit(Date):
+    try:
+        date=Date.split('-')
+        print(date)
+        if(not len(date[0])==2):
+            date[0]='0'+date[0]
+        if (not len(date[1]) == 2):
+            date[1] = '0' + date[1]
+        if (not len(date[2]) == 4):
+            date[2] = '20' + date[2]
+        return date[0]+'-'+date[1]+'-'+date[2]
+    except:
+        return Date
 
 
 

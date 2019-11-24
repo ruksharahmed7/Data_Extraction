@@ -6,7 +6,7 @@ import time
 from pprint import pprint
 import dataExtraction.tracking.trackingprojectid as tracking
 
-def summary_extract(clustered_data):
+def summary_extract(clustered_data,raw_data):
     result_list=[]
     dict_data={}
     project_id=''
@@ -36,7 +36,7 @@ def summary_extract(clustered_data):
                 project_name_save=project_name
                 flag = 1
             else:
-                result_dict = {"project_id": '', "project_name": '', "approval_date": '', "sponsoring_ministry": '',
+                result_dict = {"project_id": '', "project_name": '',"project_name_raw":'', "approval_date": '', "sponsoring_ministry": '',
                                "executing_agency": '', "planning_division": '', "cost_unit": '', "project_cost": '',
                                "project_cost_lakh": 0.00, "gob_cost": '', "gob_cost_lakh": 0.00, "pa_cost": '',
                                "pa_cost_lakh": 0.00, "own_fund": '', "own_fund_lakh": 0.00, "start_date": '',
@@ -146,10 +146,10 @@ def extract_other(data_list):
         print("type error: " + str(e))
         print(traceback.format_exc())
 
-def extract_brief_summary(operational_data):
+def extract_brief_summary(operational_data,raw_data):
     try:
         #print("project:")
-        result_dict={"project_id":'',"project_name":'',"approval_date":'',"sponsoring_ministry":'',"executing_agency":'',"planning_division":'',"cost_unit":'',"project_cost":'',"project_cost_lakh":0.00,"gob_cost":'',"gob_cost_lakh":0.00,"pa_cost":'',"pa_cost_lakh":0.00,"own_fund":'',"own_fund_lakh":0.00,"start_date":'',"start_month":'',"start_year":'',"end_date":'',"end_month":'',"end_year":'',"project_activity":'',"project_purpose":'',"project_location":[]}
+        result_dict={"project_id":'',"project_name":'','project_name_raw':'',"approval_date":'',"sponsoring_ministry":'',"executing_agency":'',"planning_division":'',"cost_unit":'',"project_cost":'',"project_cost_lakh":0.00,"gob_cost":'',"gob_cost_lakh":0.00,"pa_cost":'',"pa_cost_lakh":0.00,"own_fund":'',"own_fund_lakh":0.00,"start_date":'',"start_month":'',"start_year":'',"end_date":'',"end_month":'',"end_year":'',"project_activity":'',"project_purpose":'',"project_location":[]}
         project_purpose=''
         project_location=[]
         project_activity=''
@@ -172,6 +172,7 @@ def extract_brief_summary(operational_data):
                 continue
             elif(flag=='p_name'):
                 result_dict['project_name']=value
+                result_dict['project_name_raw']=raw_data[key]
                 flag=''
             elif(rules.ministy_re.match(value)):
                 flag='ministry'
