@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f1adb5a-0ed3-4cec-9499-dd64f640be87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dataExtraction/masterdata/division.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataExtraction/masterdata/ministry.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/mapping.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataExtraction" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractmeetingminute/meetingminutedetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractmeetingminute/meetingminutedetails.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/filereader/docreader.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/filereader/docreader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/getmetadata/mergedata.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/getmetadata/mergedata.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/resultanalysis/converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/converter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/resultanalysis/dateconverter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/dateconverter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/resultanalysis/stmconverter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/resultanalysis/stmconverter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/rulesfile/convertingrules.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/rulesfile/convertingrules.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/rulesfile/meetingminuterules.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/rulesfile/meetingminuterules.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction/tracking/filterproject.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/tracking/filterproject.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +21,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/dataExtraction" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1OleQH01qR5a1VyU5jWvzoDRvYe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -47,8 +31,8 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$USER_HOME$/FB Crawling/Ultimate-Facebook-Scraper" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$USER_HOME$/FB Crawling/fbcrawl" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -278,7 +262,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/dataExtraction/extractionstrategy/extractmeetingminute/meetingminutedetails.py</url>
-          <line>248</line>
+          <line>256</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
