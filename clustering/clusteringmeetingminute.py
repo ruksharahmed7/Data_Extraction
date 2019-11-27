@@ -5,6 +5,7 @@ from pprint import pprint
 
 def ministry_project_clustering(data_dict):
     try:
+        print('clustering ministry project data')
         cluster_data={}
         cluster_data_list={}
         flag=0
@@ -31,12 +32,14 @@ def mm_clustering(data_dict):
     next_key = 0
     next_value = ''
     flag=0
+    count=1
     for key,value in sorted(data_dict.items()):
         print(key,value)
         if(not rules.start_re.search(value)==None and flag==0 ):
             print('first')
             cluster_data[key]=value
             flag=11
+            count = 1
         elif(flag==11 and not rules.catch_re.search(value)==None):
             cluster_data[key]=value
             # cluster_data[prev_key] = prev_value
@@ -46,20 +49,26 @@ def mm_clustering(data_dict):
             if(len(value)>200):
                 flag=5
             continue
-        elif(flag==11):
+        elif(flag==11 ):
             cluster_data[key]=value
+            count+=1
             # next_key=key
             # next_value=value
         elif(flag==12):
-            print('sdfhsdjfj')
+            print('Take')
             cluster_data[key]=value
             flag=5
+            if (count > 6):
+                clustered_data_list.append(cluster_data)
+                cluster_data = {}
+                flag = 0
         elif (not (rules.decision_re.search(value) == None) and flag==5):
             flag=1
             cluster_data[key] = value
-            print('found')
+            print('found decesion')
             continue
         elif(flag==1 and not rules.approved_re.search(value)==None):
+            print('done')
             cluster_data[key]=value
             clustered_data_list.append(cluster_data)
             cluster_data = {}

@@ -1,4 +1,5 @@
 import dataExtraction.rulesfile.meetingminuterules as mmrules
+import dataExtraction.rulesfile.rules as dpprules
 import dataExtraction.datapreprocessing.processingdata as getcleandata
 import dataExtraction.tracking.trackingprojectid as tracking
 import pandas as pd
@@ -35,90 +36,95 @@ class Meetingminute:
         #pprint(self.restul_list)
 
     def extract_ministry_project(self):
-        pprint(self.ministry_cluster_data)
-        project_list=[]
-        data_dict={}
-        planning_div=''
-        ministry=''
-        agency=''
-        project_name=''
-        start_date=''
-        end_date=''
-        cost=''
-        cost_unit=''
-        flag=1
-        for key,value in self.ministry_cluster_data.items():
-            print(key,value)
-            print(flag)
-            if(flag==1 and not mmrules.div_start.search(value)==None):
-                mo=mmrules.div_start.search(value)
-                div=mo.group(0)
-                planning_div=value[:value.find(div)]
-                print(planning_div)
-                flag=1
-            elif(flag==1 and not mmrules.project_start.search(value)==None and len(value)<5):
-                print('start')
-                flag=2
-                continue
-            elif(flag==2):
-                project_name=value
-                project_name_key=key
-                print('p_name:',project_name)
-                flag=3
-            elif(flag==3 and not mmrules.year_re.search(value)==None):
-                start_date=value
-                print(start_date)
-                flag=4
-            # elif(flag==3 and not mmrules.date_mid_point.search(value)==None):
-            #     flag=4
-            elif(flag==4 and not mmrules.year_re.search(value)==None):
-                end_date=value
-                print(end_date)
-                flag=4
-            elif(flag==4 and not mmrules.ministry.search(value)==None):
-                print("ministry")
-                idx=value.find('/')
-                ministry=value[:idx]
-                agency=value[idx+1:]
-                print(ministry,agency)
-                flag=5
-            elif(flag==5 and not mmrules.min_estimated_cost.search(value)==None):
-                print('cost')
-                mo1=mmrules.amount_re.search(value)
-                cost=mo1.group(0)
-                print(cost)
-                idx1=value.find(cost)+len(cost)
-                cost_unit=value[idx1:]
-                print(cost,cost_unit)
-                flag=6
-                continue
-            elif(flag==6):
-                data_dict = {"cost_unit": cost_unit,
-                             "end_date": end_date,
-                             "gob_cost": cost,
-                             "is_ministry_project": 1,
-                             "own_fund": '',
-                             "own_fund_type": '',
-                             "pa_cost": '',
-                             "pa_cost_name": '',
-                             "planning_division": planning_div,
-                             "project_activity": '',
-                             "project_benefit": '',
-                             "project_cost": cost,
-                             "project_id": '',
-                             "project_name": project_name,
-                             "project_name_raw":self.raw_data[project_name_key],
-                             "sponsoring_ministry": ministry,
-                             "executing_agency":agency,
-                             "start_date": start_date,
-                             "approval_date":value
-                             }
-                #pprint(data_dict)
-                project_list.append(data_dict)
-                self.restul_list.append(data_dict)
-                data_dict={}
-                flag=1
-        pprint(project_list)
+        try:
+            print("ministry project extraction start")
+            pprint(self.ministry_cluster_data)
+            project_list=[]
+            data_dict={}
+            planning_div=''
+            ministry=''
+            agency=''
+            project_name=''
+            start_date=''
+            end_date=''
+            cost=''
+            cost_unit=''
+            flag=1
+            for key,value in self.ministry_cluster_data.items():
+                print(key,value)
+                print(flag)
+                if(flag==1 and not mmrules.div_start.search(value)==None):
+                    mo=mmrules.div_start.search(value)
+                    div=mo.group(0)
+                    planning_div=value[:value.find(div)]
+                    print(planning_div)
+                    flag=1
+                elif(flag==1 and not mmrules.project_start.search(value)==None and len(value)<5):
+                    print('start')
+                    flag=2
+                    continue
+                elif(flag==2):
+                    project_name=value
+                    project_name_key=key
+                    print('p_name:',project_name)
+                    flag=3
+                elif(flag==3 and not mmrules.year_re.search(value)==None):
+                    start_date=value
+                    print(start_date)
+                    flag=4
+                # elif(flag==3 and not mmrules.date_mid_point.search(value)==None):
+                #     flag=4
+                elif(flag==4 and not mmrules.year_re.search(value)==None):
+                    end_date=value
+                    print(end_date)
+                    flag=4
+                elif(flag==4 and not mmrules.ministry.search(value)==None):
+                    print("ministry")
+                    idx=value.find('/')
+                    ministry=value[:idx]
+                    agency=value[idx+1:]
+                    print(ministry,agency)
+                    flag=5
+                elif(flag==5 and not mmrules.min_estimated_cost.search(value)==None):
+                    print('cost')
+                    mo1=mmrules.amount_re.search(value)
+                    cost=mo1.group(0)
+                    print(cost)
+                    idx1=value.find(cost)+len(cost)
+                    cost_unit=value[idx1:]
+                    print(cost,cost_unit)
+                    continue
+                elif(flag==5 and not mmrules.date_format_re.search(value)==None):
+                    data_dict = {"cost_unit": cost_unit,
+                                 "end_date": end_date,
+                                 "gob_cost": cost,
+                                 "is_ministry_project": 1,
+                                 "own_fund": '',
+                                 "own_fund_type": '',
+                                 "pa_cost": '',
+                                 "pa_cost_name": '',
+                                 "planning_division": planning_div,
+                                 "project_activity": '',
+                                 "project_benefit": '',
+                                 'project_purpose':'',
+                                 "project_cost": cost,
+                                 "project_id": '',
+                                 "project_name": project_name,
+                                 "project_name_raw":self.raw_data[project_name_key],
+                                 "sponsoring_ministry": ministry,
+                                 "executing_agency":agency,
+                                 "start_date": start_date,
+                                 "approval_date":value
+                                 }
+                    #pprint(data_dict)
+                    project_list.append(data_dict)
+                    self.restul_list.append(data_dict)
+                    data_dict={}
+                    flag=1
+            pprint(project_list)
+        except Exception as e:
+            print("type error: " + str(e))
+            print(traceback.format_exc())
 
 
 
@@ -152,12 +158,15 @@ class Meetingminute:
                     temp_data_dict=self.extract_other(clustered_data[prev_key])
                 else:
                     prev_key=key
-
+        if(not self.restul_list):
+            print("other format")
+            for clustered_data in self.cluster_data_list:
+                self.restul_list.append(self.extract_second_format(clustered_data))
                 #pprint(self.result)
 
     def extract_other(self,value):
         try:
-            data_dict={'sponsoring_ministry':'','planning_division':'','project_activity':'','project_benefit':''}
+            data_dict={'sponsoring_ministry':'','planning_division':'','project_activity':'','project_benefit':'','project_purpose':''}
             pprint(value)
             mo1=mmrules.min_start_re.search(value)
             if(not mo1):
@@ -460,6 +469,110 @@ class Meetingminute:
             print(traceback.format_exc())
             return approval_date
 
+
+    def extract_second_format(self,data_dict):
+        result_dict={'project_id':'','project_name': '','project_name_raw':'', 'project_cost': '', 'cost_unit': '',
+                         'gob_cost': '', 'pa_cost': '', 'pa_cost_name': '', 'own_fund': '','executing_agency':'',
+                         'own_fund_type': '','approval_date':self.get_approval_date(), 'start_date': '', 'end_date': '',
+                         'is_ministry_project':0,'sponsoring_ministry':'','planning_division':'','project_activity':'',
+                          'project_benefit':'','project_purpose':''}
+        project_name=''
+        project_name_raw=''
+        total_cost=''
+        cost_unit=''
+        gob_cost=''
+        pa_cost=''
+        own_fund=''
+        ministry=''
+        planning=''
+        start_date=''
+        end_date=''
+        try:
+            flag='none'
+            for key,value in data_dict.items():
+                if(not mmrules.start_re.search(value)==None):
+                    flag='p_name'
+                    continue
+                elif (not mmrules.project_purpose_re.search(value) == None):
+                    mo = mmrules.project_purpose_re.search(value)
+                    start = mo.group(0)
+                    start_idx = len(start) + 2
+                    result_dict['project_purpose'] = value[start_idx:]
+                elif (not mmrules.project_activity_re.search(value) == None):
+                    mo = mmrules.project_activity_re.search(value)
+                    start = mo.group(0)
+                    start_idx = len(start) + 2
+                    result_dict['project_activity'] = value[start_idx:]
+                elif(not mmrules.planning_div_start_re.search(value)==None):
+                    mo1=mmrules.planning_div_start_re.search(value)
+                    mo2=mmrules.planning_div_end_re.search(value)
+                    start_div=mo1.group(0)
+                    end_div=mo2.group(0)
+                    idx_s=value.find(start_div)+len(start_div)
+                    idx_e=value.find(end_div)
+                    result_dict['planning_division']=value[idx_s:idx_e]
+                    continue
+                elif(not dpprules.ministy_re.search(value)==None):
+                    flag='m_name'
+                    continue
+                elif (not dpprules.agency_re.search(value) == None):
+                    flag = 'a_name'
+                    continue
+                elif (not dpprules.estimated_cost_re.search(value) == None):
+                    flag = 'cost'
+                    if('(' in value):
+                        idx1=value.find('(')
+                        idx2=value.find(')')
+                        result_dict['cost_unit']=value[idx1+1:idx2]
+                    continue
+                elif(not dpprules.total_re.search(value)==None):
+                    flag='total'
+                    continue
+                elif (not dpprules.gob_cost_re.search(value) == None):
+                    flag = 'gob'
+                    continue
+                elif (not dpprules.pa_cost_re.search(value) == None):
+                    flag = 'pa'
+                    continue
+                elif (not dpprules.own_fund_re.search(value) == None):
+                    flag = 'own'
+                    continue
+                elif (not dpprules.date_re.search(value) == None):
+                    flag = 'date'
+                    continue
+                elif(not dpprules.start_date_re.search(value)==None):
+                    flag='s_date'
+                    continue
+                elif (not dpprules.end_date_re.search(value) == None):
+                    flag = 'e_date'
+                    continue
+                elif(flag=='p_name'):
+                    result_dict['project_name']=value
+                    result_dict['project_name_raw']=self.raw_data[key]
+                elif(flag=='m_name'):
+                    result_dict['sponsoring_ministry']=value
+                elif (flag == 'a_name'):
+                    result_dict['executing_agency'] = value
+                elif(flag=='total' and not mmrules.amount_re.search(value)==None):
+                    result_dict['project_cost']=value
+                elif (flag == 'gob' and not mmrules.amount_re.search(value) == None):
+                    result_dict['gob_cost'] = value
+                elif (flag == 'pa' and not mmrules.amount_re.search(value) == None):
+                    result_dict['pa_cost'] = value
+                elif (flag == 'own' and not mmrules.amount_re.search(value) == None):
+                    result_dict['own_fund'] = value
+                elif (flag == 's_date' and not mmrules.year_re.search(value)==None):
+                    result_dict['start_date'] = value
+                elif (flag == 'e_date' and not mmrules.year_re.search(value)==None):
+                    result_dict['end_date'] = value
+                    flag=''
+
+            pprint(result_dict)
+            return result_dict
+        except Exception as e:
+            print("type error: " + str(e))
+            print(traceback.format_exc())
+            return result_dict
 
 
 

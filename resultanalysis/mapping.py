@@ -10,6 +10,10 @@ def map(result_dict):
         division_idx=-1
         #print(result_dict['sponsoring_ministry'])
         ministry_division=result_dict['sponsoring_ministry']
+        if(ministry_division==""):
+            result_dict['sponsoring_ministry_map'] = None
+            result_dict['cabinet_division_map'] = None
+            return [result_dict]
         f = open("dataExtraction/masterdata/ministry.txt")
         ministries = f.readlines()
         f = open("dataExtraction/masterdata/division.txt")
