@@ -163,7 +163,7 @@ def get_merge_meetingminute(raw_data,converted_data,project_id,project_name):
     pprint(result_list)
     filtered_result=filter.filter_project(result_list,project_name,project_id)
     print("filtered result")
-    #pprint(filtered_result)
+    pprint(filtered_result)
     if(filtered_result):
         filtered_result=Converter.convertMM(filtered_result[0])
         filtered_result=mapping.map(filtered_result[0])
