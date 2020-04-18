@@ -58,8 +58,6 @@ setup(
         "Natural Language :: Bangla",
         "Operating System :: OS Independent",
         "Topic :: Scientific/Engineering :: Metadata Extraction",
-        "Topic :: Scientific/Engineering :: Deep Learning (LSTM)",
-        "Topic :: Scientific/Engineering :: Pattern Recognization",
         "Topic :: Scientific/Engineering :: Data Mining",
         "Topic :: Scientific/Engineering :: Natural Language Processing",
         'Programming Language :: Python :: 3.4',

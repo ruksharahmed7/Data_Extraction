@@ -4,23 +4,19 @@ import json
 import traceback
 
 import dataExtraction.filereader.docreader as docreader
-import dataExtraction.filereader.readpdf as readpdf
 import dataExtraction.getmetadata.mergedata as mergedata
-from pprint import pprint
-import dataExtraction.fileconveter.doctodocx as doctodocx
-import glob
-import subprocess
+from dataExtraction.fileconveter.docxtopdf import convert_to
+from dataExtraction.projectlinking.parentproject import get_parent_project
 
 import os
-
-#print('Here:'+font.__str__('cjøx Dbœqb I mgevq gš¿Yvjq/¯’vbxq miKvi wefvM'))
-
 from flask import Flask, jsonify, request, flash, render_template
+####APP configuration#####
+#Start#
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
-
 ROOT_DIR = os.path.abspath("../../")
-
+#pathToLibrary = 'C:/Users/BR450s8g180h/Documents/backend/library'
+pathToLibrary = '/home/raihan/library'
 
 TTFSearchPath = (
             'c:/winnt/fonts',
@@ -44,92 +40,15 @@ TTFSearchPath = (
             '/Network/Library/Fonts',
             '/System/Library/Fonts',
             )
-# For debugging
-# Begin
 
-#import dataExtraction.banglaocr.ocr as ocr
-#pdf_file_name = '/home/babl/DDAS/library/pdf/test.pdf'
-#text=readpdf.pdf_to_text(pdf_file_name)
-#pprint(text)
-#ocr.pdftotext(pdf_file_name)
+#End#
 
-#pdftotext.extract(pdf_file_name)
-#text=pdfreader.extract_pdf(pdf_file_name)
-#text=pyreader.convert_pdf_to_html(pdf_file_name)
-#text=readpdf.pdf_to_text(pdf_file_name)
-#print(text)
-
-
-#meetingMinute
-#data_list,raw_data,converted_data=docreader.doc_reader_tree_formate('dataExtraction/dppFile/meetingminute/mm2.docx')
-#pprint(raw_data)
-#mergedata.get_merge_meetingminute(raw_data,converted_data)
-
-
-#~ data_list="xy!› öœ"
-#data_list,raw_data,converted_data=docreader.doc_reader_tree_formate('dataExtraction/dppFile/doc/newdpp2.docx')
-#test_data_list,test_raw_data,test_converted_data=docreader.doc_reader_tree_formate('dataExtraction/dppFile/doc/newdpp2.docx')
-
-#mergedata.get_merge_dpp_1(data_list, converted_data,test_converted_data)
-#finalresult = json.loads(dpp_result)
-#print(finalresult)
-#raw_data=docreader.get_docx_text('dataExtraction/dppFile/dppsummary/Summary01.docx')
-#print(data_list)
-#pprint(converted_data)
-#result=mergedata.get_summary_merge_data(raw_data,converted_data)
-#print(result)
-#print(raw_data[0])
-#docreader.print_doc('dataExtraction/dppFile/dppsummary/Summary01.docx')
-
-# End
-from dataExtraction.fileconveter.docxtopdf import convert_to
-#file convertion start
-# folder='/home/babl/DDAS/library/dpp/'
-# filename='/home/babl/DDAS/library/dpp/dpp2.docx'
-# converted_file_name=convert_to(folder,filename)
-# print(converted_file_name)
-# filename_renamed=filename+'.pdf'
-# os.rename(converted_file_name, filename_renamed)
-#print()
-#end
-# filename='/home/babl/DDAS/library/dpp2018-19/04-11-18 2. DPP, ঢাকা.Part-A+B(Literature)org.docx'
-# data=docreader.getTableData(filename)
-# pprint(data)
-
-# file='/home/babl/DDAS/library/dpp2018-19/09-04-2019 Dual Gauge in Akhaura-Sylhet.xlsx'
-# from dataExtraction.filereader.excelreader import readExcel
-# readExcel(file)
-#file='/home/babl/DDAS/library/summary/Summary05.03.19.docx'
-'''
-if('.docx' not in file):
-    root = "/home/babl/DDAS/library/dppFile/"
-    data_path = root + '/doc/'
-    os.chdir(data_path)
-    for doc in glob.iglob("*.doc"):
-        print(doc)
-        subprocess.call(['soffice', '--headless', '--convert-to', 'docx', doc], shell=True)
-        #doctodocx.doc_to_docx_converting(file)
-    #for doc in glob.iglob("*.doc"):
-        #subprocess.call(['soffice', '--headless', '--convert-to', 'docx', doc])
-    idx=file.find('.')
-    file=file[:idx]+'.docx'
-    print(file)
-'''
-#data_list,raw_data,converted_data =docreader.doc_reader_tree_formate(file)
-#pprint(raw_data)
-#print(converted_data)
-#dpp_result=mergedata.get_merge_summary(raw_data, converted_data,'12345',"ভুরুঙ্গামারী-সোনাহাট স্থলবন্দর-ভিতরবন্দ-নাগেশ্বরী মহাসড়কের দুধকুমর নদীর উপর সোনাহাট সেতু নির্মাণ")
-#pprint(dpp_result)
-#finalresult = json.loads(dpp_result)
-#print(finalresult)
-
-###input from url
-#@app.route('/<string:folder_name>/<string:dpp_name>', methods=['POST','GET'])
-@app.route('/',methods=['POST'])
-def start():
-    Test=request.form['test']
-    print(Test)
-
+"""
+ Data extraction API. Method POST,
+ Input field "project_name,project_id,folder_name,file_name".
+ Call get_tasks function where the internal all functions and method will be called.
+ This API Return result(a list of dictionary) in json format.
+"""
 @app.route('/data_extraction',methods=['POST'])
 def extraction_():
     try:
@@ -139,59 +58,42 @@ def extraction_():
         folder_name = data['folder_name']
         file_name = data['file_name']
         print(project_name)
-        ###Project tracking using DB
-        '''
-        p_name = trackingfromdb.get_project_name(str(project_id))
-        print(p_name)
-        if p_name == "" or p_name == None:
-            trackingfromdb.insertnewproject(str(project_id), project_name)
-            return get_tasks(folder_name, file_name, str(project_id),project_name)
-        else:
-            print('id matched', p_name)
-            return get_tasks(folder_name, file_name, str(project_id),project_name)
-        '''
         return get_tasks(folder_name, file_name, str(project_id), project_name)
     except Exception as e:
         return '<p>error<p>'
 
-#for debugging
-##start
-'''
-@app.route('/data_extraction',methods=['POST'])
-def extraction():
+"""
+Project Linking API. input project_name and get parent_project name
+"""
+@app.route('/project_link',methods=['POST'])
+def linking():
     try:
-        data=request.get_json(force=True)
-        project_name = data['project_name']
-        project_id = data['project_id']
-        folder_name = data['folder_name']
-        file_name = data['file_name']
-        print(project_name)
-        p_id = tracking.get_project_id(project_name)
-        print(p_id)
-        if str(p_id) == str(project_id):
-            print('id matched', project_id)
-            return get_tasks(folder_name, file_name, str(project_id))
-        elif str(p_id) == "" or p_id == None:
-            tracking.set_project_id(str(project_id), project_name)
-            return get_tasks(folder_name, file_name, str(project_id))
+        data = request.get_json(force=True)
+        project_name=data['project_name']
+        project_list=get_parent_project(project_name)  ### Fuzzy String Compare. input project name with existing projects
+        return jsonify(project_list)  ##return a json list. Al possible parent project_name exceded threshold ratio
     except Exception as e:
-        return '<p>error<p>'
-'''
-##end
+        print("type error: " + str(e))
+        print(traceback.format_exc())
+        return jsonify([{'response': 'error'}])
 
+
+"""
+This api convert docx file to pdf file
+"""
 @app.route('/file_convert',methods=['POST'])
 def conversion():
     try:
         data = request.get_json(force=True)
         folder_name=data['folder_name']
         file_name=data['file_name']
-        directory = '/home/babl/DDAS/library/'
+        directory = pathToLibrary
         foldername=directory+folder_name+'/'
         filename=foldername+file_name
         check_exist_file=filename + '.pdf'
         if os.path.isfile(check_exist_file):
             return jsonify([{'response':'Already coverted'}])
-        converted_file_name = convert_to(foldername, filename)
+        converted_file_name = convert_to(foldername, filename) ##conversion function. Subporcess method
         print(converted_file_name)
         os.rename(converted_file_name, check_exist_file)
         return jsonify([{'response': 'Successfully converted to PDF'}])
@@ -200,39 +102,30 @@ def conversion():
         print(traceback.format_exc())
         return jsonify([{'response': 'error'}])
 
+
+#####Data Extraction API call this function#####
 def get_tasks(folder_name,file_name,project_id,project_name):
-    print("inside get_task")
-    #object_list = getTableData('dppFile/doc/'+dpp_name)
-    #print(object_list)
-    file_location='/home/babl/DDAS/library/'+ folder_name +'/'+ file_name
-    #data_list,raw_data,converted_data =docreader.doc_reader_tree_formate(file_location)
-    #pprint(raw_data)
-    if(folder_name=='dpp2018-19'):
-        #db.update_dpp_status()
-        location_data=[]
-        password=''
-        data_list, raw_data, converted_data = docreader.doc_reader_tree_formate(file_location)
-        dpp_result=mergedata.clustering_and_get_merge_dpp(raw_data, converted_data,project_id)
+    file_location=pathToLibrary+'/'+ folder_name +'/'+ file_name
+    ### data reading from doc file. Return dictionary
+    data_list, raw_data, converted_data = docreader.doc_reader_tree_formate(file_location)
+    if(folder_name=='dpp'):
+        dpp_result=mergedata.clustering_and_get_merge_dpp(raw_data, converted_data,project_id) ##DPP Operation
         #pprint(dpp_result)
+        ### Location data in tab format ###
         location_data = docreader.getTableData(file_location)
         dpp_result_final=mergedata.merge_location(dpp_result,location_data)
         finalresult = json.loads(dpp_result_final)
     if(folder_name=='summary'):
-        password=''
-        data_list, raw_data, converted_data = docreader.doc_reader_tree_formate(file_location)
-        summary_result=mergedata.get_merge_summary(raw_data, converted_data,project_id,project_name)
+        summary_result=mergedata.get_merge_summary(raw_data, converted_data,project_id,project_name) ##Summary operation
         finalresult = json.loads(summary_result)
     if (folder_name == 'meetingminute'):
-        print('MM')
         password='ecnec14'
-        data_list, raw_data, converted_data = docreader.doc_reader_tree_formate(file_location)
-        #pprint(converted_data)
-        meetingminute_result = mergedata.get_merge_meetingminute(raw_data, converted_data,project_id,project_name)
+        meetingminute_result = mergedata.get_merge_meetingminute(raw_data, converted_data,project_id,project_name) ##MeetingMinute Operation
         finalresult = json.loads(meetingminute_result)
     return jsonify(finalresult)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port='5555')
+    app.run(host='localhost',port='5555') ###Change Host and Port as your server
 
 
 

@@ -2,11 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f1adb5a-0ed3-4cec-9499-dd64f640be87" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/DataExtractionModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DataExtractionModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataExtraction" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/clustering/KNNKmeansClassification.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/clustering/KNNKmeansClassification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/datapreprocessing/stopword.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/datapreprocessing/stopword.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/dppdetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/dppdetails.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectdate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectname.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectname.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/filereader/docreader.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/filereader/docreader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/filereader/pdfreader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/filereader/pydocx.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/filereader/pyreader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/fontconvert/fontconverter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/fontconvert/fontconverter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/getmetadata/mergedata.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/getmetadata/mergedata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/projectlinking/parentproject.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataExtraction/projectlinking/parentproject.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataExtraction/tracking/trackingdb.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,18 +39,24 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/dataExtraction" />
   </component>
   <component name="ProjectId" id="1OleQH01qR5a1VyU5jWvzoDRvYe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$USER_HOME$/FB Crawling/fbcrawl" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -57,18 +81,6 @@
       <recent name="$PROJECT_DIR$/DataExtractionModule" />
       <recent name="$PROJECT_DIR$" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.api">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python">
@@ -115,7 +127,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="clusteringsummarydata" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="docreader" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DataExtractionModule" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -123,11 +135,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataExtraction/clustering" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataExtraction/filereader" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataExtraction/clustering/clusteringsummarydata.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataExtraction/filereader/docreader.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,27 +169,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="projectlocationtableformat" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="DataExtractionModule" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataExtraction/extractionstrategy/extractdpp/projectlocationtableformat.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DataExtractionModule" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -199,21 +190,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="stopword" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DataExtractionModule" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataExtraction/datapreprocessing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataExtraction/datapreprocessing/stopword.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.api" />
-      <item itemvalue="Python.clusteringsummarydata" />
-      <item itemvalue="Python.projectlocationtableformat" />
-      <item itemvalue="Python.setup" />
+      <item itemvalue="Python.docreader" />
       <item itemvalue="Python.mergedata" />
+      <item itemvalue="Python.setup" />
+      <item itemvalue="Python.stopword" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.api" />
+        <item itemvalue="Python.docreader" />
+        <item itemvalue="Python.stopword" />
         <item itemvalue="Python.mergedata" />
         <item itemvalue="Python.setup" />
-        <item itemvalue="Python.projectlocationtableformat" />
-        <item itemvalue="Python.clusteringsummarydata" />
       </list>
     </recent_temporary>
   </component>
@@ -239,18 +251,57 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/dppFile" />
     </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1584219889722">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1584219889722" />
+    <state width="1273" height="172" key="GridCell.Tab.0.bottom" timestamp="1587194860273">
+      <screen x="70" y="27" width="1296" height="741" />
+    </state>
+    <state width="1579" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1582501923137" />
+    <state width="1276" height="94" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1582363424303" />
+    <state width="1273" height="172" key="GridCell.Tab.0.bottom/70.27.1296.741@70.27.1296.741" timestamp="1587194860273" />
+    <state width="1273" height="172" key="GridCell.Tab.0.center" timestamp="1587194860271">
+      <screen x="70" y="27" width="1296" height="741" />
+    </state>
+    <state width="1579" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1582501923137" />
+    <state width="1276" height="94" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1582363424301" />
+    <state width="1273" height="172" key="GridCell.Tab.0.center/70.27.1296.741@70.27.1296.741" timestamp="1587194860271" />
+    <state width="1273" height="172" key="GridCell.Tab.0.left" timestamp="1587194860268">
+      <screen x="70" y="27" width="1296" height="741" />
+    </state>
+    <state width="1579" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1582501923137" />
+    <state width="1276" height="94" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1582363424299" />
+    <state width="1273" height="172" key="GridCell.Tab.0.left/70.27.1296.741@70.27.1296.741" timestamp="1587194860268" />
+    <state width="1273" height="172" key="GridCell.Tab.0.right" timestamp="1587194860272">
+      <screen x="70" y="27" width="1296" height="741" />
+    </state>
+    <state width="1579" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1582501923137" />
+    <state width="1276" height="94" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1582363424302" />
+    <state width="1273" height="172" key="GridCell.Tab.0.right/70.27.1296.741@70.27.1296.741" timestamp="1587194860272" />
+    <state x="344" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1587187592658">
+      <screen x="70" y="27" width="1296" height="741" />
+    </state>
+    <state x="373" y="44" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1584220795109" />
+    <state x="344" y="31" width="1022" height="737" key="SettingsEditor/70.27.1296.741@70.27.1296.741" timestamp="1587187592658" />
+    <state x="376" y="230" key="com.intellij.ide.util.TipDialog" timestamp="1584219776922">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="376" y="230" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584219776922" />
+    <state x="372" y="225" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1582372105613" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -262,7 +313,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/dataExtraction/extractionstrategy/extractmeetingminute/meetingminutedetails.py</url>
-          <line>256</line>
+          <line>265</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
