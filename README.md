@@ -91,6 +91,15 @@ Output: JSON response
 
 ```
 
+* ### Project Linking
+Linking the current project with it's parent project.
+```
+Route: /data_extraction
+Method: [POST]
+Input: project_name
+
+Output: [parent_project_name]
+```
 ### Break down into end to end tests
 
 Explain what these tests test and why
@@ -113,30 +122,15 @@ Give an example
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/) - The micro-web framework used
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Mia Md Raihan** - *Complete work* - [website](https://mmraihan.herokuapp.com)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/RaihanSabique/Data_Extraction/contributors) who participated in this project and worked in different modules.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+This project is licensed under the Copyright © [Department of Computer Science and Engineering, BUET](https://cse.buet.ac.bd/)
