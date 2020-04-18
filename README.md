@@ -54,8 +54,11 @@ Input: folder_name
        project_name
 
 Output: JSON response
-***Output JSON response is a list of dictionary and contains:***
-DPP response:
+```
+***JSON response will be a list of dictionary and contains:***
+
+#### DPP json response:
+```
 [
   {
     "approval_date": "", "cabinet_division_map":, "cost_unit": "", "end_date": "", "end_month": "","end_year": "","executing_agency": "","gob_cost": "","gob_cost_lakh": ,"other_cost": "","other_cost_lakh": ,"own_fund": "","own_fund_lakh": ,"pa_cost": "","pa_cost_lakh": ,"planning_division": "","project_activity": "","project_cost": "","project_cost_lakh": ,"project_id": "","project_location": [],
@@ -69,6 +72,23 @@ DPP response:
     "project_name": "","project_name_english": "","project_purpose": "","revised_end_date": "","revised_end_month": ,"revised_end_year": ,"revised_gob_cost": "","revised_gob_cost_lakh": ,"revised_other_cost": "","revised_other_cost_lakh": ,"revised_pa_cost": "", "revised_pa_cost_lakh": ,"revised_project_cost": "","revised_project_cost_lakh": ,"revised_start_date": "","revised_start_month": ,"revised_start_year": ,"sponsoring_ministry": "","sponsoring_ministry_map": ,"start_date": "","start_month": ,"start_year": ""
   }
 ]
+```
+#### Summary json response:
+```
+[
+  {
+    "approval_date": "", "cabinet_division_map":, "cost_unit": "", "end_date": "", "end_month": "","end_year":                "","executing_agency": "","gob_cost": "","gob_cost_lakh": ,"other_cost": "","other_cost_lakh": ,"own_fund": "","own_fund_lakh": ,"pa_cost": "","pa_cost_lakh": ,"planning_division": "","project_activity": "","project_cost": "","project_cost_lakh": ,"project_id": "","project_location": [],"project_name": "","project_name_english": "","project_purpose": "","sponsoring_ministry": "","sponsoring_ministry_map": ,"start_date": "","start_month": ,"start_year": ""
+  }
+]
+```
+#### Meeting Minute json response:
+```
+[
+  {
+    "approval_date": "", "cabinet_division_map":, "cost_unit": "", "end_date": "", "end_month": "","end_year":                "","executing_agency": "","gob_cost": "","gob_cost_lakh": ,"is_ministry_project": ,"other_cost": "","other_cost_lakh": ,"own_fund": "","own_fund_lakh": ,"pa_cost": "","pa_cost_lakh": ,"planning_division": "","project_activity": "","project_benefit":"", "project_cost": "","project_cost_lakh": ,"project_id": "","project_location": [],"project_name": "","project_name_english": "","project_purpose": "","sponsoring_ministry": "","sponsoring_ministry_map": ,"start_date": "","start_month": ,"start_year": ""
+  }
+]
+
 ```
 
 ### Break down into end to end tests
