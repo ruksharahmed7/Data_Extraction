@@ -23,7 +23,7 @@ source /pathtoenv/bin/activate
 pip install requirements.txt
 ```
 
-Or easily run from directory
+Or easily run from project directory
 
 ```
 python setup.py
@@ -99,21 +99,6 @@ Method: [POST]
 Input: project_name
 
 Output: [parent_project_name]
-```
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
 ```
 
 ## Deployment
