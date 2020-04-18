@@ -259,8 +259,6 @@ def extract_all(raw_cluser_data,cleaned_cluster_data,project_id):
         'sponsoring_ministry':ministry,
         'executing_agency':executing_agency,
         'planning_division':planning_division,
-
-
     }
     #p_id = tracking.get_project_id(project_name_ban)
     #if str(p_id) == str(project_id):

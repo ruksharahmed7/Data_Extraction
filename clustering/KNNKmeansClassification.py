@@ -1,8 +1,6 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.cluster import KMeans
-from nltk.corpus import stopwords
-from nltk.stem.wordnet import WordNetLemmatizer
 import string
 import re
 import numpy as np

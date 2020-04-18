@@ -3,7 +3,6 @@ import traceback
 import pandas as pd
 import dataExtraction.extractionstrategy.commonfunction as commonfunction
 
-
 def extract_date_1(operational_data):
     try:
         json_data=[]

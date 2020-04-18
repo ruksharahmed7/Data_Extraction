@@ -52,14 +52,21 @@ check_ascii_re=re.compile(r"^[a-zA-Z\d]+$")
 
 
 def doc_reader_tree_formate(filename):
+    print('doc reader tree format')
+    print(filename)
+
     document = Document(filename)
     #document.setpassword(psw)
+    print('here is tree')
+
     style = document.styles['Normal']
     font = style.font
     font.name = 'SutonnyMJ'
     z = zf.ZipFile(filename)
     f = z.open("word/document.xml")  # a file-like objectclass
     tree = ET.parse(f)  # an ElementTree instance
+
+
     paratextlist=[]
     paralist=[]
     for element in tree.iter():
@@ -97,12 +104,13 @@ def doc_reader_tree_formate(filename):
             data=paratext.strip()
             raw_data[para_node] = data
             #print(data)
+            ##### Font conversion from bijoy to unicode
             toUnicode=fontconverter.bijoy2uni(data)
             #print(toUnicode)
             paratextlist.append(toUnicode +'^'+str(para_node))
             converted_data[para_node]=toUnicode
         para_node+=1
-    #print("Here find all:")
+    print("Here find all: end of tree format")
     return paratextlist,raw_data,converted_data
 
 def getParaText(filename):

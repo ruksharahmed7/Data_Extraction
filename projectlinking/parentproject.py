@@ -19,6 +19,7 @@ class APIError(Exception):
 
 def get_parent_project(project_name):
     try:
+        #### API to get all existing projects name
         resp = requests.get('http://120.50.8.205:2942/api/main/getAllProjectName')
         print(project_name)
         print(Threshold['project_linking_score'])
@@ -27,6 +28,7 @@ def get_parent_project(project_name):
         ratio_list=[]
         for todo_item in resp.json():
             ratio=fuzz.partial_ratio(project_name, todo_item['projectname'])
+            ### Threshold score from config file. Checking matching ratio with threshold  and not the same project
             if(ratio>Threshold['project_linking_score'] and ratio!=100):
                 print('{} {}'.format(todo_item['id'], todo_item['projectname']),ratio)
                 ratio_list.append(ratio)
@@ -35,7 +37,7 @@ def get_parent_project(project_name):
         #     print(ratio_list)
         #     indx = ratio_list.index(max(ratio_list))
         #     result.append(project_list[indx])
-        return project_list
+        return project_list ### return all project which is satisfied threshold  condition
 
     except APIError as error:
         print(error)

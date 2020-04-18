@@ -3,7 +3,7 @@ import traceback
 import pandas as pd
 import dataExtraction.extractionstrategy.commonfunction as commonfunction
 
-
+'''
 def extract_project_title(operational_data):
     try:
         json_data=[]
@@ -153,7 +153,7 @@ def extract_project_title(operational_data):
         print(traceback.format_exc())
         return None,None,None
 
-
+'''
 
 def extract_project_title_(operational_data):
     try:
